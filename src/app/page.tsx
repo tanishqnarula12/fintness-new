@@ -10,7 +10,7 @@ import FinalCTA from "@/components/FinalCTA";
 
 export default function Home() {
   return (
-    <main className="bg-[#020617] min-h-screen text-white font-sans overflow-clip">
+    <main className="bg-slate-900 min-h-screen text-white font-sans overflow-clip">
       <PiggyScrollScene />
       
       <TransitionSection />
