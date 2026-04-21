@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const FRAME_COUNT = 201;
 
@@ -132,12 +133,11 @@ export default function PiggyScrollScene() {
 
       // ════════════════════════════════════════════════
       //  TIMELINE  (container = 500vh → ~2920px scroll)
-      //  CROSSFADE: hero + CTA overlap at 0.52→0.60
       //
       //  0.00 → 0.70 : Piggy frames 1→201
-      //  0.00 → 0.45 : Hero text fully visible
-      //  0.45 → 0.60 : Hero text fades out
-      //  0.52 → 0.68 : CTA text fades in  ← overlaps with hero!
+      //  0.00 → 0.15 : Hero text fully visible
+      //  0.15 → 0.25 : Hero text fades out (early reveal for animation)
+      //  0.52 → 0.68 : CTA text fades in
       //  0.68 → 0.90 : CTA fully visible & clickable
       //  0.90 → 1.00 : CTA fades + bottom gradient blends
       // ════════════════════════════════════════════════
@@ -158,10 +158,11 @@ export default function PiggyScrollScene() {
         canvasWrapRef.current.style.transform = `scale(${scale})`;
       }
 
-      // ── 3. Hero text — visible 0→45%, fades 45→60% ──
+      // ── 3. Hero text — visible 0→15%, fades 15→25% ──
+      // This leaves the screen open to view the piggy bank breaking
       if (heroRef.current) {
-        const heroOpacity = mapRange(progress, 0.45, 0.60, 1, 0);
-        const heroY = mapRange(progress, 0, 0.60, 0, -50);
+        const heroOpacity = mapRange(progress, 0.15, 0.25, 1, 0);
+        const heroY = mapRange(progress, 0, 0.25, 0, -50);
         heroRef.current.style.opacity = String(heroOpacity);
         heroRef.current.style.transform = `translateY(${heroY}px)`;
       }
@@ -217,16 +218,16 @@ export default function PiggyScrollScene() {
   return (
     <div
       ref={containerRef}
-      className="w-full bg-[#020617] font-sans"
+      className="w-full bg-[#0F172A] font-sans"
       style={{ position: "relative", height: "500vh" }}
     >
       <div
-        className="w-full overflow-hidden bg-[#020617]"
+        className="w-full overflow-hidden bg-[#0F172A]"
         style={{ position: "sticky", top: 0, height: "100vh" }}
       >
         {/* Loader */}
         {!loaded && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#020617] text-[#00A3FF] z-50">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0F172A] text-[#00A3FF] z-50">
             <div className="w-12 h-12 border-4 border-[#00A3FF]/20 border-t-[#00A3FF] rounded-full animate-spin mb-4" />
             <p className="text-white/60 text-sm tracking-widest uppercase font-medium">
               Loading Experience...
@@ -237,7 +238,7 @@ export default function PiggyScrollScene() {
         {/* Canvas */}
         <div
           ref={canvasWrapRef}
-          className="absolute inset-0 will-change-transform origin-center"
+          className="absolute inset-0 will-change-transform origin-center mix-blend-screen"
         >
           <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
         </div>
@@ -255,7 +256,7 @@ export default function PiggyScrollScene() {
         {/* Bottom fade gradient */}
         <div
           ref={bottomFadeRef}
-          className="absolute bottom-0 left-0 right-0 h-[50%] z-[13] pointer-events-none bg-gradient-to-t from-[#020617] via-[#020617]/90 to-transparent"
+          className="absolute bottom-0 left-0 right-0 h-[50%] z-[13] pointer-events-none bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent"
           style={{ opacity: 0 }}
         />
 
@@ -276,12 +277,6 @@ export default function PiggyScrollScene() {
               <span className="text-[#00A3FF]">Fitter</span> Financial Future
               Together
             </h1>
-            <p
-              className="text-white/90 text-lg sm:text-xl lg:text-3xl max-w-3xl font-medium"
-              style={{ textShadow: "0 2px 15px rgba(0,0,0,0.95)" }}
-            >
-              Because just saving money isn&apos;t enough anymore.
-            </p>
           </div>
         </div>
 
@@ -305,11 +300,12 @@ export default function PiggyScrollScene() {
             Invest smarter. Grow consistently. Win long-term.
           </p>
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className="rounded-full bg-[#00A3FF] text-white px-10 py-5 font-bold text-xl shadow-[0_4px_25px_rgba(0,163,255,0.4)] hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.98 }}
+            className="group flex items-center justify-center gap-4 rounded-full bg-white px-10 py-5 font-bold text-lg text-[#020617] shadow-[0_8px_32px_rgba(255,255,255,0.1)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)] cursor-pointer"
           >
-            Talk to an Advisor
+            <span className="tracking-wide">Talk to an Advisor</span>
+            <ArrowRight className="w-6 h-6 text-[#00A3FF] group-hover:translate-x-1.5 transition-transform duration-300" />
           </motion.button>
         </div>
 
