@@ -11,7 +11,7 @@ export default function TransitionSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="max-w-3xl mx-auto text-center py-10"
       >
-        <p className="text-xl md:text-2xl lg:text-3xl text-white/40 font-extralight tracking-wide leading-relaxed">
+        <p className="text-xl md:text-2xl lg:text-3xl text-white/50 font-extralight tracking-wide leading-relaxed">
           Now that you&apos;ve broken old habits…
         </p>
         <p className="text-2xl md:text-3xl lg:text-4xl text-white font-medium mt-3 tracking-tight">
@@ -22,7 +22,7 @@ export default function TransitionSection() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-          className="w-20 h-[1px] bg-gradient-to-r from-transparent via-[#4FFFB0] to-transparent mx-auto mt-8 origin-center"
+          className="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#00A3FF] to-transparent mx-auto mt-8 origin-center"
         />
       </motion.div>
     </section>

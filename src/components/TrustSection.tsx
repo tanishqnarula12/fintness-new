@@ -14,7 +14,7 @@ export default function TrustSection() {
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden">
       {/* Background accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00A3FF] rounded-full blur-[250px] opacity-[0.02] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#00A3FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
 
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ export default function TrustSection() {
 
               {/* Icon */}
               <div className="w-12 h-12 rounded-xl bg-white/[0.02] border border-white/[0.04] flex items-center justify-center shrink-0 mt-1 group-hover:bg-[#00A3FF]/10 group-hover:border-[#00A3FF]/20 transition-all duration-500">
-                <point.icon className="w-5 h-5 text-white/25 group-hover:text-[#00A3FF] transition-colors duration-500" strokeWidth={1.5} />
+                <point.icon className="w-5 h-5 text-white/20 group-hover:text-[#00A3FF] transition-colors duration-500" strokeWidth={1.5} />
               </div>
 
               {/* Text */}
@@ -63,7 +63,7 @@ export default function TrustSection() {
 
               {/* Hover arrow indicator */}
               <div className="hidden md:flex items-center h-12 mt-1">
-                <div className="w-8 h-[1px] bg-transparent group-hover:bg-[#00A3FF]/40 transition-all duration-500 group-hover:w-12" />
+                <div className="w-8 h-[1px] bg-transparent group-hover:bg-[#00A3FF]/40 transition-all duration-500 group-hover:w-12 rounded-full" />
               </div>
             </div>
           </motion.div>

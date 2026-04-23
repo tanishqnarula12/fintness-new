@@ -57,7 +57,7 @@ export default function Testimonials() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative mb-6 group"
       >
-        <div className="relative bg-gradient-to-br from-[#0d1525] to-[#0a1020] rounded-3xl p-10 md:p-14 border border-white/[0.04] group-hover:border-white/[0.08] transition-all duration-500 overflow-hidden">
+        <div className="relative bg-gradient-to-br from-[#0d1525] to-[#0a1020] rounded-3xl p-10 md:p-14 border border-white/[0.04] group-hover:border-white/[0.08] transition-all duration-500 overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]">
           {/* Decorative quote marks */}
           <Quote className="absolute top-8 right-8 w-20 h-20 text-white/[0.03] rotate-180" strokeWidth={1} />
           
@@ -77,7 +77,7 @@ export default function Testimonials() {
               </p>
             </div>
             <div className="flex items-center gap-4 md:flex-col md:items-end md:text-right shrink-0 md:pt-8">
-              <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-lg font-semibold border border-white/[0.06]" style={{ background: `${REVIEWS[0].accent}15`, color: REVIEWS[0].accent }}>
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-lg font-semibold border border-white/[0.06] shadow-[0_0_20px_rgba(0,0,0,0.3)]" style={{ background: `${REVIEWS[0].accent}15`, color: REVIEWS[0].accent }}>
                 {REVIEWS[0].avatar}
               </div>
               <div>
@@ -98,7 +98,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 * idx, duration: 0.6, ease: "easeOut" }}
-            className="group relative bg-[#0a1020] rounded-3xl p-8 border border-white/[0.04] hover:border-white/[0.08] transition-all duration-500 overflow-hidden"
+            className="group relative bg-[#0a1020] rounded-3xl p-8 border border-white/[0.04] hover:border-white/[0.08] shadow-[0_0_20px_rgba(0,0,0,0.3)] transition-all duration-500 overflow-hidden"
           >
             {/* Corner accent */}
             <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full blur-[50px] opacity-0 group-hover:opacity-15 transition-opacity duration-700 pointer-events-none" style={{ background: review.accent }} />
@@ -114,7 +114,7 @@ export default function Testimonials() {
                 &ldquo;{review.quote}&rdquo;
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-semibold border border-white/[0.06]" style={{ background: `${review.accent}12`, color: review.accent }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-sm font-semibold border border-white/[0.06] shadow-[0_0_20px_rgba(0,0,0,0.3)]" style={{ background: `${review.accent}12`, color: review.accent }}>
                   {review.avatar}
                 </div>
                 <div>

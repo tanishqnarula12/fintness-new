@@ -40,13 +40,13 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
         style={{ background: `linear-gradient(135deg, ${card.accent}20, transparent 50%)` }}
       />
 
-      <div className="relative h-full bg-[#0a1020] rounded-3xl p-8 border border-white/[0.04] group-hover:border-white/[0.08] transition-all duration-500 overflow-hidden">
+      <div className="relative h-full bg-[#0a1020] rounded-3xl p-8 border border-white/[0.04] group-hover:border-[#00A3FF]/20 shadow-none group-hover:shadow-[0_0_30px_rgba(0,163,255,0.15)] transition-all duration-500 overflow-hidden">
         {/* Mouse-tracking spotlight */}
         <div className="spotlight" />
 
         {/* Corner accent glow */}
         <div 
-          className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-20 transition-all duration-700"
+          className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-15 transition-all duration-700"
           style={{ background: card.accent }}
         />
 
@@ -57,7 +57,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
               className="absolute inset-0 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"
               style={{ background: card.accent }}
             />
-            <div className="w-full h-full rounded-2xl border border-white/[0.06] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+            <div className="w-full h-full rounded-2xl border border-white/[0.04] bg-white/[0.02] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
               <card.icon 
                 className="w-7 h-7 transition-colors duration-500" 
                 style={{ color: card.accent }} 
@@ -69,7 +69,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
           <h3 className={`font-semibold text-white mb-4 tracking-tight group-hover:text-white transition-colors duration-300 ${idx === 0 ? "text-2xl md:text-3xl" : "text-xl"}`}>
             {card.title}
           </h3>
-          <p className={`text-white/40 leading-relaxed font-light group-hover:text-white/65 transition-colors duration-500 ${idx === 0 ? "text-base md:text-lg max-w-md" : "text-sm"}`}>
+          <p className={`text-white/40 leading-relaxed font-medium group-hover:text-white/60 transition-colors duration-500 ${idx === 0 ? "text-base md:text-lg max-w-md" : "text-sm"}`}>
             {card.desc}
           </p>
 
@@ -91,7 +91,7 @@ export default function EcosystemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-[#4FFFB0] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
+          <p className="text-[#00A3FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
             A Complete Financial Ecosystem
           </h2>

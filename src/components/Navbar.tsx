@@ -74,7 +74,7 @@ export default function Navbar() {
 
         {/* Right Nav / CTA */}
         <div className="flex items-center gap-6">
-          <Link href="/login" className="hidden md:block text-sm text-white/60 hover:text-white transition-all duration-300">
+          <Link href="/login" className="hidden md:block text-sm text-white/60 hover:text-white transition-all duration-300 font-medium">
             Client Login
           </Link>
           <button className="bg-[#00A3FF] text-white px-5 py-2.5 rounded-full font-bold text-sm tracking-wide hover:bg-white hover:text-black hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(0,163,255,0.4)] hover:shadow-[0_0_20px_rgba(255,255,255,0.6)]">

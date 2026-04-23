@@ -4,13 +4,13 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const FRAME_COUNT = 201;
+const FRAME_COUNT = 205;
 
 function preloadImages() {
   const images: HTMLImageElement[] = [];
   for (let i = 1; i <= FRAME_COUNT; i++) {
     const img = new Image();
-    img.src = `/frames/piggy_${i}.jpg`;
+    img.src = `/frames/ezgif-frame-${i.toString().padStart(3, "0")}.jpg`;
     images.push(img);
   }
   return images;
@@ -158,11 +158,11 @@ export default function PiggyScrollScene() {
         canvasWrapRef.current.style.transform = `scale(${scale})`;
       }
 
-      // ── 3. Hero text — visible 0→15%, fades 15→25% ──
+      // ── 3. Hero text — visible 0→8%, fades 8→18% ──
       // This leaves the screen open to view the piggy bank breaking
       if (heroRef.current) {
-        const heroOpacity = mapRange(progress, 0.15, 0.25, 1, 0);
-        const heroY = mapRange(progress, 0, 0.25, 0, -50);
+        const heroOpacity = mapRange(progress, 0.08, 0.18, 1, 0);
+        const heroY = mapRange(progress, 0, 0.18, 0, -50);
         heroRef.current.style.opacity = String(heroOpacity);
         heroRef.current.style.transform = `translateY(${heroY}px)`;
       }
@@ -185,13 +185,13 @@ export default function PiggyScrollScene() {
         ctaRef.current.style.pointerEvents = ctaOpacity > 0.3 ? "auto" : "none";
       }
 
-      // ── 5. Dark overlay — gradual darken, deeper for CTA readability ──
+      // ── 5. Dark overlay for text readability ──
       if (overlayRef.current) {
         let ov: number;
-        if (progress < 0.50) {
-          ov = mapRange(progress, 0, 0.50, 0.30, 0.55);
+        if (progress < 0.52) {
+          ov = mapRange(progress, 0.20, 0.45, 0.0, 0.4); 
         } else {
-          ov = mapRange(progress, 0.50, 0.70, 0.55, 0.78);
+          ov = mapRange(progress, 0.52, 0.75, 0.4, 0.85); 
         }
         overlayRef.current.style.opacity = String(ov);
       }
@@ -218,18 +218,18 @@ export default function PiggyScrollScene() {
   return (
     <div
       ref={containerRef}
-      className="w-full bg-[#0F172A] font-sans"
+      className="w-full bg-[#020617] font-sans"
       style={{ position: "relative", height: "500vh" }}
     >
       <div
-        className="w-full overflow-hidden bg-[#0F172A]"
+        className="w-full overflow-hidden bg-[#020617]"
         style={{ position: "sticky", top: 0, height: "100vh" }}
       >
         {/* Loader */}
         {!loaded && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0F172A] text-[#00A3FF] z-50">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#020617] text-[#00A3FF] z-50">
             <div className="w-12 h-12 border-4 border-[#00A3FF]/20 border-t-[#00A3FF] rounded-full animate-spin mb-4" />
-            <p className="text-white/60 text-sm tracking-widest uppercase font-medium">
+            <p className="text-white/50 text-sm tracking-widest uppercase font-medium">
               Loading Experience...
             </p>
           </div>
@@ -238,25 +238,22 @@ export default function PiggyScrollScene() {
         {/* Canvas */}
         <div
           ref={canvasWrapRef}
-          className="absolute inset-0 will-change-transform origin-center mix-blend-screen"
+          className="absolute inset-0 will-change-transform origin-center"
         >
-          <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+          <canvas ref={canvasRef} className="absolute inset-0 w-full h-full mix-blend-screen" />
         </div>
 
-        {/* Dark overlay */}
+        {/* Dark overlay for readability */}
         <div
           ref={overlayRef}
-          className="absolute inset-0 z-10 bg-black pointer-events-none"
-          style={{ opacity: 0.35 }}
+          className="absolute inset-0 z-10 bg-[#020617] pointer-events-none"
+          style={{ opacity: 0 }}
         />
-
-        {/* Vignette */}
-        <div className="absolute inset-0 z-[12] pointer-events-none bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)]" />
 
         {/* Bottom fade gradient */}
         <div
           ref={bottomFadeRef}
-          className="absolute bottom-0 left-0 right-0 h-[50%] z-[13] pointer-events-none bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent"
+          className="absolute bottom-0 left-0 right-0 h-[50%] z-[13] pointer-events-none bg-gradient-to-t from-[#020617] via-[#020617]/90 to-transparent"
           style={{ opacity: 0 }}
         />
 
@@ -270,11 +267,10 @@ export default function PiggyScrollScene() {
         >
           <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center text-center">
             <h1
-              className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black max-w-5xl tracking-tighter leading-[1.05] mb-6"
-              style={{ textShadow: "0 4px 30px rgba(0,0,0,0.95)" }}
+              className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black max-w-5xl tracking-tighter leading-[1.05] mb-6 drop-shadow-lg"
             >
               Let&apos;s Build a{" "}
-              <span className="text-[#00A3FF]">Fitter</span> Financial Future
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] to-[#00E5FF]">Fitter</span> Financial Future
               Together
             </h1>
           </div>
@@ -287,25 +283,23 @@ export default function PiggyScrollScene() {
           style={{ opacity: 0, pointerEvents: "none" }}
         >
           <h2
-            className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black max-w-5xl tracking-tighter leading-[1.05] mb-6"
-            style={{ textShadow: "0 4px 30px rgba(0,0,0,0.95)" }}
+            className="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black max-w-5xl tracking-tighter leading-[1.05] mb-6 drop-shadow-lg"
           >
             Empowering Financial Growth{" "}
             <span className="text-[#00A3FF]">Every Step</span>.
           </h2>
           <p
-            className="text-white/90 text-lg sm:text-xl lg:text-3xl max-w-3xl font-medium mb-10"
-            style={{ textShadow: "0 2px 15px rgba(0,0,0,0.95)" }}
+            className="text-white/80 text-lg sm:text-xl lg:text-3xl max-w-3xl font-light mb-10"
           >
             Invest smarter. Grow consistently. Win long-term.
           </p>
           <motion.button
-            whileHover={{ scale: 1.04 }}
+            whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group flex items-center justify-center gap-4 rounded-full bg-white px-10 py-5 font-bold text-lg text-[#020617] shadow-[0_8px_32px_rgba(255,255,255,0.1)] transition-all duration-300 hover:shadow-[0_4px_20px_rgba(255,255,255,0.2)] cursor-pointer"
+            className="group flex items-center justify-center gap-4 rounded-full bg-[#00A3FF] px-10 py-5 font-bold text-lg text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-[#0088D6] hover:shadow-[#00A3FF]/30 cursor-pointer"
           >
             <span className="tracking-wide">Talk to an Advisor</span>
-            <ArrowRight className="w-6 h-6 text-[#00A3FF] group-hover:translate-x-1.5 transition-transform duration-300" />
+            <ArrowRight className="w-6 h-6 text-white group-hover:translate-x-1.5 transition-transform duration-300" />
           </motion.button>
         </div>
 
@@ -316,7 +310,7 @@ export default function PiggyScrollScene() {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
           style={{ opacity: 1 }}
         >
-          <p className="text-white/40 text-xs tracking-[0.3em] uppercase font-medium">
+          <p className="text-white/40 text-xs tracking-[0.3em] uppercase font-bold">
             Scroll
           </p>
           <motion.div
@@ -326,9 +320,9 @@ export default function PiggyScrollScene() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center pt-1.5"
+            className="w-5 h-8 rounded-full border-2 border-white/20 flex items-start justify-center pt-1.5"
           >
-            <div className="w-1 h-2 rounded-full bg-white/40" />
+            <div className="w-1.5 h-2.5 rounded-full bg-white/40" />
           </motion.div>
         </div>
       </div>

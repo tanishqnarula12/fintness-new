@@ -78,7 +78,7 @@ export default function LifePhaseSection() {
               {/* Icon */}
               <div 
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-white/[0.06] backdrop-blur-sm transition-all duration-500 group-hover:scale-110"
-                style={{ background: `${phase.accent}10` }}
+                style={{ background: `${phase.accent}15` }}
               >
                 <phase.icon className="w-5 h-5 transition-colors duration-500" style={{ color: phase.accent }} strokeWidth={1.5} />
               </div>

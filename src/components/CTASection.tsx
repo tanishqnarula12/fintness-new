@@ -57,8 +57,8 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="gradient-border">
-            <div className="bg-[#0a1020]/90 backdrop-blur-xl rounded-3xl p-8 md:p-10 relative overflow-hidden">
+          <div className="gradient-border group">
+            <div className="bg-[#0a1020]/90 backdrop-blur-xl border border-white/[0.04] group-hover:border-[#4FFFB0]/20 rounded-3xl p-8 md:p-10 relative overflow-hidden transition-colors duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
               {/* Shimmer overlay */}
               <div className="shimmer absolute inset-0 pointer-events-none rounded-3xl" />
 
@@ -71,7 +71,7 @@ export default function CTASection() {
                     <label className="block text-white/30 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#4FFFB0] transition-colors">Full Name</label>
                     <input 
                       type="text" 
-                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/15 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300"
+                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/20 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300"
                       placeholder="John Doe"
                     />
                   </div>
@@ -79,7 +79,7 @@ export default function CTASection() {
                     <label className="block text-white/30 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#4FFFB0] transition-colors">Email Address</label>
                     <input 
                       type="email" 
-                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/15 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300"
+                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/20 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -87,18 +87,18 @@ export default function CTASection() {
                     <label className="block text-white/30 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#4FFFB0] transition-colors">Phone Number</label>
                     <input 
                       type="tel" 
-                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/15 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300"
+                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/20 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div className="group">
                     <label className="block text-white/30 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#4FFFB0] transition-colors">How can we help?</label>
                     <textarea 
-                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/15 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300 min-h-[100px] resize-none"
+                      className="w-full bg-white/[0.03] border border-white/[0.06] rounded-xl px-5 py-3.5 text-white placeholder-white/20 focus:outline-none focus:border-[#4FFFB0]/30 focus:bg-white/[0.05] focus:shadow-[0_0_20px_rgba(79,255,176,0.05)] transition-all duration-300 min-h-[100px] resize-none"
                       placeholder="Tell us about your financial goals..."
                     />
                   </div>
-                  <button className="group/btn w-full bg-[#4FFFB0] hover:bg-[#3ae09b] text-[#020617] font-semibold py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(79,255,176,0.2)]">
+                  <button className="group/btn w-full bg-[#4FFFB0] hover:bg-[#3ae09b] text-[#020617] font-semibold tracking-wide py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(79,255,176,0.3)]">
                     Request Consultation
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </button>
