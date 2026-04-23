@@ -61,7 +61,7 @@ export default function ProcessSection() {
     >
       {/* This is the sticky viewport — it pins to the screen */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-        {/* Background */}
+        {/* Light premium background */}
         <div className="absolute inset-0 bg-[#F5F0EB]" />
 
         {/* Subtle ambient glow */}
@@ -109,7 +109,6 @@ export default function ProcessSection() {
             {/* Right — stacking cards */}
             <div className="relative h-[400px] md:h-[360px]">
               {PROCESS_PHASES.map((phase, index) => {
-                // Calculate card transform based on active index
                 const isVisible = index <= activeIndex;
                 const isActive = index === activeIndex;
                 const stackOffset = isVisible
@@ -142,14 +141,6 @@ export default function ProcessSection() {
                         }
                       `}
                     >
-                      {/* Corner glow */}
-                      <div
-                        className={`absolute -top-12 -right-12 w-48 h-48 rounded-full blur-[60px] pointer-events-none transition-opacity duration-700 ${
-                          isActive ? "opacity-100" : "opacity-0"
-                        }`}
-                        style={{ background: "radial-gradient(circle, rgba(0,102,255,0.08), transparent 70%)" }}
-                      />
-
                       {/* Card content */}
                       <div className="relative z-10 flex flex-col justify-between h-full">
                         <div>
@@ -157,8 +148,8 @@ export default function ProcessSection() {
                             <span
                               className={`text-7xl md:text-8xl font-black leading-none transition-colors duration-500 ${
                                 isActive
-                                  ? "text-[#0066FF]/20"
-                                  : "text-[#1a1a2e]/[0.04]"
+                                  ? "text-[#0066FF]/[0.60]"
+                                  : "text-[#1a1a2e]/[0.12]"
                               }`}
                             >
                               {phase.num}

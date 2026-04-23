@@ -176,10 +176,12 @@ export default function PiggyScrollScene() {
       // ── 4. Light overlay for text readability (warm tint) ──
       if (overlayRef.current) {
         let ov: number;
-        if (progress < 0.52) {
-          ov = mapRange(progress, 0.20, 0.45, 0.0, 0.3); 
+        if (progress < 0.45) {
+          ov = 0;
+        } else if (progress < 0.55) {
+          ov = mapRange(progress, 0.45, 0.55, 0.0, 0.35); 
         } else {
-          ov = mapRange(progress, 0.52, 0.75, 0.3, 0.75); 
+          ov = mapRange(progress, 0.55, 0.75, 0.35, 0.75); 
         }
         overlayRef.current.style.opacity = String(ov);
       }
