@@ -4,8 +4,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 const AnimatedNavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-  const defaultTextColor = 'text-gray-300';
-  const hoverTextColor = 'text-white';
+  const defaultTextColor = 'text-[#1a1a2e]/60';
+  const hoverTextColor = 'text-[#1a1a2e]';
   const textSizeClass = 'text-sm font-medium tracking-wide';
 
   return (
@@ -51,7 +51,7 @@ export function Navbar() {
   const logoElement = (
     <div className="flex items-center gap-3">
       <img src="/logo.png" alt="Fintness Finserv Logo" className="w-8 h-8 object-contain" />
-      <span className="text-white font-semibold tracking-tighter hidden lg:block">FINTNESS FINSERV</span>
+      <span className="text-[#1a1a2e] font-semibold tracking-tighter hidden lg:block">FINTNESS FINSERV</span>
     </div>
   );
 
@@ -65,14 +65,14 @@ export function Navbar() {
   ];
 
   const loginButtonElement = (
-    <button className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-white/10 bg-white/5 text-gray-300 rounded-full hover:border-[#00A3FF]/50 hover:text-white transition-colors duration-200 w-full xl:w-auto font-medium">
+    <button className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-[#1a1a2e]/10 bg-[#1a1a2e]/[0.03] text-[#1a1a2e]/60 rounded-full hover:border-[#0066FF]/40 hover:text-[#1a1a2e] transition-colors duration-200 w-full xl:w-auto font-medium">
       Client Login
     </button>
   );
 
   const signupButtonElement = (
     <div className="relative group w-full xl:w-auto">
-       <button className="relative z-10 px-5 py-2.5 xl:px-4 xl:py-2 text-sm font-semibold text-black bg-white rounded-full hover:bg-[#00A3FF] hover:text-white transition-all duration-300 w-full xl:w-auto shadow-md border border-transparent">
+       <button className="relative z-10 px-5 py-2.5 xl:px-4 xl:py-2 text-sm font-semibold text-white bg-[#0066FF] rounded-full hover:bg-[#0052CC] transition-all duration-300 w-full xl:w-auto shadow-md border border-transparent">
          Get Started
        </button>
     </div>
@@ -83,7 +83,7 @@ export function Navbar() {
                        flex flex-col items-center
                        pl-6 pr-6 py-3 backdrop-blur-md
                        ${headerShapeClass}
-                       border border-white/10 bg-[#020617]/70 shadow-[0_4px_30px_rgba(0,0,0,0.5)]
+                       border border-[#1a1a2e]/10 bg-white/75 shadow-[0_4px_30px_rgba(0,0,0,0.06)]
                        w-[calc(100%-2rem)] xl:w-max max-w-[95vw] xl:max-w-7xl
                        transition-[border-radius] duration-300 ease-in-out`}>
 
@@ -105,7 +105,7 @@ export function Navbar() {
           {signupButtonElement}
         </div>
 
-        <button className="xl:hidden flex items-center justify-center w-8 h-8 text-gray-300 focus:outline-none shrink-0 border border-white/10 rounded-full bg-white/5" onClick={toggleMenu} aria-label={isOpen ? 'Close Menu' : 'Open Menu'}>
+        <button className="xl:hidden flex items-center justify-center w-8 h-8 text-[#1a1a2e]/60 focus:outline-none shrink-0 border border-[#1a1a2e]/10 rounded-full bg-[#1a1a2e]/[0.03]" onClick={toggleMenu} aria-label={isOpen ? 'Close Menu' : 'Open Menu'}>
           {isOpen ? (
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
           ) : (
@@ -119,12 +119,12 @@ export function Navbar() {
                        ${isOpen ? 'max-h-[500px] opacity-100 pt-6 pb-2' : 'max-h-0 opacity-0 pt-0 pb-0 pointer-events-none'}`}>
         <nav className="flex flex-col items-center space-y-5 text-base w-full">
           {navLinksData.map((link) => (
-            <Link key={link.href} href={link.href} onClick={toggleMenu} className="text-gray-300 hover:text-white transition-colors w-full text-center font-medium">
+            <Link key={link.href} href={link.href} onClick={toggleMenu} className="text-[#1a1a2e]/60 hover:text-[#1a1a2e] transition-colors w-full text-center font-medium">
               {link.label}
             </Link>
           ))}
         </nav>
-        <div className="flex flex-col items-center gap-3 mt-8 w-full border-t border-white/10 pt-6">
+        <div className="flex flex-col items-center gap-3 mt-8 w-full border-t border-[#1a1a2e]/10 pt-6">
           {loginButtonElement}
           {signupButtonElement}
         </div>

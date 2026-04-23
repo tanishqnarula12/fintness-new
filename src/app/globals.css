@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a;
-  --foreground: #ffffff;
-  --accent: #4FFFB0;
-  --accent-blue: #00A3FF;
+  --background: #F5F0EB;
+  --foreground: #1a1a2e;
+  --accent: #0066FF;
+  --accent-blue: #00B2FF;
 }
 
 @theme inline {
@@ -15,8 +15,8 @@
 }
 
 body {
-  background: #0f172a;
-  color: #ffffff;
+  background: #F5F0EB;
+  color: #1a1a2e;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
@@ -26,7 +26,7 @@ body {
   100% { background-position: 200% 0; }
 }
 .shimmer {
-  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.03) 50%, transparent 75%);
+  background: linear-gradient(90deg, transparent 25%, rgba(0, 102, 255, 0.04) 50%, transparent 75%);
   background-size: 200% 100%;
   animation: shimmer 4s linear infinite;
 }
@@ -50,16 +50,16 @@ body {
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: conic-gradient(from var(--angle), #4FFFB0, #00A3FF, #4FFFB0);
+  background: conic-gradient(from var(--angle), #0066FF, #00B2FF, #0066FF);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: gradient-rotate 4s linear infinite;
-  opacity: 0.4;
+  opacity: 0.3;
   transition: opacity 0.5s;
 }
 .gradient-border:hover::before {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 /* ── Glow Pulse ───────────────────────────────── */
@@ -99,7 +99,7 @@ body {
   pointer-events: none;
   background: radial-gradient(
     300px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(79, 255, 176, 0.08),
+    rgba(0, 102, 255, 0.06),
     transparent 70%
   );
 }
@@ -114,8 +114,8 @@ html {
 
 /* ── Custom Selection Color ───────────────────── */
 ::selection {
-  background: rgba(79, 255, 176, 0.2);
-  color: #fff;
+  background: rgba(0, 102, 255, 0.15);
+  color: #1a1a2e;
 }
 
 /* ── Scrollbar ────────────────────────────────── */
@@ -123,12 +123,12 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #F5F0EB;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(26, 26, 46, 0.12);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(26, 26, 46, 0.25);
 }

@@ -4,12 +4,12 @@ import { useRef, useCallback } from "react";
 import { Wallet, LineChart, Shield, Landmark, PieChart, Coins } from "lucide-react";
 
 const CARDS = [
-  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#4FFFB0" },
-  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolios tailored for maximum risk-adjusted returns.", accent: "#00A3FF" },
-  { icon: Shield, title: "Risk Mitigation", desc: "Advanced protection mechanisms for structured life security.", accent: "#A78BFA" },
-  { icon: Landmark, title: "Estate Planning", desc: "Secure generational wealth transfer and legacy continuity.", accent: "#F59E0B" },
-  { icon: PieChart, title: "Tax Optimization", desc: "Strategic structuring to dynamically maximize your post-tax yield.", accent: "#EC4899" },
-  { icon: Coins, title: "Retirement Strategy", desc: "Reliable and structured cash flows for lasting financial independence.", accent: "#06B6D4" }
+  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF" },
+  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolios tailored for maximum risk-adjusted returns.", accent: "#00B2FF" },
+  { icon: Shield, title: "Risk Mitigation", desc: "Advanced protection mechanisms for structured life security.", accent: "#7c6baa" },
+  { icon: Landmark, title: "Estate Planning", desc: "Secure generational wealth transfer and legacy continuity.", accent: "#c9852a" },
+  { icon: PieChart, title: "Tax Optimization", desc: "Strategic structuring to dynamically maximize your post-tax yield.", accent: "#c94e7c" },
+  { icon: Coins, title: "Retirement Strategy", desc: "Reliable and structured cash flows for lasting financial independence.", accent: "#1e8a9a" }
 ];
 
 function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
@@ -40,13 +40,13 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
         style={{ background: `linear-gradient(135deg, ${card.accent}20, transparent 50%)` }}
       />
 
-      <div className="relative h-full bg-[#0a1020] rounded-3xl p-8 border border-white/[0.04] group-hover:border-[#00A3FF]/20 shadow-none group-hover:shadow-[0_0_30px_rgba(0,163,255,0.15)] transition-all duration-500 overflow-hidden">
+      <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-[#1a1a2e]/[0.06] group-hover:border-[#0066FF]/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_rgba(0,102,255,0.1)] transition-all duration-500 overflow-hidden">
         {/* Mouse-tracking spotlight */}
         <div className="spotlight" />
 
         {/* Corner accent glow */}
         <div 
-          className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-15 transition-all duration-700"
+          className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-10 transition-all duration-700"
           style={{ background: card.accent }}
         />
 
@@ -57,7 +57,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
               className="absolute inset-0 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"
               style={{ background: card.accent }}
             />
-            <div className="w-full h-full rounded-2xl border border-white/[0.04] bg-white/[0.02] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+            <div className="w-full h-full rounded-2xl border border-[#1a1a2e]/[0.06] bg-[#1a1a2e]/[0.02] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
               <card.icon 
                 className="w-7 h-7 transition-colors duration-500" 
                 style={{ color: card.accent }} 
@@ -66,10 +66,10 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
             </div>
           </div>
 
-          <h3 className={`font-semibold text-white mb-4 tracking-tight group-hover:text-white transition-colors duration-300 ${idx === 0 ? "text-2xl md:text-3xl" : "text-xl"}`}>
+          <h3 className={`font-semibold text-[#1a1a2e] mb-4 tracking-tight group-hover:text-[#1a1a2e] transition-colors duration-300 ${idx === 0 ? "text-2xl md:text-3xl" : "text-xl"}`}>
             {card.title}
           </h3>
-          <p className={`text-white/40 leading-relaxed font-medium group-hover:text-white/60 transition-colors duration-500 ${idx === 0 ? "text-base md:text-lg max-w-md" : "text-sm"}`}>
+          <p className={`text-[#1a1a2e]/50 leading-relaxed font-medium group-hover:text-[#1a1a2e]/70 transition-colors duration-500 ${idx === 0 ? "text-base md:text-lg max-w-md" : "text-sm"}`}>
             {card.desc}
           </p>
 
@@ -91,8 +91,8 @@ export default function EcosystemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-[#00A3FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+          <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] mb-6 tracking-tight">
             A Complete Financial Ecosystem
           </h2>
         </motion.div>
@@ -101,7 +101,7 @@ export default function EcosystemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-white/40 text-lg md:text-xl max-w-2xl mx-auto font-light"
+          className="text-[#1a1a2e]/45 text-lg md:text-xl max-w-2xl mx-auto font-light"
         >
           Everything you need to manage, grow, and protect your wealth.
         </motion.p>

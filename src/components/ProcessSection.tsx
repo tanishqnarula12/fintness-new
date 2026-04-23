@@ -62,27 +62,27 @@ export default function ProcessSection() {
       {/* This is the sticky viewport — it pins to the screen */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-[#020617]" />
+        <div className="absolute inset-0 bg-[#F5F0EB]" />
 
         {/* Subtle ambient glow */}
-        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#00A3FF]/[0.03] rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#00E5FF]/[0.02] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#0066FF]/[0.03] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#00B2FF]/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 xl:px-12">
           <div className="grid md:grid-cols-2 gap-12 xl:gap-20 items-center">
             {/* Left — sticky heading area */}
             <div>
-              <p className="text-[#00A3FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">
+              <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">
                 OUR PROCESS
               </p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-white">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-[#1a1a2e]">
                 Planning your{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A3FF] to-[#00E5FF]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">
                   financial
                 </span>{" "}
                 journey
               </h2>
-              <p className="max-w-md text-base md:text-lg text-white/40 leading-relaxed font-light mt-6">
+              <p className="max-w-md text-base md:text-lg text-[#1a1a2e]/45 leading-relaxed font-light mt-6">
                 We engage in meaningful conversations to grasp your goals and
                 build a foundation for everything that follows.
               </p>
@@ -97,8 +97,8 @@ export default function ProcessSection() {
                     <div
                       className={`rounded-full transition-all duration-500 ${
                         i <= activeIndex
-                          ? "w-8 h-2 bg-[#00A3FF]"
-                          : "w-2 h-2 bg-white/20"
+                          ? "w-8 h-2 bg-[#0066FF]"
+                          : "w-2 h-2 bg-[#1a1a2e]/15"
                       }`}
                     />
                   </div>
@@ -137,8 +137,8 @@ export default function ProcessSection() {
                         h-full rounded-3xl p-8 md:p-10 relative
                         border transition-all duration-700
                         ${isActive
-                          ? "bg-[#0a1428]/95 border-[#00A3FF]/20 shadow-[0_8px_40px_rgba(0,163,255,0.1)]"
-                          : "bg-[#060b1e]/90 border-white/[0.06] shadow-[0_8px_30px_rgba(0,0,0,0.4)]"
+                          ? "bg-white/90 border-[#0066FF]/15 shadow-[0_8px_40px_rgba(0,102,255,0.08)]"
+                          : "bg-white/60 border-[#1a1a2e]/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
                         }
                       `}
                     >
@@ -147,7 +147,7 @@ export default function ProcessSection() {
                         className={`absolute -top-12 -right-12 w-48 h-48 rounded-full blur-[60px] pointer-events-none transition-opacity duration-700 ${
                           isActive ? "opacity-100" : "opacity-0"
                         }`}
-                        style={{ background: "radial-gradient(circle, rgba(0,163,255,0.12), transparent 70%)" }}
+                        style={{ background: "radial-gradient(circle, rgba(0,102,255,0.08), transparent 70%)" }}
                       />
 
                       {/* Card content */}
@@ -157,8 +157,8 @@ export default function ProcessSection() {
                             <span
                               className={`text-7xl md:text-8xl font-black leading-none transition-colors duration-500 ${
                                 isActive
-                                  ? "text-[#00A3FF]/25"
-                                  : "text-white/[0.04]"
+                                  ? "text-[#0066FF]/20"
+                                  : "text-[#1a1a2e]/[0.04]"
                               }`}
                             >
                               {phase.num}
@@ -166,14 +166,14 @@ export default function ProcessSection() {
                           </div>
                           <h3
                             className={`text-2xl md:text-3xl font-bold tracking-tight mb-4 transition-colors duration-500 ${
-                              isActive ? "text-white" : "text-white/70"
+                              isActive ? "text-[#1a1a2e]" : "text-[#1a1a2e]/60"
                             }`}
                           >
                             {phase.title}
                           </h3>
                           <p
                             className={`text-base md:text-lg leading-relaxed font-light transition-colors duration-500 ${
-                              isActive ? "text-white/70" : "text-white/40"
+                              isActive ? "text-[#1a1a2e]/65" : "text-[#1a1a2e]/35"
                             }`}
                           >
                             {phase.description}
@@ -182,9 +182,9 @@ export default function ProcessSection() {
 
                         {/* Bottom accent line */}
                         <div className="mt-8">
-                          <div className="h-[2px] w-full bg-white/[0.04] rounded-full overflow-hidden">
+                          <div className="h-[2px] w-full bg-[#1a1a2e]/[0.04] rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-gradient-to-r from-[#00A3FF] to-[#00E5FF] rounded-full transition-all duration-700 ease-out"
+                              className="h-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full transition-all duration-700 ease-out"
                               style={{
                                 width: isActive ? "100%" : "0%",
                               }}
