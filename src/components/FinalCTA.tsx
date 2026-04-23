@@ -14,7 +14,7 @@ export default function FinalCTA() {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)`,
           backgroundSize: '60px 60px'
         }}
       />
@@ -42,11 +42,11 @@ export default function FinalCTA() {
           transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group bg-[#4FFFB0] hover:bg-[#3ae09b] text-[#020617] font-semibold py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(79,255,176,0.25)] flex items-center gap-2">
+          <button className="group bg-[#4FFFB0] hover:bg-[#3ae09b] text-[#020617] font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(79,255,176,0.25)] flex items-center gap-2">
             Get Started
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
-          <button className="text-white/50 hover:text-white font-medium py-4 px-8 rounded-full text-lg transition-all duration-300 border border-white/[0.06] hover:border-white/[0.15] hover:bg-white/[0.03]">
+          <button className="text-white/50 hover:text-white font-medium tracking-wide py-4 px-8 rounded-full text-lg transition-all duration-300 border border-white/[0.06] hover:border-white/[0.15] hover:bg-white/[0.03]">
             Learn More
           </button>
         </motion.div>
