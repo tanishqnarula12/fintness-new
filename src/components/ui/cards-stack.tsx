@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { HTMLMotionProps, motion } from "framer-motion"
 
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
@@ -10,7 +9,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-interface CardStickyProps extends HTMLMotionProps<"div"> {
+interface CardStickyProps extends React.HTMLAttributes<HTMLDivElement> {
   index: number
   incrementY?: number
   incrementZ?: number
