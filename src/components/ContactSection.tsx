@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative py-24 md:py-32 px-6 w-full bg-[#0B0B14] overflow-hidden">
+    <section className="relative py-24 md:py-32 px-6 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] mx-auto my-12 md:my-24 bg-[#0B0B14] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
       {/* Background ambient glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.15] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.1] pointer-events-none" />

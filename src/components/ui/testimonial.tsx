@@ -41,7 +41,7 @@ export const TestimonialCarousel = React.forwardRef<
           }, 200)
           return newDirection
         })
-      }, 5500)
+      }, 3500)
 
       return () => clearInterval(interval)
     }, [testimonials.length])
