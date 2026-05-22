@@ -36,14 +36,15 @@ const PHASES = [
 export default function LifePhaseSection() {
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto w-full relative">
-      <div className="mb-20">
+      <div className="mb-20 flex flex-col items-center text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center"
         >
-          <p className="text-[#c9852a] text-sm font-medium tracking-[0.2em] uppercase mb-4">Who We Serve</p>
+          <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Who We Serve</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
             Tailored for Your Life Stage
           </h2>

@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative py-24 md:py-32 px-6 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] mx-auto my-12 md:my-24 bg-[#0B0B14] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+    <section className="relative py-16 md:py-24 px-6 w-[calc(100%-2rem)] md:max-w-6xl mx-auto my-12 md:my-24 bg-[#0B0B14] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
       {/* Background ambient glows */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.15] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.1] pointer-events-none" />
@@ -18,7 +18,7 @@ export default function ContactSection() {
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           
           {/* Left Column: Contact Info */}
           <motion.div 
@@ -28,41 +28,41 @@ export default function ContactSection() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Get in Touch</p>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-8">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
               Let's map out your financial future.
             </h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-12 max-w-md font-light">
+            <p className="text-white/60 text-base leading-relaxed mb-8 max-w-md font-light">
               Whether you're looking to grow your wealth, plan for retirement, or optimize your portfolio, our advisors are here to help.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Mail className="w-5 h-5 text-[#0066FF]" />
+                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <Mail className="w-4 h-4 text-[#0066FF]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Email Us</h4>
-                  <a href="mailto:contact@fintnessfinserv.com" className="text-white/60 hover:text-white transition-colors font-light">contact@fintnessfinserv.com</a>
+                  <h4 className="text-white text-sm font-medium mb-1">Email Us</h4>
+                  <a href="mailto:contact@fintnessfinserv.com" className="text-white/60 text-sm hover:text-white transition-colors font-light">contact@fintnessfinserv.com</a>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5 text-[#0066FF]" />
+                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <Phone className="w-4 h-4 text-[#0066FF]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Call Us</h4>
-                  <a href="tel:+919876543210" className="text-white/60 hover:text-white transition-colors font-light">+91 98765 43210</a>
+                  <h4 className="text-white text-sm font-medium mb-1">Call Us</h4>
+                  <a href="tel:+919876543210" className="text-white/60 text-sm hover:text-white transition-colors font-light">+91 98765 43210</a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5 text-[#0066FF]" />
+                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <MapPin className="w-4 h-4 text-[#0066FF]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Visit Us</h4>
-                  <p className="text-white/60 font-light">123 Financial District,<br />Mumbai, MH 400001</p>
+                  <h4 className="text-white text-sm font-medium mb-1">Visit Us</h4>
+                  <p className="text-white/60 text-sm font-light">123 Financial District,<br />Mumbai, MH 400001</p>
                 </div>
               </div>
             </div>
@@ -75,10 +75,10 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-6">Send us a message</h3>
+            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
+              <h3 className="text-xl font-bold text-white mb-5">Send us a message</h3>
               
-              <form className="space-y-6">
+              <form className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium text-white/80" htmlFor="firstName">First Name</label>
