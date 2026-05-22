@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 
 interface StatItemProps {
   endValue: number;
@@ -12,37 +12,28 @@ interface StatItemProps {
 }
 
 const StatItem = ({ endValue, suffix = "", title, subtitle, isAccent = false }: StatItemProps) => {
-  const [count, setCount] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
+  
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, Math.round);
 
   useEffect(() => {
     if (isInView) {
-      let startTime: number;
-      const duration = 2000; // 2 seconds
-
-      const updateCount = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const progress = timestamp - startTime;
-        
-        if (progress < duration) {
-          // easeOutQuart formula
-          const easeOut = 1 - Math.pow(1 - progress / duration, 4);
-          setCount(Math.floor(easeOut * endValue));
-          requestAnimationFrame(updateCount);
-        } else {
-          setCount(endValue);
-        }
-      };
-
-      requestAnimationFrame(updateCount);
+      // Use framer-motion's highly optimized animate function
+      const controls = animate(count, endValue, { 
+        duration: 2.5, // 2.5 seconds for all
+        ease: "easeOut" 
+      });
+      return controls.stop;
     }
-  }, [isInView, endValue]);
+  }, [isInView, endValue, count]);
 
   return (
     <div ref={ref} className="flex flex-col items-center justify-center text-center p-6 w-full">
-      <h3 className={`text-3xl md:text-4xl font-bold mb-2 tracking-tight ${isAccent ? 'text-[#00B2FF]' : 'text-[#1a1a2e]'}`}>
-        {count}{suffix}
+      <h3 className={`text-3xl md:text-4xl font-bold mb-2 tracking-tight flex items-center justify-center ${isAccent ? 'text-[#00B2FF]' : 'text-[#1a1a2e]'}`}>
+        <motion.span>{rounded}</motion.span>
+        <span>{suffix}</span>
       </h3>
       <p className="text-base md:text-lg font-medium text-[#1a1a2e]/80 mb-1">{title}</p>
       <p className="text-xs md:text-sm text-[#1a1a2e]/50 font-light">{subtitle}</p>

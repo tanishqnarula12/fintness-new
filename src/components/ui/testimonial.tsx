@@ -27,6 +27,24 @@ export const TestimonialCarousel = React.forwardRef<
   ) => {
     const [currentIndex, setCurrentIndex] = React.useState(0)
     const [exitX, setExitX] = React.useState<number>(0)
+    const [slideDirection, setSlideDirection] = React.useState<number>(1)
+
+    // Auto-play with alternating left/right animations
+    React.useEffect(() => {
+      const interval = setInterval(() => {
+        setSlideDirection((prev) => {
+          const newDirection = prev === 1 ? -1 : 1
+          setExitX(200 * newDirection)
+          setTimeout(() => {
+            setCurrentIndex((curr) => (curr + 1) % testimonials.length)
+            setExitX(0)
+          }, 200)
+          return newDirection
+        })
+      }, 5500)
+
+      return () => clearInterval(interval)
+    }, [testimonials.length])
 
     const handleDragEnd = (
       event: MouseEvent | TouchEvent | PointerEvent,
@@ -114,8 +132,8 @@ export const TestimonialCarousel = React.forwardRef<
                 }}
                 transition={{
                   type: "spring",
-                  stiffness: 300,
-                  damping: 20,
+                  stiffness: 200,
+                  damping: 25,
                 }}
               >
                 <div className="p-6 md:p-8 flex flex-col items-center gap-4 text-center h-full justify-center">
