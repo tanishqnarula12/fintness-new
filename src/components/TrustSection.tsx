@@ -42,7 +42,7 @@ export default function TrustSection() {
           >
             <div className="flex items-start gap-6 md:gap-10 py-8 md:py-10 px-2 md:px-6">
               {/* Number */}
-              <span className="text-4xl md:text-5xl font-extralight text-[#1a1a2e]/[0.08] group-hover:text-[#1a1a2e]/[0.18] transition-colors duration-500 tabular-nums shrink-0 w-16 md:w-20">
+              <span className="text-4xl md:text-5xl font-light text-[#1a1a2e]/30 group-hover:text-[#0066FF]/60 transition-colors duration-500 tabular-nums shrink-0 w-16 md:w-20">
                 {point.num}
               </span>
 
