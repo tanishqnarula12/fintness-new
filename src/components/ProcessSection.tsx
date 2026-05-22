@@ -136,8 +136,8 @@ export default function ProcessSection() {
                         h-full rounded-3xl p-8 md:p-10 relative
                         border transition-all duration-700
                         ${isActive
-                          ? "bg-white/90 border-[#0066FF]/15 shadow-[0_8px_40px_rgba(0,102,255,0.08)]"
-                          : "bg-white/60 border-[#1a1a2e]/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+                          ? "bg-white/80 backdrop-blur-xl border-[#0066FF]/20 shadow-[0_8px_40px_rgba(0,102,255,0.15)]"
+                          : "bg-white/50 backdrop-blur-lg border-[#1a1a2e]/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
                         }
                       `}
                     >

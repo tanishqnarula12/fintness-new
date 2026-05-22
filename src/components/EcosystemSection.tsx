@@ -32,7 +32,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: 0.08 * idx, duration: 0.6, ease: "easeOut" }}
-      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default ${idx === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
+      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default transition-transform duration-500 hover:-translate-y-2 ${idx === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
     >
       {/* Animated border gradient */}
       <div 
@@ -83,35 +83,37 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
 
 export default function EcosystemSection() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto w-full">
-      <div className="text-center mb-20">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] mb-6 tracking-tight">
-            A Complete Financial Ecosystem
-          </h2>
-        </motion.div>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-          className="text-[#1a1a2e]/45 text-lg md:text-xl max-w-2xl mx-auto font-light"
-        >
-          Everything you need to manage, grow, and protect your wealth.
-        </motion.p>
-      </div>
+    <section className="py-24 w-full bg-[#FAFAFC] border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] mb-6 tracking-tight">
+              A Complete Financial Ecosystem
+            </h2>
+          </motion.div>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="text-[#1a1a2e]/45 text-lg md:text-xl max-w-2xl mx-auto font-light"
+          >
+            Everything you need to manage, grow, and protect your wealth.
+          </motion.p>
+        </div>
 
-      {/* Bento Grid — first card is large */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-fr">
-        {CARDS.map((card, idx) => (
-          <SpotlightCard key={idx} card={card} idx={idx} />
-        ))}
+        {/* Bento Grid — first card is large */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-fr">
+          {CARDS.map((card, idx) => (
+            <SpotlightCard key={idx} card={card} idx={idx} />
+          ))}
+        </div>
       </div>
     </section>
   );

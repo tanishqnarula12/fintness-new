@@ -12,7 +12,8 @@ const TRUST_POINTS = [
 
 export default function TrustSection() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden">
+    <section className="py-24 w-full bg-[#FAFAFC] border-y border-slate-100 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
 
@@ -38,9 +39,9 @@ export default function TrustSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-30px" }}
             transition={{ delay: 0.08 * idx, duration: 0.6, ease: "easeOut" }}
-            className="group border-t border-[#1a1a2e]/[0.06] last:border-b hover:bg-[#0066FF]/[0.02] transition-all duration-500"
+            className="group border-t border-[#1a1a2e]/[0.06] last:border-b hover:bg-[#0066FF]/[0.02] transition-all duration-500 hover:shadow-sm"
           >
-            <div className="flex items-start gap-6 md:gap-10 py-8 md:py-10 px-2 md:px-6">
+            <div className="flex items-start gap-6 md:gap-10 py-8 md:py-10 px-2 md:px-6 group-hover:translate-x-2 transition-transform duration-500">
               {/* Number */}
               <span className="text-4xl md:text-5xl font-light text-[#1a1a2e]/30 group-hover:text-[#0066FF]/60 transition-colors duration-500 tabular-nums shrink-0 w-16 md:w-20">
                 {point.num}
@@ -68,6 +69,7 @@ export default function TrustSection() {
             </div>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );
