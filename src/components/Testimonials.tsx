@@ -47,7 +47,7 @@ export default function Testimonials() {
         >
           <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Testimonials</p>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
-            What Our Clients Say
+            Voices of Success
           </h2>
         </motion.div>
       </div>

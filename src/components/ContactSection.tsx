@@ -1,138 +1,80 @@
 "use client";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { CheckCircle2, ChevronDown } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative py-16 md:py-24 px-6 w-[calc(100%-2rem)] md:max-w-6xl mx-auto my-12 md:my-24 bg-[#0B0B14] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
-      {/* Background ambient glows */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.15] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.1] pointer-events-none" />
-
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px'
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
-          
-          {/* Left Column: Contact Info */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Get in Touch</p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
-              Let's map out your financial future.
-            </h2>
-            <p className="text-white/60 text-base leading-relaxed mb-8 max-w-md font-light">
-              Whether you're looking to grow your wealth, plan for retirement, or optimize your portfolio, our advisors are here to help.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Mail className="w-4 h-4 text-[#0066FF]" />
-                </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Email Us</h4>
-                  <a href="mailto:contact@fintnessfinserv.com" className="text-white/60 text-sm hover:text-white transition-colors font-light">contact@fintnessfinserv.com</a>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 text-[#0066FF]" />
-                </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Call Us</h4>
-                  <a href="tel:+919876543210" className="text-white/60 text-sm hover:text-white transition-colors font-light">+91 98765 43210</a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
-                  <MapPin className="w-4 h-4 text-[#0066FF]" />
-                </div>
-                <div>
-                  <h4 className="text-white text-sm font-medium mb-1">Visit Us</h4>
-                  <p className="text-white/60 text-sm font-light">123 Financial District,<br />Mumbai, MH 400001</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column: Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-          >
-            <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
-              <h3 className="text-xl font-bold text-white mb-5">Send us a message</h3>
-              
-              <form className="space-y-5">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/80" htmlFor="firstName">First Name</label>
-                    <input 
-                      type="text" 
-                      id="firstName"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-all"
-                      placeholder="John"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium text-white/80" htmlFor="lastName">Last Name</label>
-                    <input 
-                      type="text" 
-                      id="lastName"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-all"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-white/80" htmlFor="email">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-all"
-                    placeholder="john@example.com"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium text-white/80" htmlFor="message">How can we help?</label>
-                  <textarea 
-                    id="message"
-                    rows={4}
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#0066FF] focus:ring-1 focus:ring-[#0066FF] transition-all resize-none"
-                    placeholder="Tell us about your financial goals..."
-                  />
-                </div>
-
-                <button 
-                  type="button"
-                  className="w-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.01] transition-all duration-300"
-                >
-                  Send Message
-                  <Send className="w-5 h-5" />
-                </button>
-              </form>
-            </div>
-          </motion.div>
-
+    <section className="relative py-16 md:py-24 px-6 mx-auto w-[calc(100%-2rem)] md:max-w-6xl">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="flex flex-col md:flex-row rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
+      >
+        {/* Left Pane */}
+        <div className="md:w-1/2 p-12 md:p-16 bg-[#0B1221] flex flex-col justify-center">
+           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+             Start Your Journey with a Professional Blueprint.
+           </h2>
+           <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10">
+             Our advisors will contact you for a complimentary 30-minute discovery call to map out your primary financial goals.
+           </p>
+           <div className="space-y-5">
+             <div className="flex items-center gap-4">
+               <CheckCircle2 className="w-6 h-6 text-[#22C55E]" strokeWidth={2.5} />
+               <span className="text-white/80 text-base font-medium">No-obligation initial consultation</span>
+             </div>
+             <div className="flex items-center gap-4">
+               <CheckCircle2 className="w-6 h-6 text-[#22C55E]" strokeWidth={2.5} />
+               <span className="text-white/80 text-base font-medium">Certified Financial Planners only</span>
+             </div>
+           </div>
         </div>
-      </div>
+        
+        {/* Right Pane */}
+        <div className="md:w-1/2 p-12 md:p-16 bg-[#141C2B] flex flex-col justify-center">
+          <form className="space-y-7">
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-white/90">Full Name</label>
+              <input 
+                type="text" 
+                className="w-full bg-[#1F2937]/50 border border-transparent rounded-xl px-5 py-4 text-white text-base placeholder-white/30 focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all"
+                placeholder="John Doe"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-white/90">Phone Number</label>
+              <input 
+                type="tel" 
+                className="w-full bg-[#1F2937]/50 border border-transparent rounded-xl px-5 py-4 text-white text-base placeholder-white/30 focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label className="text-sm font-bold text-white/90">Primary Goal</label>
+              <div className="relative">
+                <select className="w-full bg-[#1F2937]/50 border border-transparent rounded-xl px-5 py-4 text-white text-base focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all appearance-none cursor-pointer">
+                  <option className="bg-[#141C2B]">Retirement Planning</option>
+                  <option className="bg-[#141C2B]">Wealth Creation</option>
+                  <option className="bg-[#141C2B]">Tax Optimization</option>
+                  <option className="bg-[#141C2B]">Estate Planning</option>
+                </select>
+                <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50 pointer-events-none" />
+              </div>
+            </div>
+            
+            <button 
+              type="button"
+              className="w-full mt-4 bg-gradient-to-r from-[#10B981] to-[#22C55E] text-white font-bold text-lg py-5 rounded-xl hover:shadow-xl hover:-translate-y-0.5 hover:shadow-[#22C55E]/20 transition-all duration-300"
+            >
+              Request My Plan
+            </button>
+          </form>
+        </div>
+      </motion.div>
     </section>
   );
 }
