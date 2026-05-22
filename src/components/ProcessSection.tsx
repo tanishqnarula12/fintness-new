@@ -62,7 +62,7 @@ export default function ProcessSection() {
       {/* This is the sticky viewport — it pins to the screen */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* Light premium background */}
-        <div className="absolute inset-0 bg-[#F5F0EB]" />
+        <div className="absolute inset-0 bg-white" />
 
         {/* Subtle ambient glow */}
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#0066FF]/[0.03] rounded-full blur-[120px] pointer-events-none" />
