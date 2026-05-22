@@ -14,7 +14,7 @@ export default function ContactSection() {
       >
         {/* Left Pane */}
         <div className="md:w-1/2 p-12 md:p-16 bg-[#0B1221] flex flex-col justify-center">
-           <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+           <h2 className="text-4xl lg:text-[44px] font-bold text-white leading-tight mb-6">
              Start Your Journey with a Professional Blueprint.
            </h2>
            <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10">
@@ -60,6 +60,7 @@ export default function ContactSection() {
                   <option className="bg-[#141C2B]">Retirement Planning</option>
                   <option className="bg-[#141C2B]">Wealth Creation</option>
                   <option className="bg-[#141C2B]">Tax Optimization</option>
+                  <option className="bg-[#141C2B]">Insurance Planning</option>
                   <option className="bg-[#141C2B]">Estate Planning</option>
                 </select>
                 <ChevronDown className="absolute right-5 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50 pointer-events-none" />
