@@ -42,7 +42,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group bg-[#0066FF] hover:bg-[#0052CC] text-white font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,102,255,0.2)] flex items-center gap-2">
+          <button className="group bg-[#0066FF] hover:bg-[#0052CC] text-white font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
             Get Started
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>

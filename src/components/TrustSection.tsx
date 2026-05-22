@@ -12,64 +12,75 @@ const TRUST_POINTS = [
 
 export default function TrustSection() {
   return (
-    <section className="py-24 w-full bg-[#FAFAFC] border-y border-slate-100 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-      {/* Background accent */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
+    <section className="py-24 w-full bg-[#FAFAFC] relative overflow-hidden">
+      {/* Subtle Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="mb-20"
-      >
-        <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Why Us</p>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
-          Why Clients Trust<br className="hidden md:block" /> Fintness Finserv
-        </h2>
-      </motion.div>
-
-      {/* Numbered list layout — completely different from cards */}
-      <div className="flex flex-col">
-        {TRUST_POINTS.map((point, idx) => (
-          <motion.div
-            key={idx}
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
+        
+        <div className="text-center mb-20">
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{ delay: 0.08 * idx, duration: 0.6, ease: "easeOut" }}
-            className="group border-t border-[#1a1a2e]/[0.06] last:border-b hover:bg-[#0066FF]/[0.02] transition-all duration-500 hover:shadow-sm"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="flex items-start gap-6 md:gap-10 py-8 md:py-10 px-2 md:px-6 group-hover:translate-x-2 transition-transform duration-500">
-              {/* Number */}
-              <span className="text-4xl md:text-5xl font-light text-[#1a1a2e]/30 group-hover:text-[#0066FF]/60 transition-colors duration-500 tabular-nums shrink-0 w-16 md:w-20">
-                {point.num}
-              </span>
-
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-xl bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/[0.06] flex items-center justify-center shrink-0 mt-1 group-hover:bg-[#0066FF]/10 group-hover:border-[#0066FF]/20 transition-all duration-500">
-                <point.icon className="w-5 h-5 text-[#1a1a2e]/25 group-hover:text-[#0066FF] transition-colors duration-500" strokeWidth={1.5} />
-              </div>
-
-              {/* Text */}
-              <div className="flex-1 min-w-0">
-                <h3 className="text-xl md:text-2xl font-medium text-[#1a1a2e] mb-2 tracking-tight group-hover:text-[#1a1a2e] transition-colors duration-300">
-                  {point.title}
-                </h3>
-                <p className="text-[#1a1a2e]/35 text-sm md:text-base font-light leading-relaxed max-w-xl group-hover:text-[#1a1a2e]/55 transition-colors duration-500">
-                  {point.desc}
-                </p>
-              </div>
-
-              {/* Hover arrow indicator */}
-              <div className="hidden md:flex items-center h-12 mt-1">
-                <div className="w-8 h-[1px] bg-transparent group-hover:bg-[#0066FF]/40 transition-all duration-500 group-hover:w-12 rounded-full" />
-              </div>
-            </div>
+            <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Why Us</p>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
+              Why Clients Trust<br className="hidden md:block" /> Fintness Finserv
+            </h2>
           </motion.div>
-        ))}
-      </div>
+        </div>
+
+        {/* Alternating Timeline Layout */}
+        <div className="relative wrap overflow-hidden p-4 md:p-10 h-full">
+          {/* Central Line with smooth fading ends */}
+          <div className="absolute w-[2px] h-full left-[39px] md:left-[calc(50%-1px)] top-0 bg-gradient-to-b from-transparent via-[#1a1a2e]/10 to-transparent"></div>
+
+          {TRUST_POINTS.map((point, idx) => {
+            // Determine if it's left or right aligned
+            const isEven = idx % 2 === 0; // 0, 2, 4 are left. 1, 3 are right.
+            
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                className={`mb-12 md:mb-8 flex justify-between items-center w-full ${isEven ? 'md:flex-row-reverse' : ''}`}
+              >
+                {/* Empty div for spacing on the opposite side (Desktop) */}
+                <div className="order-1 hidden md:block md:w-5/12"></div>
+                
+                {/* Center Node (Number) */}
+                <div className="z-20 flex items-center order-1 bg-[#0066FF] shadow-xl w-14 h-14 rounded-full absolute left-1 md:relative md:left-auto">
+                  <h1 className="mx-auto font-bold text-lg text-white">{point.num}</h1>
+                </div>
+
+                {/* Content Card */}
+                <div className="order-1 rounded-2xl bg-white border border-[#1a1a2e]/[0.06] shadow-sm w-full md:w-5/12 px-6 py-6 md:px-8 md:py-8 ml-16 md:ml-0 hover:-translate-y-1 hover:shadow-lg hover:border-[#0066FF]/20 transition-all duration-300 relative group">
+                  {/* Small pointer triangle on desktop */}
+                  <div className={`hidden md:block absolute top-6 w-4 h-4 bg-white border-t border-l border-[#1a1a2e]/[0.06] ${isEven ? '-right-2 rotate-135 border-l-0 border-b group-hover:border-[#0066FF]/20' : '-left-2 -rotate-45 group-hover:border-[#0066FF]/20'}`}></div>
+                  
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-[#FAFAFC] flex items-center justify-center border border-[#1a1a2e]/[0.06] group-hover:bg-[#0066FF]/5 group-hover:border-[#0066FF]/20 transition-all duration-300">
+                      <point.icon className="w-5 h-5 text-[#1a1a2e]/60 group-hover:text-[#0066FF]" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="font-bold text-xl text-[#1a1a2e] group-hover:text-[#0066FF] transition-colors duration-300">
+                      {point.title}
+                    </h3>
+                  </div>
+                  
+                  <p className="text-sm md:text-base leading-relaxed text-[#1a1a2e]/60 font-medium">
+                    {point.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
       </div>
     </section>
   );

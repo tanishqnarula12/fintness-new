@@ -32,7 +32,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: 0.08 * idx, duration: 0.6, ease: "easeOut" }}
-      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default transition-transform duration-500 hover:-translate-y-2 ${idx === 0 ? "md:col-span-2 md:row-span-2" : ""}`}
+      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default transition-transform duration-500 hover:-translate-y-2`}
     >
       {/* Animated border gradient */}
       <div 
@@ -40,7 +40,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
         style={{ background: `linear-gradient(135deg, ${card.accent}20, transparent 50%)` }}
       />
 
-      <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-3xl p-8 border border-[#1a1a2e]/[0.06] group-hover:border-[#0066FF]/20 shadow-[0_2px_20px_rgba(0,0,0,0.04)] group-hover:shadow-[0_8px_30px_rgba(0,102,255,0.1)] transition-all duration-500 overflow-hidden">
+      <div className="relative h-full bg-white rounded-3xl p-8 border border-[#1a1a2e]/10 group-hover:border-[#0066FF]/20 shadow-[0_12px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_20px_50px_rgba(0,102,255,0.12)] transition-all duration-500 overflow-hidden">
         {/* Mouse-tracking spotlight */}
         <div className="spotlight" />
 
@@ -66,10 +66,10 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
             </div>
           </div>
 
-          <h3 className={`font-semibold text-[#1a1a2e] mb-4 tracking-tight group-hover:text-[#1a1a2e] transition-colors duration-300 ${idx === 0 ? "text-2xl md:text-3xl" : "text-xl"}`}>
+          <h3 className={`font-semibold text-[#1a1a2e] mb-4 tracking-tight group-hover:text-[#1a1a2e] transition-colors duration-300 text-xl`}>
             {card.title}
           </h3>
-          <p className={`text-[#1a1a2e]/50 leading-relaxed font-medium group-hover:text-[#1a1a2e]/70 transition-colors duration-500 ${idx === 0 ? "text-base md:text-lg max-w-md" : "text-sm"}`}>
+          <p className={`text-[#1a1a2e]/50 leading-relaxed font-medium group-hover:text-[#1a1a2e]/70 transition-colors duration-500 text-sm`}>
             {card.desc}
           </p>
 
@@ -83,7 +83,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
 
 export default function EcosystemSection() {
   return (
-    <section className="py-24 w-full bg-[#FAFAFC] border-y border-slate-100">
+    <section className="py-24 w-full bg-[#F4F5F7] border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <motion.div 

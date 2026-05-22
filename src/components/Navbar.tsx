@@ -77,7 +77,7 @@ export default function Navbar() {
           <Link href="/login" className="hidden md:block text-sm text-[#1a1a2e]/50 hover:text-[#1a1a2e] transition-all duration-300 font-medium">
             Client Login
           </Link>
-          <button className="bg-[#0066FF] text-white px-5 py-2.5 rounded-full font-bold text-sm tracking-wide hover:bg-[#0052CC] hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(0,102,255,0.2)] hover:shadow-[0_0_20px_rgba(0,102,255,0.3)]">
+          <button className="bg-[#0066FF] text-white px-5 py-2.5 rounded-full font-bold text-sm tracking-wide hover:bg-[#0052CC] hover:-translate-y-0.5 transition-all duration-300 hover:shadow-md">
             Get Started
           </button>
         </div>

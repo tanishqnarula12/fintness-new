@@ -6,6 +6,8 @@ import Testimonials from "@/components/Testimonials";
 import TrustSection from "@/components/TrustSection";
 import LifePhaseSection from "@/components/LifePhaseSection";
 import FinalCTA from "@/components/FinalCTA";
+import ContactSection from "@/components/ContactSection";
+import StatsBanner from "@/components/StatsBanner";
 
 export default function Home() {
   return (
@@ -41,10 +43,11 @@ export default function Home() {
         </div>
       </section>
       
+      <StatsBanner />
       <TransitionSection />
       <EcosystemSection />
       <ProcessSection />
-      <CTASection />
+      <ContactSection />
       <TrustSection />
       <LifePhaseSection />
       <Testimonials />
