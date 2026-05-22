@@ -4,7 +4,7 @@ import { CheckCircle2, ChevronDown } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative py-16 md:py-24 px-6 mx-auto w-[calc(100%-2rem)] md:max-w-6xl">
+    <section className="relative py-16 md:py-24 px-6 mx-auto w-[calc(100%-2rem)] md:max-w-[85rem]">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,7 +14,7 @@ export default function ContactSection() {
       >
         {/* Left Pane */}
         <div className="md:w-1/2 p-12 md:p-16 bg-[#0B1221] flex flex-col justify-center">
-           <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+           <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
              Start Your Journey with a Professional Blueprint.
            </h2>
            <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10">
@@ -68,7 +68,7 @@ export default function ContactSection() {
             
             <button 
               type="button"
-              className="w-full mt-4 bg-gradient-to-r from-[#10B981] to-[#22C55E] text-white font-bold text-lg py-5 rounded-xl hover:shadow-xl hover:-translate-y-0.5 hover:shadow-[#22C55E]/20 transition-all duration-300"
+              className="w-full mt-4 bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-bold text-lg py-5 rounded-xl hover:shadow-xl hover:-translate-y-0.5 hover:shadow-[#0066FF]/20 transition-all duration-300"
             >
               Request My Plan
             </button>
