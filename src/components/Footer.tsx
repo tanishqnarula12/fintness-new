@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Shield, FileText } from "lucide-react";
+import { Shield, FileText, MapPin, Mail, Phone } from "lucide-react";
 
 // Inline Custom SVG Icons to avoid lucide version mismatches
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -33,86 +33,82 @@ const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+  </svg>
+);
+
 export default function Footer() {
   const socialLinks = [
+    {
+      name: "Facebook",
+      icon: FacebookIcon,
+      href: "https://www.facebook.com/fintness.finserv",
+      color: "hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2]",
+    },
     {
       name: "Linkedin",
       icon: LinkedinIcon,
       href: "https://www.linkedin.com/company/team_fintness/",
-      color: "hover:text-[#0A66C2] hover:bg-[#0A66C2]/10",
+      color: "hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2]",
     },
     {
       name: "Instagram",
       icon: InstagramIcon,
       href: "https://www.instagram.com/fintness_finserv?igsh=djhhM2gyN2luOGZ1&utm_source=qr",
-      color: "hover:text-[#E1306C] hover:bg-[#E1306C]/10",
-    },
-    {
-      name: "Facebook",
-      icon: FacebookIcon,
-      href: "https://www.facebook.com/fintness.finserv",
-      color: "hover:text-[#1877F2] hover:bg-[#1877F2]/10",
+      color: "hover:bg-[#E1306C] hover:text-white hover:border-[#E1306C]",
     },
     {
       name: "Youtube",
       icon: YoutubeIcon,
       href: "https://www.youtube.com/@FINTNESSFINSERV",
-      color: "hover:text-[#FF0000] hover:bg-[#FF0000]/10",
+      color: "hover:bg-[#FF0000] hover:text-white hover:border-[#FF0000]",
     },
   ];
 
   return (
-    <footer className="bg-[#0B1221] border-t border-white/[0.05] w-full pt-10 pb-6 md:pt-12 md:pb-6 px-6 md:px-12 mt-auto relative z-10 text-white">
+    <footer className="bg-[#141C2B] border-t border-white/[0.05] w-full pt-10 pb-6 md:pt-12 md:pb-6 px-6 md:px-12 mt-auto relative z-10 text-white">
       <div className="max-w-7xl mx-auto space-y-6 md:space-y-8">
         
         {/* Top Grid: Brand & Navigation */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10 pb-6 border-b border-white/[0.05]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8 pb-6">
           
           {/* Logo & Info */}
-          <div className="lg:col-span-5 space-y-4">
-            <div className="space-y-2">
-              <Link href="/" className="font-bold text-xl text-white tracking-tight hover:opacity-90 block">
+          <div className="lg:col-span-3 space-y-5">
+            <div className="space-y-3">
+              <Link href="/" className="font-extrabold text-2xl md:text-3xl text-white tracking-tight hover:opacity-90 block">
                 FINTNESS FINSERV
               </Link>
+              <div className="space-y-1 pt-2">
+                <a href="tel:+919509608886" className="block text-sm md:text-base font-semibold text-white/90 hover:text-[#00B2FF] transition-colors">
+                  +91 95096 08886
+                </a>
+                <a href="mailto:mail@fintness.in" className="block text-sm md:text-base font-medium text-white/70 hover:text-[#00B2FF] transition-colors">
+                  mail@fintness.in
+                </a>
+              </div>
             </div>
 
             {/* Social Links directly below it */}
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2 pt-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/70 transition-all duration-300 ${social.color} hover:scale-105 shadow-sm hover:shadow-md`}
+                  className={`w-9 h-9 rounded-md bg-[#24324D]/60 border border-white/[0.08] flex items-center justify-center text-white/80 transition-all duration-300 ${social.color} hover:scale-105 shadow-sm`}
                   aria-label={social.name}
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
               ))}
             </div>
-            
-            {/* AMFI Certification Details below socials (No background box) */}
-            <div className="max-w-xs space-y-2 pt-1">
-              <div className="flex items-center gap-1.5 text-[#00B2FF]">
-                <Shield className="w-3.5 h-3.5" strokeWidth={2.5} />
-                <span className="text-[10px] font-bold uppercase tracking-wider">AMFI Registered Distributor</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2 text-[10px]">
-                <div>
-                  <p className="text-white/60 mb-0.5">Reg. Date</p>
-                  <p className="text-white/95 font-semibold">13 May 2025</p>
-                </div>
-                <div>
-                  <p className="text-white/60 mb-0.5">Valid Till</p>
-                  <p className="text-white/95 font-semibold">23 Aug 2028</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Quick Links Group */}
-          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div className="lg:col-span-9 grid grid-cols-2 sm:grid-cols-5 gap-6">
             
             {/* Company Links */}
             <div>
@@ -146,6 +142,43 @@ export default function Footer() {
                 <li>
                   <Link href="/#events" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Events
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Advisory Links */}
+            <div>
+              <h3 className="text-xs font-bold text-white/50 uppercase tracking-widest mb-3">Advisory</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Wealth Management
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Investment Planning
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Risk Mitigation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Estate Planning
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Tax Optimization
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Retirement Strategy
                   </Link>
                 </li>
               </ul>
@@ -185,25 +218,47 @@ export default function Footer() {
               </ul>
             </div>
 
+            <div className="col-span-2 sm:col-span-1 space-y-3">
+              <h3 className="text-xs font-bold text-white/50 uppercase tracking-widest mb-3">Contact Us</h3>
+              <ul className="space-y-5 text-xs text-white/75 font-medium">
+                <li className="flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-[#00B2FF] shrink-0 mt-0.5" />
+                  <span className="leading-relaxed">
+                    House No. 164, Adarsh Nagar, Jaipur, Rajasthan – 302004
+                  </span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-[#00B2FF] shrink-0" />
+                  <a href="mailto:mail@fintness.in" className="hover:text-[#00B2FF] transition-colors">
+                    mail@fintness.in
+                  </a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-[#00B2FF] shrink-0" />
+                  <a href="tel:+919509608886" className="hover:text-[#00B2FF] transition-colors font-semibold">
+                    +91 95096 08886
+                  </a>
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
 
-        {/* Regulatory Disclaimer (No background box) */}
-        <div className="space-y-2.5">
-          <div className="flex items-center gap-1.5 text-white/95">
-            <FileText className="w-3.5 h-3.5 text-[#00B2FF]" />
-            <h4 className="text-[11px] font-bold uppercase tracking-wider">Regulatory Disclaimer</h4>
-          </div>
-          <p className="text-[10px] leading-relaxed text-white/60 font-medium">
-            <strong>Disclaimer:</strong> Investments in Mutual Funds are subject to market risks. Please read all scheme-related documents carefully before investing. Mutual Fund investments do not offer guaranteed or assured returns, and past performance may or may not be sustained in the future. Investors are advised to consider the applicable exit loads, Total Expense Ratio (TER), and other related costs before making any investment decision. Fintness Finserv deals exclusively in Regular Plans of Mutual Fund Schemes and may receive trail commissions, which are disclosed to clients at the time of investment. Direct Plans, which carry lower expense ratios, are available separately; however, we do not facilitate investments in Direct Plans.
+        {/* Centered Regulatory, AMFI & Copyright info */}
+        <div className="text-center space-y-4 pt-6 border-t border-white text-white">
+          <p className="text-xs md:text-sm leading-relaxed font-medium max-w-5xl mx-auto text-white">
+            <strong>Risk Factors -</strong> Investments in Mutual Funds are subject to Market Risks. Read all scheme related documents carefully before investing. Mutual Fund Schemes do not assure or guarantee any returns. Past performances of any Mutual Fund Scheme may or may not be sustained in future. There is no guarantee that the investment objective of any suggested scheme shall be achieved. All existing and prospective investors are advised to check and evaluate the Exit loads and other cost structure (TER) applicable at the time of making the investment before finalizing on any investment decision for Mutual Funds schemes. We deal in Regular Plans only for Mutual Fund Schemes and earn a Trailing Commission on client investments. Disclosure For Commission earnings is made to clients at the time of investments. Option of Direct Plan for every Mutual Fund Scheme is available to investors offering advantage of lower expense ratio. We are not entitled to earn any commission on Direct plans. Hence we do not deal in Direct Plans.
           </p>
-        </div>
 
-        {/* Bottom copyright row */}
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-[10px] text-white/40 font-medium border-t border-white/[0.05] pt-4">
-          <p>© {new Date().getFullYear()} Fintness Finserv. All Rights Reserved.</p>
-          <p className="flex items-center gap-1.5 text-[10px] text-white/30 font-light">
-            Architected for growth and precision.
+          <p className="text-[10px] md:text-xs text-white/90 font-medium flex flex-wrap justify-center items-center gap-x-2 gap-y-1 pt-1">
+            <span>{new Date().getFullYear()} © Copyright Reserved by Fintness Finserv Pvt. Ltd.</span>
+            <span className="text-white/40">|</span>
+            <span className="text-white font-semibold">AMFI Registered Distributor</span>
+            <span className="text-white/40">|</span>
+            <span className="text-white font-semibold">Reg. Date: 13 May 2025</span>
+            <span className="text-white/40">|</span>
+            <span className="text-white font-semibold">Valid Till: 23 Aug 2028</span>
           </p>
         </div>
 
