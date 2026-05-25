@@ -246,6 +246,8 @@ export default function Footer() {
             <span className="text-white/40">|</span>
             <span className="text-white font-semibold">AMFI Registered Distributor</span>
             <span className="text-white/40">|</span>
+            <span className="text-white font-semibold">ARN - 328688</span>
+            <span className="text-white/40">|</span>
             <span className="text-white font-semibold">Reg. Date: 13 May 2025</span>
             <span className="text-white/40">|</span>
             <span className="text-white font-semibold">Valid Till: 23 Aug 2028</span>
