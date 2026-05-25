@@ -83,7 +83,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
 
 export default function EcosystemSection() {
   return (
-    <section className="py-24 w-full bg-[#F4F5F7] border-y border-slate-200">
+    <section id="services" className="py-24 w-full bg-[#F4F5F7] border-y border-slate-200">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <motion.div 

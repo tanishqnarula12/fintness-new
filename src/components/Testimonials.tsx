@@ -37,7 +37,7 @@ const TESTIMONIAL_DATA = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden bg-white">
+    <section id="events" className="py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden bg-white">
       <div className="mb-20 text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

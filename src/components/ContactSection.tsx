@@ -4,7 +4,7 @@ import { CheckCircle2, ChevronDown } from "lucide-react";
 
 export default function ContactSection() {
   return (
-    <section className="relative py-16 md:py-24 px-6 mx-auto w-[calc(100%-2rem)] md:max-w-[85rem]">
+    <section id="contact" className="relative py-16 md:py-24 px-6 mx-auto w-[calc(100%-2rem)] md:max-w-[85rem]">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,22 +14,24 @@ export default function ContactSection() {
       >
         {/* Left Pane */}
         <div className="md:w-1/2 p-12 md:p-16 bg-[#0B1221] flex flex-col justify-center">
-           <h2 className="text-4xl lg:text-[44px] font-bold text-white leading-tight mb-6">
-             Start Your Journey with a Professional Blueprint.
-           </h2>
-           <p className="text-white/60 text-base md:text-lg leading-relaxed mb-10">
-             Our advisors will contact you for a complimentary 30-minute discovery call to map out your primary financial goals.
-           </p>
-           <div className="space-y-5">
-             <div className="flex items-center gap-4">
-               <CheckCircle2 className="w-6 h-6 text-[#22C55E]" strokeWidth={2.5} />
-               <span className="text-white/80 text-base font-medium">No-obligation initial consultation</span>
-             </div>
-             <div className="flex items-center gap-4">
-               <CheckCircle2 className="w-6 h-6 text-[#22C55E]" strokeWidth={2.5} />
-               <span className="text-white/80 text-base font-medium">Certified Financial Planners only</span>
-             </div>
-           </div>
+          <div className="md:-translate-y-6">
+            <h2 className="text-4xl lg:text-[44px] font-bold text-white leading-tight mb-6">
+              Start Your Journey with a Professional Blueprint.
+            </h2>
+            <p className="text-white/60 text-base md:text-lg leading-relaxed mb-14">
+              Our advisors will contact you for a complimentary 30-minute discovery call to map out your primary financial goals.
+            </p>
+            <div className="space-y-5">
+              <div className="flex items-center gap-4">
+                <CheckCircle2 className="w-6 h-6 text-[#22C55E]" strokeWidth={2.5} />
+                <span className="text-white/80 text-base font-medium">No-obligation initial consultation</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <CheckCircle2 className="w-6 h-6 text-[#22C55E]" strokeWidth={2.5} />
+                <span className="text-white/80 text-base font-medium">Certified Financial Planners only</span>
+              </div>
+            </div>
+          </div>
         </div>
         
         {/* Right Pane */}
