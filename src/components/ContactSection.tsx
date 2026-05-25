@@ -13,7 +13,7 @@ export default function ContactSection() {
         className="flex flex-col md:flex-row rounded-[2rem] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.15)]"
       >
         {/* Left Pane */}
-        <div className="md:w-1/2 p-12 md:p-16 bg-[#0B1221] flex flex-col justify-center">
+        <div className="md:w-1/2 p-12 md:p-16 bg-[#141C2B] border-b md:border-b-0 md:border-r border-white/[0.05] flex flex-col justify-center">
           <div className="md:-translate-y-6">
             <h2 className="text-4xl lg:text-[44px] font-bold text-white leading-tight mb-6">
               Start Your Journey with a Professional Blueprint.

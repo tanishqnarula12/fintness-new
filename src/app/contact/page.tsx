@@ -65,9 +65,9 @@ export default function ContactPage() {
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          className="lg:col-span-7 bg-white border border-[#1a1a2e]/10 rounded-3xl p-8 lg:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.04)]"
+          className="lg:col-span-7 bg-[#141C2B] border border-white/[0.05] rounded-3xl p-8 lg:p-12 shadow-2xl text-white"
         >
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-8 tracking-tight">Inquiry Registry</h2>
+          <h2 className="text-2xl font-bold text-white mb-8 tracking-tight">Inquiry Registry</h2>
           
           {submitted ? (
             <motion.div 
@@ -83,23 +83,23 @@ export default function ContactPage() {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-[#1a1a2e]/45 ml-1">Full Name</label>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Full Name</label>
                   <input
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] text-[#1a1a2e] placeholder-[#1a1a2e]/30 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white transition-all duration-300 text-sm font-medium"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white placeholder-white/30 focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium"
                     placeholder="John Doe"
                     type="text"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-[#1a1a2e]/45 ml-1">Corporate Email</label>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Corporate Email</label>
                   <input
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] text-[#1a1a2e] placeholder-[#1a1a2e]/30 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white transition-all duration-300 text-sm font-medium"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white placeholder-white/30 focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium"
                     placeholder="john@company.com"
                     type="email"
                   />
@@ -107,28 +107,28 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-[#1a1a2e]/45 ml-1">Subject of Inquiry</label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Subject of Inquiry</label>
                 <div className="relative">
                   <select
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] text-[#1a1a2e] focus:outline-none focus:border-[#0066FF]/30 focus:bg-white transition-all duration-300 text-sm font-medium appearance-none cursor-pointer"
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium appearance-none cursor-pointer"
                   >
-                    <option>Wealth Architecture</option>
-                    <option>Asset Management</option>
-                    <option>Institutional Services</option>
-                    <option>General Support</option>
+                    <option className="bg-[#141C2B] text-white">Wealth Architecture</option>
+                    <option className="bg-[#141C2B] text-white">Asset Management</option>
+                    <option className="bg-[#141C2B] text-white">Institutional Services</option>
+                    <option className="bg-[#141C2B] text-white">General Support</option>
                   </select>
-                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#1a1a2e]/40 pointer-events-none" />
+                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 pointer-events-none" />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-[#1a1a2e]/45 ml-1">Detailed Message</label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Detailed Message</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] text-[#1a1a2e] placeholder-[#1a1a2e]/30 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white transition-all duration-300 text-sm font-medium resize-none min-h-[120px]"
+                  className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white placeholder-white/30 focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium resize-none min-h-[120px]"
                   placeholder="How can our financial architects assist you today?"
                   rows={5}
                 />
@@ -140,11 +140,11 @@ export default function ContactPage() {
                   id="agree-checkbox"
                   checked={formData.agree}
                   onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
-                  className="mt-1 rounded border-[#1a1a2e]/20 text-[#0066FF] focus:ring-[#0066FF] cursor-pointer"
+                  className="mt-1 rounded border-white/20 bg-[#1F2937]/50 text-[#0066FF] focus:ring-[#0066FF] cursor-pointer"
                   type="checkbox"
                 />
-                <label htmlFor="agree-checkbox" className="text-sm text-[#1a1a2e]/60 cursor-pointer select-none">
-                  I agree to the <a className="text-[#0066FF] font-semibold hover:underline" href="#">Privacy Policy</a> regarding data handling.
+                <label htmlFor="agree-checkbox" className="text-sm text-white/60 cursor-pointer select-none">
+                  I agree to the <a className="text-[#00B2FF] font-semibold hover:underline" href="/privacy-policy">Privacy Policy</a> regarding data handling.
                 </label>
               </div>
 
@@ -204,7 +204,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            className="bg-[#0B1221] border border-white/[0.05] text-white rounded-3xl p-8 relative overflow-hidden shadow-2xl"
+            className="bg-[#141C2B] border border-white/[0.05] text-white rounded-3xl p-8 relative overflow-hidden shadow-2xl"
           >
             <div className="absolute top-0 right-0 p-8 opacity-5 text-white pointer-events-none">
               <Building2 className="w-[120px] h-[120px]" />

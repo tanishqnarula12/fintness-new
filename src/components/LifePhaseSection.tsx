@@ -1,43 +1,46 @@
 "use client";
 import { motion } from "framer-motion";
-import { Briefcase, Building2, Globe, Heart } from "lucide-react";
 
 const PHASES = [
   {
     title: "Salaried Professionals",
-    desc: "Maximize your take-home through smart tax planning, equity investing, and retirement corpus building.",
-    icon: Briefcase,
-    accent: "#0066FF",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+    category: "Wealth Creation",
+    categoryColor: "#0066FF",
+    desc: "Optimization strategies for tax planning, wealth creation, and retirement mapping for high-earning experts.",
+    bullets: ["Tax Optimization", "Automated SIP Management"],
+    image: "/salaried-professionals.jpeg",
   },
   {
     title: "Business Owners",
-    desc: "Separate personal and business wealth. Structure your finances for growth, succession, and protection.",
-    icon: Building2,
-    accent: "#00B2FF",
-    image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800"
+    category: "Asset Protection",
+    categoryColor: "#00B2FF",
+    desc: "Integrated cash flow management and robust protection plans to separate personal wealth from business risk.",
+    bullets: ["Cash Flow Smoothing", "Key-person Protection"],
+    image: "/business-owners.jpeg",
   },
   {
-    title: "NRIs",
-    desc: "Navigate cross-border taxation, repatriation, and investment regulations with expert guidance.",
-    icon: Globe,
-    accent: "#7c6baa",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800"
+    title: "Non-Resident Indians",
+    category: "Global Mobility",
+    categoryColor: "#7c6baa",
+    desc: "Seamless cross-border planning, NRE/NRO account optimization, and Indian market exposure management.",
+    bullets: ["Cross-border Compliance", "Remittance Strategy"],
+    image: "/nris.jpeg",
   },
   {
-    title: "Families",
-    desc: "Build generational wealth with estate planning, education funds, and comprehensive family coverage.",
-    icon: Heart,
-    accent: "#c9852a",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800"
-  }
+    title: "Modern Families",
+    category: "Legacy Building",
+    categoryColor: "#c9852a",
+    desc: "Comprehensive insurance layering and estate planning to ensure smooth wealth transition for the next generation.",
+    bullets: ["Will & Trust Creation", "Child Education Corpus"],
+    image: "/modern-families.jpeg",
+  },
 ];
 
 export default function LifePhaseSection() {
   return (
     <section id="careers" className="py-24 px-6 max-w-7xl mx-auto w-full relative">
       <div className="mb-20 flex flex-col items-center text-center">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -48,10 +51,13 @@ export default function LifePhaseSection() {
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
             Tailored for Your Life Stage
           </h2>
+          <p className="text-[#1a1a2e]/50 text-base md:text-lg font-light leading-relaxed mt-5 max-w-2xl">
+            We specialize in solving the complex financial challenges of high-achieving individuals and families.
+          </p>
         </motion.div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {PHASES.map((phase, idx) => (
           <motion.div
             key={idx}
@@ -59,44 +65,69 @@ export default function LifePhaseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: 0.1 * idx, duration: 0.6, ease: "easeOut" }}
-            className="group relative h-[360px] md:h-[420px] rounded-3xl overflow-hidden cursor-pointer"
+            className="group bg-[#f0f4fa] rounded-3xl overflow-hidden flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-500"
           >
-            {/* Background Image */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center transition-transform duration-[1200ms] ease-out group-hover:scale-110"
-              style={{ backgroundImage: `url(${phase.image})` }}
-            />
-            
-            {/* Gradient overlays — adapted for light theme base */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e]/90 via-[#1a1a2e]/50 to-[#1a1a2e]/20" />
-            <div 
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-              style={{ background: `linear-gradient(to top, ${phase.accent}25, transparent 60%)` }}
-            />
+            {/* Image Side */}
+            <div className="relative w-full sm:w-[45%] h-[220px] sm:h-auto min-h-[260px] overflow-hidden shrink-0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={phase.image}
+                alt={phase.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+              />
+            </div>
 
-            {/* Content */}
-            <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-end">
-              {/* Icon */}
-              <div 
-                className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 border border-white/[0.15] backdrop-blur-sm transition-all duration-500 group-hover:scale-110"
-                style={{ background: `${phase.accent}25` }}
-              >
-                <phase.icon className="w-5 h-5 transition-colors duration-500" style={{ color: '#fff' }} strokeWidth={1.5} />
+            {/* Content Side */}
+            <div className="flex flex-col justify-center p-6 sm:p-8 flex-1">
+              {/* Category Tag */}
+              <div className="flex items-center gap-2 mb-4">
+                <span
+                  className="w-2 h-2 rounded-full"
+                  style={{ backgroundColor: phase.categoryColor }}
+                />
+                <span
+                  className="text-[10px] font-bold uppercase tracking-[0.15em]"
+                  style={{ color: phase.categoryColor }}
+                >
+                  {phase.category}
+                </span>
               </div>
 
-              <h3 className="text-2xl md:text-3xl font-semibold text-white mb-3 tracking-tight">
+              {/* Title */}
+              <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a2e] mb-3 tracking-tight leading-tight">
                 {phase.title}
               </h3>
-              
-              {/* Description slides up on hover */}
-              <div className="overflow-hidden">
-                <p className="text-white/70 text-sm md:text-base font-light leading-relaxed max-w-sm translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                  {phase.desc}
-                </p>
-              </div>
 
-              {/* Accent line */}
-              <div className="mt-5 h-[2px] w-0 group-hover:w-16 rounded-full transition-all duration-700" style={{ background: phase.accent }} />
+              {/* Description */}
+              <p className="text-[#1a1a2e]/55 text-sm font-normal leading-relaxed mb-5">
+                {phase.desc}
+              </p>
+
+              {/* Bullet Points */}
+              <div className="space-y-2.5">
+                {phase.bullets.map((bullet, bIdx) => (
+                  <div key={bIdx} className="flex items-center gap-2.5">
+                    <svg
+                      className="w-4 h-4 shrink-0"
+                      viewBox="0 0 20 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle cx="10" cy="10" r="10" fill={phase.categoryColor} fillOpacity="0.12" />
+                      <path
+                        d="M6.5 10.5L8.5 12.5L13.5 7.5"
+                        stroke={phase.categoryColor}
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="text-sm font-semibold text-[#1a1a2e]/80">
+                      {bullet}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
