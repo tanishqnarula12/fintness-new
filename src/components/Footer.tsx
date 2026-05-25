@@ -85,7 +85,7 @@ export default function Footer() {
                   <Phone className="w-4 h-4 text-[#00B2FF] shrink-0" />
                   <span>+91 95096 08886</span>
                 </a>
-                <a href="mailto:mail@fintness.in" className="flex items-center gap-2 text-sm md:text-base font-medium text-white/70 hover:text-[#00B2FF] transition-colors">
+                <a href="mailto:mail@fintness.in" className="flex items-center gap-2 text-sm md:text-base font-semibold text-white/90 hover:text-[#00B2FF] transition-colors">
                   <Mail className="w-4 h-4 text-[#00B2FF] shrink-0" />
                   <span>mail@fintness.in</span>
                 </a>
@@ -238,7 +238,7 @@ export default function Footer() {
         {/* Centered Regulatory, AMFI & Copyright info */}
         <div className="text-center space-y-4 pt-6 border-t border-white text-white">
           <p className="text-xs md:text-sm leading-relaxed font-normal max-w-7xl mx-auto text-white/75">
-            <strong>Disclaimer:</strong> Investments in Mutual Funds are subject to Market Risks. Read all scheme related documents carefully before investing. Mutual Fund Schemes do not assure or guarantee any returns. Past performances of any Mutual Fund Scheme may or may not be sustained in future. There is no guarantee that the investment objective of any suggested scheme shall be achieved. All existing and prospective investors are advised to check and evaluate the Exit loads and other cost structure (TER) applicable at the time of making the investment before finalizing on any investment decision for Mutual Funds schemes. We deal in Regular Plans only for Mutual Fund Schemes and earn a Trailing Commission on client investments. Disclosure For Commission earnings is made to clients at the time of investments. Option of Direct Plan for every Mutual Fund Scheme is available to investors offering advantage of lower expense ratio. We are not entitled to earn any commission on Direct plans. Hence we do not deal in Direct Plans.
+            <strong className="text-white">Disclaimer:</strong> Investments in Mutual Funds are subject to Market Risks. Read all scheme related documents carefully before investing. Mutual Fund Schemes do not assure or guarantee any returns. Past performances of any Mutual Fund Scheme may or may not be sustained in future. There is no guarantee that the investment objective of any suggested scheme shall be achieved. All existing and prospective investors are advised to check and evaluate the Exit loads and other cost structure (TER) applicable at the time of making the investment before finalizing on any investment decision for Mutual Funds schemes. We deal in Regular Plans only for Mutual Fund Schemes and earn a Trailing Commission on client investments. Disclosure For Commission earnings is made to clients at the time of investments. Option of Direct Plan for every Mutual Fund Scheme is available to investors offering advantage of lower expense ratio. We are not entitled to earn any commission on Direct plans. Hence we do not deal in Direct Plans.
           </p>
 
           <p className="text-[10px] md:text-xs text-white/90 font-medium flex flex-wrap justify-center items-center gap-x-2 gap-y-1 pt-1">
