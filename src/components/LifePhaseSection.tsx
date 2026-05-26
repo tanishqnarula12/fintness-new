@@ -38,7 +38,7 @@ const PHASES = [
 
 export default function LifePhaseSection() {
   return (
-    <section id="careers" className="py-24 px-6 max-w-7xl mx-auto w-full relative">
+    <section className="py-24 px-6 max-w-7xl mx-auto w-full relative">
       <div className="mb-20 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
