@@ -347,8 +347,8 @@ export default function PrivacyPolicyPage() {
             <div className="bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 p-5 rounded-2xl">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                 <div className="bg-white p-3.5 rounded-xl border border-[#1a1a2e]/5 shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
-                  <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">Euin no.</p>
-                  <p className="text-sm font-extrabold text-[#1a1a2e]">Euin no. - 328688</p>
+                  <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">EUIN NO</p>
+                  <p className="text-sm font-extrabold text-[#1a1a2e]">EUIN NO- E104126</p>
                 </div>
                 <div className="bg-white p-3.5 rounded-xl border border-[#1a1a2e]/5 shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
                   <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">Registration Date</p>

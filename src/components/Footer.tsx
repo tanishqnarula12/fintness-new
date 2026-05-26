@@ -246,7 +246,7 @@ export default function Footer() {
             <span className="text-white/40">|</span>
             <span className="text-white font-semibold">AMFI Registered Sub Distributor</span>
             <span className="text-white/40">|</span>
-            <span className="text-white font-semibold">EUIN No. - 328688</span>
+            <span className="text-white font-semibold">EUIN NO- E104126</span>
             <span className="text-white/40">|</span>
             <span className="text-white font-semibold">Reg. Date: 25 Oct 2025</span>
             <span className="text-white/40">|</span>
