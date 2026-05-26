@@ -48,7 +48,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:shadow-[0_8px_30px_rgba(0,102,255,0.3)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
             >
               Book Consultation <ArrowRight className="w-4 h-4" />
             </Link>
