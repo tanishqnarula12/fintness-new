@@ -130,9 +130,12 @@ export default function CareersPage() {
         </section>
 
         {/* Start Your Journey Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-[#121620] border border-[#1a1a2e]/5 rounded-3xl p-10 md:p-16">
+        <section className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 bg-[#1a1a2e] overflow-hidden rounded-3xl p-10 md:p-16 shadow-2xl">
+          {/* Background elements to match CTA */}
+          <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-br from-[#0066FF]/20 to-transparent opacity-50 pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] bg-[#00B2FF] rounded-full blur-[120px] opacity-30 pointer-events-none" />
           
-          <div className="flex flex-col justify-center space-y-10">
+          <div className="flex flex-col justify-center space-y-10 relative z-10">
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                 Start Your Journey
@@ -169,7 +172,7 @@ export default function CareersPage() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-12 lg:pt-0 lg:pl-16">
+          <div className="flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-12 lg:pt-0 lg:pl-16 relative z-10">
             <motion.form
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -185,8 +188,9 @@ export default function CareersPage() {
                   <input 
                     type="text" 
                     required
+                    readOnly
                     placeholder="John Doe" 
-                    className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all"
+                    className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all opacity-60 cursor-not-allowed"
                   />
                 </div>
                 <div className="space-y-2">
@@ -196,8 +200,9 @@ export default function CareersPage() {
                   <input 
                     type="email" 
                     required
+                    readOnly
                     placeholder="john@company.com" 
-                    className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all"
+                    className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all opacity-60 cursor-not-allowed"
                   />
                 </div>
               </div>

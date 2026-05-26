@@ -11,7 +11,8 @@ import {
   Clock, 
   Compass, 
   CheckCircle2, 
-  XCircle
+  XCircle,
+  Sparkles
 } from "lucide-react";
 import { ShaderBackground } from "@/components/ui/shader-background";
 
@@ -34,8 +35,9 @@ export default function AboutPage() {
           {/* Readability glow behind text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] md:w-[80%] h-[150%] bg-white/90 blur-[60px] rounded-[100%] pointer-events-none -z-10" />
 
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0066FF]/5 border border-[#0066FF]/10 text-[#0066FF] text-xs font-bold uppercase tracking-[0.15em] mb-4">
-            Structured Planning
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/10 text-[#0066FF] font-semibold text-sm mb-6 border border-[#0066FF]/20">
+            <Sparkles className="w-4 h-4" />
+            Our Mission
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]">
             Structured Planning for a <br className="hidden md:block" />
@@ -92,7 +94,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { label: "Experience", value: "12+ Years", desc: "Of Market Expertise" },
-              { label: "Client Impact", value: "500+", desc: "Families Catered" },
+              { label: "Client Impact", value: "400+", desc: "Families Catered" },
               { label: "Approach", value: "Client-Focused", desc: "Structured Planning" },
               { label: "Vision", value: "Long-Term", desc: "Wealth Guidance" }
             ].map((stat, idx) => (
@@ -291,25 +293,25 @@ export default function AboutPage() {
             { 
               name: "Manish Sharma", 
               role: "Certified Financial Planner & Portfolio Manager", 
-              bio: "Manish Sharma specializes in financial planning, investment advisory, and portfolio management at Fintness Finserv Pvt. Ltd. He focuses on helping clients build goal-based financial strategies through disciplined investing, proper asset allocation, and long-term wealth planning.", 
+              bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
               img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
             },
             { 
               name: "Preksha Jain", 
               role: "Insurance & Estate Planning Consultant", 
-              bio: "Preksha Jain specializes in insurance planning, will & estate planning, and financial protection solutions at Fintness Finserv Pvt. Ltd. Holding a law degree from Hansraj College of Law, she also assists clients with the review and guidance of NPS, PPF, LIC policies, Fixed Deposits, and other long-term financial products.", 
+              bio: "Focuses on insurance, estate planning, and financial protection solutions, while guiding clients on long-term financial products and policy planning.", 
               img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
             },
             { 
               name: "Mehul Khandelwal", 
               role: "Operations Head", 
-              bio: "Mehul Khandelwal oversees business operations, client coordination, transaction support, and process management at Fintness Finserv Pvt. Ltd. Holding a Bachelor’s degree in Business Administration from Jaipur National University, he focuses on operational efficiency, workflow management, process automation, and enhancing client experience.", 
+              bio: "Leads operations, process management, and client coordination, ensuring efficient workflows and a seamless client experience.", 
               img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
             },
             { 
               name: "Vimla Parmanandani", 
               role: "Service Relationship Manager", 
-              bio: "Vimla Parmanandani specializes in client servicing and relationship support at Fintness Finserv Pvt. Ltd. She focuses on assisting clients with service coordination, query resolution, follow-ups, and ensuring a smooth and responsive client experience.", 
+              bio: "Handles client servicing and relationship support, ensuring smooth communication, timely assistance, and responsive query resolution.", 
               img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?auto=format&fit=crop&q=80&w=600" 
             }
           ].map((member, idx) => (
@@ -319,9 +321,9 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-3xl border border-[#1a1a2e]/5 overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,102,255,0.08)] transition-all duration-300 flex flex-col"
+              className="bg-white rounded-3xl border border-[#1a1a2e]/5 overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,102,255,0.08)] transition-all duration-300 relative aspect-[4/5]"
             >
-              <div className="aspect-square w-full bg-[#f0f4fa] overflow-hidden shrink-0">
+              <div className="absolute inset-0 bg-[#f0f4fa]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={member.img} 
@@ -329,12 +331,14 @@ export default function AboutPage() {
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="absolute bottom-0 left-0 w-full bg-white p-6 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
                 <h4 className="text-xl font-bold text-[#1a1a2e] mb-1">{member.name}</h4>
-                <p className="text-[#0066FF] font-semibold text-xs tracking-wider uppercase mb-4">{member.role}</p>
-                <p className="text-[#1a1a2e]/60 text-sm leading-relaxed flex-grow">
-                  {member.bio}
-                </p>
+                <p className="text-[#0066FF] font-semibold text-xs tracking-wider uppercase">{member.role}</p>
+                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 overflow-hidden">
+                  <p className="text-[#1a1a2e]/60 text-sm leading-relaxed min-h-0 pt-3">
+                    {member.bio}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}
