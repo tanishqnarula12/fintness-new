@@ -174,7 +174,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">4. Mutual Fund & Investment Disclosure</h2>
             </div>
             <p>
-              Nitesh Luthra is an AMFI sub registered Mutual Fund Distributor and primarily deals in Regular Plans of Mutual Fund Schemes. The company may receive trail commissions from Asset Management Companies (AMCs), and such commission disclosures are communicated to clients at the time of investment.
+              Nitesh Luthra is an AMFI Registered Sub Distributor and primarily deals in Regular Plans of Mutual Fund Schemes. The company may receive trail commissions from Asset Management Companies (AMCs), and such commission disclosures are communicated to clients at the time of investment.
             </p>
             <div className="bg-rose-500/[0.03] border border-rose-500/20 text-rose-800 p-5 rounded-2xl">
               <h4 className="text-xs font-bold uppercase tracking-wider text-rose-900 mb-1.5">Market Risk Advisory</h4>

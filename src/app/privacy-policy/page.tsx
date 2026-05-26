@@ -116,8 +116,8 @@ export default function PrivacyPolicyPage() {
                   key={sec.id}
                   onClick={() => scrollToSection(sec.id)}
                   className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left text-xs font-semibold tracking-wide transition-all duration-200 group ${isActive
-                      ? "bg-[#0066FF] text-white shadow-md shadow-[#0066FF]/10"
-                      : "text-[#1a1a2e]/60 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/[0.04]"
+                    ? "bg-[#0066FF] text-white shadow-md shadow-[#0066FF]/10"
+                    : "text-[#1a1a2e]/60 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/[0.04]"
                     }`}
                 >
                   <Icon className={`w-4 h-4 shrink-0 transition-colors duration-200 ${isActive ? "text-white" : "text-[#1a1a2e]/30 group-hover:text-[#1a1a2e]/60"}`} />
@@ -342,7 +342,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">10. Regulatory & Distribution Disclosure</h2>
             </div>
             <p>
-              Nitesh Luthra is an **AMFI sub registered Mutual Fund Distributor**.
+              Nitesh Luthra is an **AMFI Registered sub distributor**.
             </p>
             <div className="bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 p-5 rounded-2xl">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
