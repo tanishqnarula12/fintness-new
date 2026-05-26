@@ -333,7 +333,7 @@ export default function AboutPage() {
               </div>
               <div className="absolute bottom-0 left-0 w-full bg-white p-6 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
                 <h4 className="text-xl font-bold text-[#1a1a2e] mb-1">{member.name}</h4>
-                <p className="text-[#0066FF] font-semibold text-xs tracking-wider uppercase">{member.role}</p>
+                <p className="text-[#0066FF] font-semibold text-xs tracking-wider uppercase min-h-[2rem] flex items-start">{member.role}</p>
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 overflow-hidden">
                   <p className="text-[#1a1a2e]/60 text-sm leading-relaxed min-h-0 pt-3">
                     {member.bio}
