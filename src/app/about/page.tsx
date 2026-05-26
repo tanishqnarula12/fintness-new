@@ -50,7 +50,7 @@ export default function AboutPage() {
               href="/contact" 
               className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
             >
-              Book Consultation <ArrowRight className="w-4 h-4" />
+              Check Your Score <ArrowRight className="w-4 h-4" />
             </Link>
             <Link 
               href="/#services" 
