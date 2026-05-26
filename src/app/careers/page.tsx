@@ -81,7 +81,7 @@ export default function CareersPage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  className="bg-white border border-[#1a1a2e]/5 shadow-[0_4px_25px_rgba(0,0,0,0.02)] p-8 rounded-3xl text-left hover:shadow-[0_4px_30px_rgba(0,102,255,0.06)] transition-all duration-300 group"
+                  className="bg-white border border-[#1a1a2e]/10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] p-8 rounded-3xl text-left hover:shadow-[0_16px_40px_rgba(0,102,255,0.12)] hover:-translate-y-2 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-[#0066FF]/5 flex items-center justify-center text-[#0066FF] mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-6 h-6" />
@@ -130,43 +130,37 @@ export default function CareersPage() {
         </section>
 
         {/* Start Your Journey Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 rounded-3xl p-8 md:p-12">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-[#121620] border border-[#1a1a2e]/5 rounded-3xl p-10 md:p-16">
           
-          <div className="lg:col-span-5 space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-4"
-            >
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#1a1a2e]">
+          <div className="flex flex-col justify-center space-y-10">
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                 Start Your Journey
               </h2>
-              <p className="text-[#1a1a2e]/60 leading-relaxed">
+              <p className="text-[#a0aabf] text-lg leading-relaxed max-w-md">
                 Don't see a role that fits? We are always looking for exceptional talent. Submit your credentials for our "Architect Talent Pool."
               </p>
-            </motion.div>
+            </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-4 bg-white border border-[#1a1a2e]/5 p-4 rounded-2xl shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-[#0066FF]/10 flex items-center justify-center text-[#0066FF] shrink-0">
-                  <Mail className="w-5 h-5" />
+            <div className="space-y-5 pt-4">
+              <div className="flex items-center gap-4">
+                <div className="shrink-0 w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-[#00A3FF]" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-[#1a1a2e]/40 font-bold mb-0.5">Email Us</p>
-                  <a href="mailto:mail@fintness.in" className="text-sm font-semibold text-[#1a1a2e] hover:text-[#0066FF] transition-colors">
+                  <p className="text-xs uppercase tracking-wider text-[#a0aabf] font-bold mb-0.5">Email Us</p>
+                  <a href="mailto:mail@fintness.in" className="text-sm font-semibold text-white hover:text-[#00A3FF] transition-colors">
                     mail@fintness.in
                   </a>
                 </div>
               </div>
-              
-              <div className="flex items-center gap-4 bg-white border border-[#1a1a2e]/5 p-4 rounded-2xl shadow-sm">
-                <div className="w-10 h-10 rounded-xl bg-[#00B2FF]/10 flex items-center justify-center text-[#00B2FF] shrink-0">
-                  <MapPin className="w-5 h-5" />
+              <div className="flex items-center gap-4">
+                <div className="shrink-0 w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center">
+                  <MapPin className="w-5 h-5 text-[#00A3FF]" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wider text-[#1a1a2e]/40 font-bold mb-0.5">Office</p>
-                  <p className="text-sm font-semibold text-[#1a1a2e]">
+                  <p className="text-xs uppercase tracking-wider text-[#a0aabf] font-bold mb-0.5">Office</p>
+                  <p className="text-sm font-semibold text-white">
                     House No. 164, Adarsh Nagar,<br />
                     Jaipur, Rajasthan – 302004
                   </p>
@@ -175,46 +169,47 @@ export default function CareersPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-7">
+          <div className="flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-white/10 pt-12 lg:pt-0 lg:pl-16">
             <motion.form
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               onSubmit={handleSubmit}
-              className="bg-white p-8 md:p-10 rounded-3xl border border-[#1a1a2e]/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] space-y-6"
+              className="space-y-6"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/60 flex items-center gap-2">
-                    <User className="w-3.5 h-3.5" /> Full Name
+                  <label className="text-sm font-bold text-white flex items-center gap-2">
+                    <User className="w-3.5 h-3.5 text-[#00A3FF]" /> Full Name
                   </label>
                   <input 
                     type="text" 
                     required
                     placeholder="John Doe" 
-                    className="w-full bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0066FF]/20 focus:border-[#0066FF] transition-all"
+                    className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/60 flex items-center gap-2">
-                    <Mail className="w-3.5 h-3.5" /> Email Address
+                  <label className="text-sm font-bold text-white flex items-center gap-2">
+                    <Mail className="w-3.5 h-3.5 text-[#00A3FF]" /> Email Address
                   </label>
                   <input 
                     type="email" 
                     required
                     placeholder="john@company.com" 
-                    className="w-full bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0066FF]/20 focus:border-[#0066FF] transition-all"
+                    className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/60 flex items-center gap-2">
-                  <Briefcase className="w-3.5 h-3.5" /> Role of Interest
+                <label className="text-sm font-bold text-white flex items-center gap-2">
+                  <Briefcase className="w-3.5 h-3.5 text-[#00A3FF]" /> Role of Interest
                 </label>
                 <select 
                   required
-                  className="w-full bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 rounded-xl px-4 py-3 text-sm text-[#1a1a2e] focus:outline-none focus:ring-2 focus:ring-[#0066FF]/20 focus:border-[#0066FF] transition-all appearance-none"
+                  className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all appearance-none cursor-pointer"
+                  style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%236b7280\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1.25rem center', backgroundSize: '1.2em' }}
                 >
                   <option value="" disabled selected>Select an area of interest...</option>
                   <option value="wealth-advisor">Wealth Advisor</option>
@@ -226,24 +221,24 @@ export default function CareersPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/60 flex items-center gap-2">
-                  <FileText className="w-3.5 h-3.5" /> Professional Bio / Cover Note
+                <label className="text-sm font-bold text-white flex items-center gap-2">
+                  <FileText className="w-3.5 h-3.5 text-[#00A3FF]" /> Professional Bio / Cover Note
                 </label>
                 <textarea 
                   required
                   rows={4}
-                  placeholder="Tell us about your architectural approach to finance..." 
-                  className="w-full bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0066FF]/20 focus:border-[#0066FF] transition-all resize-none"
+                  placeholder="Tell us about your approach to finance..." 
+                  className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white placeholder-[#6b7280] focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all resize-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={formStatus !== "idle"}
-                className={`w-full py-4 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
+                className={`w-full py-4 mt-2 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
                   formStatus === "success" 
-                    ? "bg-emerald-500 text-white shadow-emerald-500/20" 
-                    : "bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white shadow-[#0066FF]/25 hover:shadow-[#0066FF]/40 hover:-translate-y-0.5"
+                    ? "bg-[#00E676] text-[#121620]" 
+                    : "bg-[#00A3FF] hover:bg-[#0088EE] text-white"
                 }`}
               >
                 {formStatus === "idle" && (

@@ -38,11 +38,11 @@ export default function AboutPage() {
             Structured Planning
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]">
-            Building Financial Confidence Through <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">Structured Planning</span>
+            Structured Planning for a <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">Financially Fit Future</span>
           </h1>
           <p className="text-base md:text-xl text-[#1a1a2e]/60 font-light leading-relaxed max-w-3xl mx-auto pt-4">
-            Helping individuals and families make smarter financial decisions through disciplined planning, personalized guidance, and long-term financial strategies.
+            Our mission is to help individuals and families become financially fit through disciplined planning, structured financial solutions, and long-term guidance.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
@@ -92,7 +92,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { label: "Experience", value: "12+ Years", desc: "Of Market Expertise" },
-              { label: "Client Impact", value: "50+", desc: "Financial Sessions" },
+              { label: "Client Impact", value: "500+", desc: "Families Catered" },
               { label: "Approach", value: "Client-Focused", desc: "Structured Planning" },
               { label: "Vision", value: "Long-Term", desc: "Wealth Guidance" }
             ].map((stat, idx) => (
@@ -113,52 +113,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. MISSION SECTION */}
-      <section className="bg-gradient-to-b from-white to-[#f0f4fa] text-[#1a1a2e] py-32 relative overflow-hidden border-t border-[#1a1a2e]/5">
-        {/* Subtle motion background lines */}
-        <div className="absolute inset-0 opacity-5">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-          </svg>
-        </div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.05] pointer-events-none" />
 
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto px-6 md:px-12 text-center relative z-10"
-        >
-          {/* Mission */}
-          <div className="mb-24">
-            <h2 className="text-[#00B2FF] text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center justify-center gap-4">
-              <span className="w-12 h-[1px] bg-[#00B2FF]/40"></span>
-              Our Mission
-              <span className="w-12 h-[1px] bg-[#00B2FF]/40"></span>
-            </h2>
-            <p className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-[1.2] tracking-tight text-[#1a1a2e]">
-              Our mission is to help individuals and families become <span className="text-[#0066FF]">financially fit</span> through disciplined planning, structured financial solutions, and long-term guidance.
-            </p>
-          </div>
-
-          {/* Philosophy Quote */}
-          <div className="pt-16 border-t border-[#1a1a2e]/10 max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-[1.4] tracking-tight text-[#1a1a2e]/80 italic mb-10">
-              &ldquo;We do not believe in selling financial products. We believe in understanding your goals and guiding you towards financial decisions that are right for you.&rdquo;
-            </p>
-            <div className="text-[#00B2FF] font-bold tracking-wide flex items-center justify-center gap-3 uppercase text-sm">
-              <div className="w-8 h-[2px] bg-[#00B2FF]"></div>
-              Fintness Finserv Pvt. Ltd.
-            </div>
-          </div>
-        </motion.div>
-      </section>
 
       {/* 4. FINANCIAL HEALTH DASHBOARD SECTION */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -293,13 +248,13 @@ export default function AboutPage() {
             { 
               name: "Nitesh Luthra", 
               role: "Founder", 
-              bio: "Qualified Certified Financial Planner and MBA (Finance) from SCMLD Pune. With over 12 years of experience educating and managing money for investors, he specializes in investments, insurance, and estate planning. His vision is to make people financially fit.", 
+              bio: "Qualified Certified Financial Planner and MBA (Finance) from SCMLD Pune. He has been educating and managing money for investors for 12 years. He covers investments, insurance, tax planning, goal planning and estate planning. He has taken 50+ sessions for companies like Hero and Summit Digital. His vision is to make people financially fit.", 
               img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
             },
             { 
               name: "Vaishali Choudhary", 
               role: "Co-Founder", 
-              bio: "With over 6 years of experience in financial services, she specializes in personal financial planning, client servicing, operational management, and digital communication.", 
+              bio: "With over 6 years of experience in the financial services industry, Vaishali specializes in personal financial planning, client servicing, and operational management. She plays a key role in driving operations, client experience, and digital communication at Fintness Finserv Pvt. Ltd. Holding an MBA from Rajasthan University, her focus is on simplifying financial planning.", 
               img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
             }
           ].map((member, idx) => (
@@ -316,7 +271,7 @@ export default function AboutPage() {
                 <img 
                   src={member.img} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -333,10 +288,30 @@ export default function AboutPage() {
         {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { name: "Mehul Khandelwal", role: "Operations Head", bio: "Focuses on operational efficiency, workflow management, process automation, and client experience enhancement.", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" },
-            { name: "Manish Sharma", role: "Certified Financial Planner (CFP) & Portfolio Manager", bio: "Specializes in investment advisory, portfolio management, asset allocation, and long-term wealth planning.", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" },
-            { name: "Preksha Jain", role: "Insurance & Estate Planning Consultant", bio: "Specializes in insurance planning, estate planning, NPS, PPF, LIC, Fixed Deposits, and long-term financial products.", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" },
-            { name: "Vimla Parmanandani", role: "Service Relationship Manager", bio: "Focuses on client servicing, relationship support, coordination, follow-ups, and smooth client experiences.", img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?auto=format&fit=crop&q=80&w=600" }
+            { 
+              name: "Manish Sharma", 
+              role: "Certified Financial Planner & Portfolio Manager", 
+              bio: "Manish Sharma specializes in financial planning, investment advisory, and portfolio management at Fintness Finserv Pvt. Ltd. He focuses on helping clients build goal-based financial strategies through disciplined investing, proper asset allocation, and long-term wealth planning.", 
+              img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+            },
+            { 
+              name: "Preksha Jain", 
+              role: "Insurance & Estate Planning Consultant", 
+              bio: "Preksha Jain specializes in insurance planning, will & estate planning, and financial protection solutions at Fintness Finserv Pvt. Ltd. Holding a law degree from Hansraj College of Law, she also assists clients with the review and guidance of NPS, PPF, LIC policies, Fixed Deposits, and other long-term financial products.", 
+              img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
+            },
+            { 
+              name: "Mehul Khandelwal", 
+              role: "Operations Head", 
+              bio: "Mehul Khandelwal oversees business operations, client coordination, transaction support, and process management at Fintness Finserv Pvt. Ltd. Holding a Bachelor’s degree in Business Administration from Jaipur National University, he focuses on operational efficiency, workflow management, process automation, and enhancing client experience.", 
+              img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
+            },
+            { 
+              name: "Vimla Parmanandani", 
+              role: "Service Relationship Manager", 
+              bio: "Vimla Parmanandani specializes in client servicing and relationship support at Fintness Finserv Pvt. Ltd. She focuses on assisting clients with service coordination, query resolution, follow-ups, and ensuring a smooth and responsive client experience.", 
+              img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?auto=format&fit=crop&q=80&w=600" 
+            }
           ].map((member, idx) => (
             <motion.div 
               key={idx}
@@ -351,7 +326,7 @@ export default function AboutPage() {
                 <img 
                   src={member.img} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
