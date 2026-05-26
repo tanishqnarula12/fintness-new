@@ -5,6 +5,15 @@
   --foreground: #1a1a2e;
   --accent: #0066FF;
   --accent-blue: #00B2FF;
+  
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  --blue-300: #00B2FF;
+  --blue-400: #0066FF;
+  --blue-500: #0044BB;
+  --indigo-300: #3388FF;
+  --violet-200: #66AAFF;
 }
 
 @theme inline {
@@ -12,12 +21,23 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-aurora: aurora 60s linear infinite;
 }
 
 body {
   background: #FFFFFF;
   color: #1a1a2e;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* ── Aurora Effect ─────────────────────────────── */
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
 }
 
 /* ── Shimmer Effect ────────────────────────────── */

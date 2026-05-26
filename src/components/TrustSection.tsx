@@ -12,7 +12,7 @@ const TRUST_POINTS = [
 
 export default function TrustSection() {
   return (
-    <section id="about" className="py-24 w-full bg-[#FAFAFC] relative overflow-hidden">
+    <section className="py-24 w-full bg-[#FAFAFC] relative overflow-hidden">
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
 
