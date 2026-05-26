@@ -1,18 +1,18 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  FileText, 
-  Building2, 
-  HelpCircle, 
-  Award, 
-  ExternalLink, 
-  MessageSquare, 
-  FileSpreadsheet, 
-  Lock, 
-  ShieldCheck, 
-  Scale, 
-  RefreshCw, 
+import {
+  FileText,
+  Building2,
+  HelpCircle,
+  Award,
+  ExternalLink,
+  MessageSquare,
+  FileSpreadsheet,
+  Lock,
+  ShieldCheck,
+  Scale,
+  RefreshCw,
   Compass,
   Clock
 } from "lucide-react";
@@ -96,7 +96,7 @@ export default function TermsOfServicePage() {
 
       {/* Content Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
+
         {/* Sticky Table of Contents Sidebar */}
         <aside className="hidden lg:block lg:col-span-4 sticky top-32 bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 rounded-2xl p-6">
           <h2 className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/40 mb-4 px-2">Table of Contents</h2>
@@ -108,11 +108,10 @@ export default function TermsOfServicePage() {
                 <button
                   key={sec.id}
                   onClick={() => scrollToSection(sec.id)}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left text-xs font-semibold tracking-wide transition-all duration-200 group ${
-                    isActive 
-                      ? "bg-[#0066FF] text-white shadow-md shadow-[#0066FF]/10" 
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left text-xs font-semibold tracking-wide transition-all duration-200 group ${isActive
+                      ? "bg-[#0066FF] text-white shadow-md shadow-[#0066FF]/10"
                       : "text-[#1a1a2e]/60 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/[0.04]"
-                  }`}
+                    }`}
                 >
                   <Icon className={`w-4 h-4 shrink-0 transition-colors duration-200 ${isActive ? "text-white" : "text-[#1a1a2e]/30 group-hover:text-[#1a1a2e]/60"}`} />
                   <span>{sec.label}</span>
@@ -124,7 +123,7 @@ export default function TermsOfServicePage() {
 
         {/* Core Content */}
         <article className="lg:col-span-8 space-y-12 text-[#1a1a2e]/85 leading-relaxed text-sm md:text-base font-normal">
-          
+
           {/* Section: Introduction */}
           <section id="introduction" className="scroll-mt-32 space-y-4">
             <div className="flex items-center gap-2.5 text-[#0066FF]">
@@ -146,7 +145,7 @@ export default function TermsOfServicePage() {
             </div>
             <div className="border border-[#1a1a2e]/10 p-5 rounded-2xl bg-white shadow-[0_4px_15px_rgba(0,0,0,0.01)] max-w-md">
               <p className="text-xs uppercase tracking-wider text-[#1a1a2e]/40 font-bold mb-1">Registered Entity</p>
-              <p className="font-semibold text-sm text-[#1a1a2e]/90">Fintness Finserv Pvt. Ltd.</p>
+              <p className="font-semibold text-sm text-[#1a1a2e]/90">Nitesh Luthra</p>
               <p className="text-xs text-[#1a1a2e]/60 mt-1 leading-relaxed">
                 House No. 164, Adarsh Nagar,<br />
                 Jaipur, Rajasthan – 302004.
@@ -161,7 +160,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">3. Scope of Services</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. provides financial distribution and support services related to Mutual Funds, Insurance Planning, Loans Against Securities, Goal Planning, Financial Planning, Tax Planning, and Will & Estate Planning.
+              Nitesh Luthra provides financial distribution and support services related to Mutual Funds, Insurance Planning, Loans Against Securities, Goal Planning, Financial Planning, Tax Planning, and Will & Estate Planning.
             </p>
             <p className="text-xs font-semibold text-[#1a1a2e]/60 bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 p-4 rounded-xl">
               The content and information available on this website are intended solely for general informational and educational purposes and should not be construed as investment, legal, tax, or financial advice unless specifically provided by an authorized representative of the company.
@@ -175,7 +174,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">4. Mutual Fund & Investment Disclosure</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. is an AMFI-registered Mutual Fund Distributor and primarily deals in Regular Plans of Mutual Fund Schemes. The company may receive trail commissions from Asset Management Companies (AMCs), and such commission disclosures are communicated to clients at the time of investment.
+              Nitesh Luthra is an AMFI sub registered Mutual Fund Distributor and primarily deals in Regular Plans of Mutual Fund Schemes. The company may receive trail commissions from Asset Management Companies (AMCs), and such commission disclosures are communicated to clients at the time of investment.
             </p>
             <div className="bg-rose-500/[0.03] border border-rose-500/20 text-rose-800 p-5 rounded-2xl">
               <h4 className="text-xs font-bold uppercase tracking-wider text-rose-900 mb-1.5">Market Risk Advisory</h4>
@@ -192,10 +191,10 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">5. Third-Party Platforms & Transaction Processing</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. may facilitate client onboarding, portfolio access, transaction execution, and investment-related services through authorized third-party platforms, including **NSE NMF II** and **Investwell Mint**. Clients may be redirected to such platforms for registration, transaction processing, portfolio viewing, and related services.
+              Nitesh Luthra may facilitate client onboarding, portfolio access, transaction execution, and investment-related services through authorized third-party platforms, including **NSE NMF II** and **Investwell Mint**. Clients may be redirected to such platforms for registration, transaction processing, portfolio viewing, and related services.
             </p>
             <div className="bg-amber-500/[0.03] border border-amber-500/20 text-amber-800 p-5 rounded-2xl text-xs font-medium">
-              All services availed through third-party platforms shall be governed by the respective platform’s terms, conditions, privacy policies, and operational guidelines. While reasonable care is taken in selecting such service providers, Fintness Finserv Pvt. Ltd. shall not be responsible for any technical errors, system failures, delays, data inaccuracies, interruptions, or service disruptions arising from third-party platforms or external service providers.
+              All services availed through third-party platforms shall be governed by the respective platform’s terms, conditions, privacy policies, and operational guidelines. While reasonable care is taken in selecting such service providers, Nitesh Luthra shall not be responsible for any technical errors, system failures, delays, data inaccuracies, interruptions, or service disruptions arising from third-party platforms or external service providers.
             </div>
           </section>
 
@@ -217,7 +216,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">7. Accuracy of Information</h2>
             </div>
             <p>
-              While reasonable efforts are made to ensure the accuracy and reliability of the information available on this website, Fintness Finserv Pvt. Ltd. makes no warranties or representations regarding the completeness, accuracy, suitability, or reliability of any content, calculations, data, or information published on the website.
+              While reasonable efforts are made to ensure the accuracy and reliability of the information available on this website, Nitesh Luthra makes no warranties or representations regarding the completeness, accuracy, suitability, or reliability of any content, calculations, data, or information published on the website.
             </p>
             <p className="text-xs text-[#1a1a2e]/60 border-l-2 border-[#1a1a2e]/25 pl-3.5">
               Users are advised to independently verify information before making any financial or investment decisions.
@@ -245,7 +244,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">9. Limitation of Liability</h2>
             </div>
             <p className="font-semibold text-rose-600">
-              Fintness Finserv Pvt. Ltd., its directors, employees, representatives, and affiliates shall not be liable for any direct, indirect, incidental, consequential, or financial loss arising from the use of this website, reliance on any information provided herein, or usage of third-party platforms linked through the website.
+              Nitesh Luthra, its directors, employees, representatives, and affiliates shall not be liable for any direct, indirect, incidental, consequential, or financial loss arising from the use of this website, reliance on any information provided herein, or usage of third-party platforms linked through the website.
             </p>
           </section>
 
@@ -256,7 +255,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">10. Modification of Terms</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. reserves the right to modify, update, or revise these Terms & Conditions at any time without prior notice. Continued use of the website after such changes shall constitute acceptance of the revised terms.
+              Nitesh Luthra reserves the right to modify, update, or revise these Terms & Conditions at any time without prior notice. Continued use of the website after such changes shall constitute acceptance of the revised terms.
             </p>
           </section>
 
@@ -270,7 +269,7 @@ export default function TermsOfServicePage() {
               These Terms & Conditions shall be governed by and interpreted in accordance with the laws of India. Any disputes arising in connection with the use of this website shall be subject to the exclusive jurisdiction of the courts located in **Jaipur, Rajasthan**.
             </p>
             <div className="bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 p-5 rounded-2xl text-xs text-[#1a1a2e]/60 leading-relaxed mt-4">
-              <strong>Contact Information:</strong> For any queries, concerns, or clarification regarding these Terms & Conditions, users may contact Fintness Finserv Pvt. Ltd. through the official contact details provided on the website.
+              <strong>Contact Information:</strong> For any queries, concerns, or clarification regarding these Terms & Conditions, users may contact Nitesh Luthra through the official contact details provided on the website.
             </div>
           </section>
 

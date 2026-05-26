@@ -244,13 +244,13 @@ export default function Footer() {
           <p className="text-[10px] md:text-xs text-white/90 font-medium flex flex-wrap justify-center items-center gap-x-2 gap-y-1 pt-1">
             <span>{new Date().getFullYear()} © Copyright Reserved by Fintness Finserv Pvt. Ltd.</span>
             <span className="text-white/40">|</span>
-            <span className="text-white font-semibold">AMFI Registered Distributor</span>
+            <span className="text-white font-semibold">AMFI Sub Registered Distributor</span>
             <span className="text-white/40">|</span>
-            <span className="text-white font-semibold">ARN - 328688</span>
+            <span className="text-white font-semibold">EUIN No. - 328688</span>
             <span className="text-white/40">|</span>
-            <span className="text-white font-semibold">Reg. Date: 13 May 2025</span>
+            <span className="text-white font-semibold">Reg. Date: 25 Oct 2025</span>
             <span className="text-white/40">|</span>
-            <span className="text-white font-semibold">Valid Till: 23 Aug 2028</span>
+            <span className="text-white font-semibold">Valid Till: 24 Oct 2028</span>
           </p>
         </div>
 

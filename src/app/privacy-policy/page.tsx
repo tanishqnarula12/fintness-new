@@ -1,20 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Shield, 
-  Building2, 
-  Eye, 
-  Target, 
-  MessageSquare, 
-  Share2, 
-  Lock, 
-  Cookie, 
-  ExternalLink, 
-  Award, 
-  UserCheck, 
-  Clock, 
-  Ban, 
+import {
+  Shield,
+  Building2,
+  Eye,
+  Target,
+  MessageSquare,
+  Share2,
+  Lock,
+  Cookie,
+  ExternalLink,
+  Award,
+  UserCheck,
+  Clock,
+  Ban,
   HelpCircle,
   Phone,
   Mail,
@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Content Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-        
+
         {/* Sticky Table of Contents Sidebar */}
         <aside className="hidden lg:block lg:col-span-4 sticky top-32 bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 rounded-2xl p-6">
           <h2 className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/40 mb-4 px-2">Table of Contents</h2>
@@ -115,11 +115,10 @@ export default function PrivacyPolicyPage() {
                 <button
                   key={sec.id}
                   onClick={() => scrollToSection(sec.id)}
-                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left text-xs font-semibold tracking-wide transition-all duration-200 group ${
-                    isActive 
-                      ? "bg-[#0066FF] text-white shadow-md shadow-[#0066FF]/10" 
+                  className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left text-xs font-semibold tracking-wide transition-all duration-200 group ${isActive
+                      ? "bg-[#0066FF] text-white shadow-md shadow-[#0066FF]/10"
                       : "text-[#1a1a2e]/60 hover:text-[#1a1a2e] hover:bg-[#1a1a2e]/[0.04]"
-                  }`}
+                    }`}
                 >
                   <Icon className={`w-4 h-4 shrink-0 transition-colors duration-200 ${isActive ? "text-white" : "text-[#1a1a2e]/30 group-hover:text-[#1a1a2e]/60"}`} />
                   <span>{sec.label}</span>
@@ -131,7 +130,7 @@ export default function PrivacyPolicyPage() {
 
         {/* Core Content */}
         <article className="lg:col-span-8 space-y-12 text-[#1a1a2e]/85 leading-relaxed text-sm md:text-base font-normal">
-          
+
           {/* Section: Introduction */}
           <section id="introduction" className="scroll-mt-32 space-y-4">
             <div className="flex items-center gap-2.5 text-[#0066FF]">
@@ -140,7 +139,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div className="bg-[#0066FF]/[0.02] border-l-4 border-[#0066FF] p-5 rounded-r-xl space-y-3">
               <p>
-                <strong>Fintness Finserv Pvt. Ltd.</strong> (“Company”, “we”, “our”, or “us”) is committed to protecting the privacy and confidentiality of user information. This Privacy Policy explains how we collect, use, store, process, and protect the information shared with us through our website, communication channels, and associated services.
+                <strong>Nitesh Luthra</strong> (“Company”, “we”, “our”, or “us”) is committed to protecting the privacy and confidentiality of user information. This Privacy Policy explains how we collect, use, store, process, and protect the information shared with us through our website, communication channels, and associated services.
               </p>
               <p className="text-xs font-semibold text-[#1a1a2e]/60">
                 By accessing or using our website, you agree to the terms of this Privacy Policy.
@@ -157,7 +156,7 @@ export default function PrivacyPolicyPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="border border-[#1a1a2e]/10 p-5 rounded-2xl bg-white shadow-[0_4px_15px_rgba(0,0,0,0.01)]">
                 <p className="text-xs uppercase tracking-wider text-[#1a1a2e]/40 font-bold mb-1">Registered Address</p>
-                <p className="font-semibold text-sm text-[#1a1a2e]/90">Fintness Finserv Pvt. Ltd.</p>
+                <p className="font-semibold text-sm text-[#1a1a2e]/90">Nitesh Luthra</p>
                 <p className="text-xs text-[#1a1a2e]/60 mt-1 leading-relaxed">
                   House No. 164, Adarsh Nagar,<br />
                   Jaipur, Rajasthan – 302004
@@ -249,7 +248,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div className="space-y-3">
               <p>
-                By submitting your contact details through the website, forms, WhatsApp, phone calls, or any other communication channel, you authorize Fintness Finserv Pvt. Ltd. to contact you through phone calls, WhatsApp, SMS, or email regarding financial services, support, promotional communication, SIP reminders, investment-related assistance, and related updates.
+                By submitting your contact details through the website, forms, WhatsApp, phone calls, or any other communication channel, you authorize Nitesh Luthra to contact you through phone calls, WhatsApp, SMS, or email regarding financial services, support, promotional communication, SIP reminders, investment-related assistance, and related updates.
               </p>
               <p>
                 Users may voluntarily share investment-related information and service requirements through WhatsApp or other communication channels for the purpose of financial service facilitation and support. Such information shall be handled with reasonable confidentiality and used only for servicing, support, compliance, and relationship management purposes.
@@ -267,7 +266,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">6. Third-Party Platforms</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. may facilitate onboarding, portfolio access, transaction-related services, and investment execution through authorized third-party platforms including **NSE NMF II** and **Investwell Mint**.
+              Nitesh Luthra may facilitate onboarding, portfolio access, transaction-related services, and investment execution through authorized third-party platforms including **NSE NMF II** and **Investwell Mint**.
             </p>
             <p className="text-xs text-[#1a1a2e]/60 border-l-2 border-[#1a1a2e]/25 pl-3.5">
               Use of such platforms shall also be governed by their respective privacy policies, terms, and operational guidelines.
@@ -307,7 +306,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">8. Data Security</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. implements reasonable administrative and technical measures to safeguard user information against unauthorized access, misuse, disclosure, or loss.
+              Nitesh Luthra implements reasonable administrative and technical measures to safeguard user information against unauthorized access, misuse, disclosure, or loss.
             </p>
             <p className="text-xs font-medium text-amber-600 bg-amber-500/[0.05] p-3 rounded-lg border border-amber-500/10">
               Note: No method of electronic transmission or storage is completely secure, and absolute security cannot be guaranteed.
@@ -332,7 +331,7 @@ export default function PrivacyPolicyPage() {
           <section className="scroll-mt-32 space-y-3 border-t border-[#1a1a2e]/10 pt-6">
             <h3 className="text-sm font-bold text-[#1a1a2e] uppercase tracking-wider">External Links</h3>
             <p className="text-xs md:text-sm text-[#1a1a2e]/70 leading-relaxed">
-              The website may contain links to external websites or third-party platforms for informational or service purposes. Fintness Finserv Pvt. Ltd. is not responsible for the content, privacy practices, or security of external websites.
+              The website may contain links to external websites or third-party platforms for informational or service purposes. Nitesh Luthra is not responsible for the content, privacy practices, or security of external websites.
             </p>
           </section>
 
@@ -343,25 +342,25 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">10. Regulatory & Distribution Disclosure</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. is an **AMFI-registered Mutual Fund Distributor**.
+              Nitesh Luthra is an **AMFI sub registered Mutual Fund Distributor**.
             </p>
             <div className="bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/10 p-5 rounded-2xl">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                 <div className="bg-white p-3.5 rounded-xl border border-[#1a1a2e]/5 shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
-                  <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">ARN Number</p>
-                  <p className="text-sm font-extrabold text-[#1a1a2e]">ARN-328688</p>
+                  <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">Euin no.</p>
+                  <p className="text-sm font-extrabold text-[#1a1a2e]">Euin no. - 328688</p>
                 </div>
                 <div className="bg-white p-3.5 rounded-xl border border-[#1a1a2e]/5 shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
                   <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">Registration Date</p>
-                  <p className="text-sm font-extrabold text-[#1a1a2e]">13 May 2025</p>
+                  <p className="text-sm font-extrabold text-[#1a1a2e]">25 Oct 2025</p>
                 </div>
                 <div className="bg-white p-3.5 rounded-xl border border-[#1a1a2e]/5 shadow-[0_2px_10px_rgba(0,0,0,0.01)]">
                   <p className="text-[10px] uppercase tracking-wider text-[#1a1a2e]/45 font-bold mb-1">Valid Till</p>
-                  <p className="text-sm font-extrabold text-[#1a1a2e]">23 August 2028</p>
+                  <p className="text-sm font-extrabold text-[#1a1a2e]">24 Oct 2028</p>
                 </div>
               </div>
               <p className="text-xs text-[#1a1a2e]/60 mt-4 leading-relaxed">
-                Fintness Finserv Pvt. Ltd. operates as a Mutual Fund Distributor and facilitates financial distribution and support services. The company is **not** a SEBI Registered Investment Advisor (RIA) unless separately stated.
+                Nitesh Luthra operates as a Mutual Fund Distributor and facilitates financial distribution and support services. The company is **not** a SEBI Registered Investment Advisor (RIA) unless separately stated.
               </p>
               <p className="text-xs text-[#1a1a2e]/60 mt-2 leading-relaxed">
                 All Mutual Fund investments are facilitated in compliance with applicable AMFI, SEBI, KYC, FATCA, AML, and other regulatory guidelines.
@@ -392,7 +391,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 p-4.5 rounded-xl space-y-2">
                   <h4 className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/70">No Direct Transactions</h4>
                   <p className="text-xs text-[#1a1a2e]/60 leading-relaxed">
-                    Fintness Finserv Pvt. Ltd. does not directly collect investment funds or execute transactions through this website. Transactions are facilitated through authorized third-party platforms.
+                    Nitesh Luthra does not directly collect investment funds or execute transactions through this website. Transactions are facilitated through authorized third-party platforms.
                   </p>
                 </div>
               </div>
@@ -406,7 +405,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-lg md:text-xl font-bold uppercase tracking-wide">12. Refund & Cancellation</h2>
             </div>
             <p>
-              Fintness Finserv Pvt. Ltd. does not collect payments directly through the website. Accordingly, no online refund or cancellation policy is applicable through the website platform.
+              Nitesh Luthra does not collect payments directly through the website. Accordingly, no online refund or cancellation policy is applicable through the website platform.
             </p>
             <div className="bg-[#1a1a2e]/[0.02] border border-[#1a1a2e]/5 p-4 rounded-xl">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#1a1a2e]/70 mb-1">Testimonials Disclaimer</h4>
@@ -431,11 +430,11 @@ export default function PrivacyPolicyPage() {
             <p>
               For any queries, concerns, or grievances related to this Privacy Policy or data handling practices, please contact our support desk:
             </p>
-            
+
             <div className="bg-gradient-to-br from-[#1a1a2e] to-[#0f1524] text-white p-8 rounded-3xl relative overflow-hidden shadow-xl">
               <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-[#0066FF] rounded-full blur-[80px] opacity-40 pointer-events-none" />
               <div className="absolute -left-10 -top-10 w-40 h-40 bg-[#00B2FF] rounded-full blur-[80px] opacity-20 pointer-events-none" />
-              
+
               <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                   <h4 className="text-sm font-bold uppercase tracking-widest text-[#00B2FF] mb-2">Corporate Support</h4>
