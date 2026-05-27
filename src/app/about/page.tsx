@@ -27,30 +27,45 @@ export default function AboutPage() {
       {/* 1. HERO SECTION */}
       <ShaderBackground className="w-full">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+          }}
           className="relative px-6 md:px-12 max-w-7xl mx-auto w-full flex flex-col items-center text-center z-10"
         >
           {/* Readability glow behind text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] md:w-[80%] h-[150%] bg-white/90 blur-[60px] rounded-[100%] pointer-events-none -z-10" />
 
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/10 text-[#0066FF] font-semibold text-sm mb-6 border border-[#0066FF]/20">
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/10 text-[#0066FF] font-semibold text-sm mb-6 border border-[#0066FF]/20"
+          >
             <Sparkles className="w-4 h-4" />
             Our Mission
-          </div>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]">
+          </motion.div>
+          <motion.h1 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
+            className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]"
+          >
             Structured Planning for a <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">Financially Fit Future</span>
-          </h1>
-          <p className="text-base md:text-xl text-[#1a1a2e]/60 font-light leading-relaxed max-w-3xl mx-auto pt-4">
+          </motion.h1>
+          <motion.p 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
+            className="text-base md:text-xl text-[#1a1a2e]/60 font-light leading-relaxed max-w-3xl mx-auto pt-4"
+          >
             Our mission is to help individuals and families become financially fit through disciplined planning, structured financial solutions, and long-term guidance.
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+          >
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(0,102,255,0.25)] hover:shadow-[0_12px_25px_rgba(0,102,255,0.35)]"
             >
               Check Your Score <ArrowRight className="w-4 h-4" />
             </Link>
@@ -60,7 +75,7 @@ export default function AboutPage() {
             >
               Explore Services
             </Link>
-          </div>
+          </motion.div>
         </motion.div>
       </ShaderBackground>
 
@@ -104,7 +119,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-[#f0f4fa]/50 backdrop-blur-xl border border-[#1a1a2e]/5 p-6 rounded-3xl hover:bg-white hover:shadow-[0_8px_30px_rgba(0,102,255,0.06)] transition-all duration-300"
+                className="bg-[#f0f4fa]/50 backdrop-blur-xl border border-[#1a1a2e]/5 p-6 rounded-3xl hover:bg-white hover:shadow-[0_8px_30px_rgba(0,102,255,0.06)] hover:-translate-y-1 transition-all duration-300"
               >
                 <p className="text-xs uppercase tracking-wider text-[#0066FF] font-bold mb-2">{stat.label}</p>
                 <p className="text-2xl md:text-3xl font-extrabold text-[#1a1a2e] mb-1">{stat.value}</p>
@@ -115,7 +130,30 @@ export default function AboutPage() {
         </div>
       </section>
 
-
+      {/* 3. QUOTE SECTION */}
+      <section className="relative w-full py-16 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center py-10"
+        >
+          <p className="text-xl md:text-2xl lg:text-3xl text-[#1a1a2e] font-bold tracking-wide leading-relaxed">
+            &quot;We do not believe in selling financial products. We believe in understanding your goals and guiding you towards financial decisions that are right for you.&quot;
+          </p>
+          <p className="text-xl md:text-2xl text-[#0066FF] font-medium mt-6 tracking-tight">
+            — Fintness Finserv Pvt. Ltd.
+          </p>
+          <motion.div 
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
+            className="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#0066FF] to-transparent mx-auto mt-8 origin-center"
+          />
+        </motion.div>
+      </section>
 
       {/* 4. FINANCIAL HEALTH DASHBOARD SECTION */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -239,10 +277,15 @@ export default function AboutPage() {
 
       {/* 6. FOUNDERS & TEAM SECTION */}
       <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <h2 className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-3">Our People</h2>
           <h3 className="text-3xl md:text-5xl font-extrabold text-[#1a1a2e] tracking-tight">Meet the Experts Behind Fintness Finserv</h3>
-        </div>
+        </motion.div>
 
         {/* Founders Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

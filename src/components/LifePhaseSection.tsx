@@ -61,10 +61,10 @@ export default function LifePhaseSection() {
         {PHASES.map((phase, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ delay: 0.1 * idx, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
             className="group bg-[#f0f4fa] rounded-3xl overflow-hidden flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-500"
           >
             {/* Image Side */}

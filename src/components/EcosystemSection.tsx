@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef, useCallback } from "react";
 import { Wallet, LineChart, Shield, Landmark, PieChart, Coins } from "lucide-react";
 
@@ -15,32 +15,63 @@ const CARDS = [
 function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 20 });
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    cardRef.current.style.setProperty("--mouse-x", `${x}px`);
-    cardRef.current.style.setProperty("--mouse-y", `${y}px`);
-  }, []);
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    
+    // For CSS spotlight
+    cardRef.current.style.setProperty("--mouse-x", `${mouseX}px`);
+    cardRef.current.style.setProperty("--mouse-y", `${mouseY}px`);
+
+    // For 3D tilt
+    const width = rect.width;
+    const height = rect.height;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  }, [x, y]);
+
+  const handleMouseLeave = useCallback(() => {
+    x.set(0);
+    y.set(0);
+  }, [x, y]);
 
   return (
     <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      onMouseLeave={handleMouseLeave}
+      initial={{ opacity: 0, y: 30, scale: 0.95 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ delay: 0.08 * idx, duration: 0.6, ease: "easeOut" }}
-      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default transition-transform duration-500 hover:-translate-y-2`}
+      style={{ perspective: 1000 }}
+      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default z-10`}
     >
-      {/* Animated border gradient */}
-      <div 
-        className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: `linear-gradient(135deg, ${card.accent}20, transparent 50%)` }}
-      />
+      <motion.div 
+        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+        className="w-full h-full transition-shadow duration-500 hover:z-50 relative"
+      >
+        {/* Animated border gradient */}
+        <div 
+          className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          style={{ background: `linear-gradient(135deg, ${card.accent}20, transparent 50%)`, transform: "translateZ(-10px)" }}
+        />
 
-      <div className="relative h-full bg-white rounded-3xl p-8 border border-[#1a1a2e]/10 group-hover:border-[#0066FF]/20 shadow-[0_12px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_20px_50px_rgba(0,102,255,0.12)] transition-all duration-500 overflow-hidden">
+        <div 
+          className="relative h-full bg-white rounded-3xl p-8 border border-[#1a1a2e]/10 group-hover:border-[#0066FF]/20 shadow-[0_12px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_20px_50px_rgba(0,102,255,0.12)] transition-all duration-500 overflow-hidden"
+          style={{ transform: "translateZ(20px)" }}
+        >
         {/* Mouse-tracking spotlight */}
         <div className="spotlight" />
 
@@ -77,6 +108,7 @@ function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
           <div className="mt-6 h-[2px] w-0 group-hover:w-12 transition-all duration-500 rounded-full" style={{ background: card.accent }} />
         </div>
       </div>
+      </motion.div>
     </motion.div>
   );
 }
