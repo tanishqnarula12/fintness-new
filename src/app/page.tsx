@@ -6,6 +6,7 @@ import ProcessSection from "@/components/ProcessSection";
 import CTASection from "@/components/CTASection";
 import Testimonials from "@/components/Testimonials";
 import TrustSection from "@/components/TrustSection";
+import FoundersDesk from "@/components/FoundersDesk";
 import LifePhaseSection from "@/components/LifePhaseSection";
 import FinalCTA from "@/components/FinalCTA";
 import ContactSection from "@/components/ContactSection";
@@ -71,6 +72,7 @@ export default function Home() {
       <ProcessSection />
       <ContactSection />
       <TrustSection />
+      <FoundersDesk />
       <LifePhaseSection />
       <Testimonials />
       <FinalCTA />

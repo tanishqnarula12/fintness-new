@@ -24,8 +24,24 @@ export default function AboutPage() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.04] pointer-events-none" />
       <div className="absolute top-[40%] left-[-20%] w-[500px] h-[500px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
       
-      {/* 1. HERO SECTION */}
-      <ShaderBackground className="w-full">
+      {/* 1. FULL-BLEED HERO IMAGE BANNER */}
+      <section className="w-full pt-0">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="w-full h-[450px] md:h-[600px] lg:h-[700px] xl:h-[800px] relative overflow-hidden"
+        >
+          <img 
+            src="/about-us-hero.png" 
+            alt="Fintness Finserv Team" 
+            className="w-full h-full object-cover object-[center_30%]"
+          />
+        </motion.div>
+      </section>
+
+      {/* 2. HERO CONTENT */}
+      <section className="px-6 md:px-12 max-w-4xl mx-auto pt-16 pb-20 text-center">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -33,51 +49,50 @@ export default function AboutPage() {
             hidden: { opacity: 0 },
             visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
           }}
-          className="relative px-6 md:px-12 max-w-7xl mx-auto w-full flex flex-col items-center text-center z-10"
+          className="flex flex-col items-center"
         >
-          {/* Readability glow behind text */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] md:w-[80%] h-[150%] bg-white/90 blur-[60px] rounded-[100%] pointer-events-none -z-10" />
-
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/10 text-[#0066FF] font-semibold text-sm mb-6 border border-[#0066FF]/20"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/5 border border-[#0066FF]/10 text-[#0066FF] font-semibold text-xs tracking-widest uppercase mb-6"
           >
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4 text-[#0066FF]" />
             Our Mission
           </motion.div>
+          
           <motion.h1 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]"
           >
-            Structured Planning for a <br className="hidden md:block" />
+            Structured Planning for a <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">Financially Fit Future</span>
           </motion.h1>
+          
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="text-base md:text-xl text-[#1a1a2e]/60 font-light leading-relaxed max-w-3xl mx-auto pt-4"
+            className="text-lg md:text-xl text-[#1a1a2e]/70 font-light leading-relaxed max-w-2xl pt-6"
           >
             Our mission is to help individuals and families become financially fit through disciplined planning, structured financial solutions, and long-term guidance.
           </motion.p>
           
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-10 w-full sm:w-auto"
           >
             <Link 
               href="/contact" 
-              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(0,102,255,0.25)] hover:shadow-[0_12px_25px_rgba(0,102,255,0.35)]"
+              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(0,102,255,0.3)]"
             >
               Check Your Score <ArrowRight className="w-4 h-4" />
             </Link>
             <Link 
               href="/#services" 
-              className="w-full sm:w-auto px-8 py-4 bg-transparent text-[#0066FF] border-2 border-[#0066FF] rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0066FF]/5 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent text-[#0066FF] border border-[#0066FF]/20 rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0066FF]/5 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
             >
               Explore Services
             </Link>
           </motion.div>
         </motion.div>
-      </ShaderBackground>
+      </section>
 
       {/* 2. ABOUT COMPANY SECTION */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto py-24 border-t border-[#1a1a2e]/10">
@@ -128,31 +143,6 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* 3. QUOTE SECTION */}
-      <section className="relative w-full py-16 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mx-auto text-center py-10"
-        >
-          <p className="text-xl md:text-2xl lg:text-3xl text-[#1a1a2e] font-bold tracking-wide leading-relaxed">
-            &quot;We do not believe in selling financial products. We believe in understanding your goals and guiding you towards financial decisions that are right for you.&quot;
-          </p>
-          <p className="text-xl md:text-2xl text-[#0066FF] font-medium mt-6 tracking-tight">
-            — Fintness Finserv Pvt. Ltd.
-          </p>
-          <motion.div 
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-            className="w-20 h-[2px] bg-gradient-to-r from-transparent via-[#0066FF] to-transparent mx-auto mt-8 origin-center"
-          />
-        </motion.div>
       </section>
 
       {/* 4. FINANCIAL HEALTH DASHBOARD SECTION */}
