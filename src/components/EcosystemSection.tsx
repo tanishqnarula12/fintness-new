@@ -124,10 +124,10 @@ export default function EcosystemSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">Our Services</p>
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] mb-6 tracking-tight">
+            <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">Our Services</h2>
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] mb-6 tracking-tight">
               A Complete Financial Ecosystem
-            </h2>
+            </h3>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

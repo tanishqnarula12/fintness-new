@@ -72,16 +72,16 @@ export default function ProcessSection() {
           <div className="grid md:grid-cols-2 gap-12 xl:gap-20 items-center">
             {/* Left — sticky heading area */}
             <div>
-              <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">
-                OUR PROCESS
-              </p>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] text-[#1a1a2e]">
+              <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
+                Our Process
+              </h2>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight leading-[1.1] text-[#1a1a2e]">
                 Planning your{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">
                   financial
                 </span>{" "}
                 journey
-              </h2>
+              </h3>
               <p className="max-w-md text-base md:text-lg text-[#1a1a2e]/45 leading-relaxed font-light mt-6">
                 We engage in meaningful conversations to grasp your goals and
                 build a foundation for everything that follows.

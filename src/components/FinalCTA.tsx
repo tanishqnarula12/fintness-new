@@ -26,10 +26,10 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-6">Take The First Step</p>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#1a1a2e] tracking-tight leading-[1.1] mb-8">
+          <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Take The First Step</h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight leading-[1.2] mb-8 mt-2">
             Ready to take control of your financial future?
-          </h2>
+          </h3>
           <p className="text-[#1a1a2e]/40 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
             Join thousands who have transformed their relationship with money. Your journey starts with a single conversation.
           </p>

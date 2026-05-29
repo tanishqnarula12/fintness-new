@@ -38,12 +38,12 @@ export default function FoundersDesk() {
       </div>
       {/* Animated Background Lights */}
       <motion.div 
-        animate={{ opacity: [0.03, 0.15, 0.03], scale: [0.8, 1.2, 0.8] }}
+        animate={{ opacity: [0.1, 0.3, 0.1], scale: [0.8, 1.2, 0.8] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-[#0066FF] rounded-full blur-[150px] pointer-events-none z-0" 
       />
       <motion.div 
-        animate={{ opacity: [0.03, 0.12, 0.03], scale: [0.8, 1.1, 0.8] }}
+        animate={{ opacity: [0.1, 0.25, 0.1], scale: [0.8, 1.1, 0.8] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-[#00B2FF] rounded-full blur-[120px] pointer-events-none z-0" 
       />
@@ -109,7 +109,7 @@ export default function FoundersDesk() {
               transition={{ duration: 0.6 }}
               className="mb-8"
             >
-              <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase">From The Founder&apos;s Desk</p>
+              <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">From The Founder&apos;s Desk</h2>
             </motion.div>
 
             <motion.div 
@@ -117,12 +117,13 @@ export default function FoundersDesk() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative py-2"
+              className="relative py-4 px-8"
             >
-              <Quote className="absolute -top-6 -left-6 w-12 h-12 text-[#0066FF]/20 rotate-180 z-0" />
-              <h2 className="relative z-10 text-2xl md:text-3xl lg:text-4xl font-serif italic text-slate-700 leading-[1.6]">
-                &quot;We do <strong className="font-semibold text-[#1a1a2e] not-italic">not</strong> believe in selling financial products. We believe in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] font-semibold not-italic">understanding your goals</span> and guiding you towards financial decisions that are right for you.&quot;
-              </h2>
+              <Quote className="absolute -top-4 -left-4 w-12 h-12 text-[#0066FF]/20 rotate-180 z-0" />
+              <h3 className="relative z-10 text-xl md:text-2xl lg:text-3xl font-serif italic text-slate-700 leading-[1.6]">
+                We do <strong className="font-semibold text-[#1a1a2e] not-italic">not</strong> believe in selling financial products. We believe in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] font-semibold not-italic">understanding your goals</span> and guiding you towards financial decisions that are right for you.
+                <span className="inline-block ml-2"><Quote className="w-10 h-10 text-[#0066FF]/20 translate-y-3" /></span>
+              </h3>
             </motion.div>
 
             <motion.div 

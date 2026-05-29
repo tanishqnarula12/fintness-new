@@ -45,10 +45,10 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Testimonials</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
+          <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">Testimonials</h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight mt-2">
             Voices of Success
-          </h2>
+          </h3>
         </motion.div>
       </div>
 

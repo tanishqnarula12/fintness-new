@@ -47,10 +47,10 @@ export default function LifePhaseSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Who We Serve</p>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
+          <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">Who We Serve</h2>
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight mt-2">
             Tailored for Your Life Stage
-          </h2>
+          </h3>
           <p className="text-[#1a1a2e]/50 text-base md:text-lg font-light leading-relaxed mt-5 max-w-2xl">
             We specialize in solving the complex financial challenges of high-achieving individuals and families.
           </p>

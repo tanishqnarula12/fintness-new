@@ -71,12 +71,8 @@ export default function WhyUsOrbital() {
 
       {/* Header */}
       <div className="text-center mb-16 max-w-3xl mx-auto">
-        <p className="text-[#0066FF] text-sm font-medium tracking-[0.2em] uppercase mb-4">
+        <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
           Why Us
-        </p>
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
-          Why Clients Trust
-          <br className="hidden md:block" /> Fintness Finserv
         </h2>
       </div>
 

@@ -5,11 +5,10 @@ import EcosystemSection from "@/components/EcosystemSection";
 import ProcessSection from "@/components/ProcessSection";
 import CTASection from "@/components/CTASection";
 import Testimonials from "@/components/Testimonials";
-import TrustSection from "@/components/TrustSection";
+import WhyUsOrbital from "@/components/ui/WhyUsOrbital";
 import FoundersDesk from "@/components/FoundersDesk";
 import LifePhaseSection from "@/components/LifePhaseSection";
 import FinalCTA from "@/components/FinalCTA";
-import ContactSection from "@/components/ContactSection";
 import StatsBanner from "@/components/StatsBanner";
 
 export default function Home() {
@@ -67,11 +66,9 @@ export default function Home() {
       </section>
       
       <StatsBanner />
-      <TransitionSection />
       <EcosystemSection />
       <ProcessSection />
-      <ContactSection />
-      <TrustSection />
+      <WhyUsOrbital />
       <FoundersDesk />
       <LifePhaseSection />
       <Testimonials />

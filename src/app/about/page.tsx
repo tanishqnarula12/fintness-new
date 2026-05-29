@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRef } from "react";
 import { 
   ArrowRight, 
   TrendingUp, 
@@ -12,11 +13,24 @@ import {
   Compass, 
   CheckCircle2, 
   XCircle,
-  Sparkles
+  Sparkles,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import { ShaderBackground } from "@/components/ui/shader-background";
 
 export default function AboutPage() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      // Scroll by one card width approximately, or full width
+      const scrollAmount = direction === 'left' ? -350 : 350;
+      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
     <main className="bg-white min-h-screen text-[#1a1a2e] font-sans w-full relative overflow-hidden">
       
@@ -25,18 +39,30 @@ export default function AboutPage() {
       <div className="absolute top-[40%] left-[-20%] w-[500px] h-[500px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
       
       {/* 1. FULL-BLEED HERO IMAGE BANNER */}
-      <section className="w-full pt-0">
+      <section className="w-full pt-0 relative">
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="w-full h-[450px] md:h-[600px] lg:h-[700px] xl:h-[800px] relative overflow-hidden"
+          className="w-full h-[450px] md:h-[500px] lg:h-[600px] xl:h-[700px] relative overflow-hidden flex items-end justify-center pb-4 md:pb-6"
         >
           <img 
             src="/about-us-hero.png" 
             alt="Fintness Finserv Team" 
-            className="w-full h-full object-cover object-[center_30%]"
+            className="absolute inset-0 w-full h-full object-cover object-[center_40%]"
           />
+          {/* Overlay text */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full">
+            <div className="relative w-full flex items-center justify-center">
+              <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] font-black text-white/20 uppercase tracking-widest pointer-events-none select-none whitespace-nowrap z-0">
+                Introduction
+              </h1>
+              <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase mb-0 drop-shadow-xl mt-4 md:mt-8">
+                About Us
+              </h2>
+            </div>
+          </div>
         </motion.div>
       </section>
 
@@ -74,23 +100,6 @@ export default function AboutPage() {
             Our mission is to help individuals and families become financially fit through disciplined planning, structured financial solutions, and long-term guidance.
           </motion.p>
           
-          <motion.div 
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-10 w-full sm:w-auto"
-          >
-            <Link 
-              href="/contact" 
-              className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 shadow-[0_8px_20px_rgba(0,102,255,0.3)]"
-            >
-              Check Your Score <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link 
-              href="/#services" 
-              className="w-full sm:w-auto px-8 py-4 bg-transparent text-[#0066FF] border border-[#0066FF]/20 rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0066FF]/5 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center"
-            >
-              Explore Services
-            </Link>
-          </motion.div>
         </motion.div>
       </section>
 
@@ -145,49 +154,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. FINANCIAL HEALTH DASHBOARD SECTION */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1a1a2e] tracking-tight mb-4">Financial Health Dashboard</h2>
-            <p className="text-[#1a1a2e]/60 text-lg max-w-2xl mx-auto">Helping You Stay Financially Fit Through Structured Planning</p>
-          </motion.div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            { icon: TrendingUp, title: "Investment Health", desc: "Track and review your investment portfolio, SIP performance, asset allocation, and long-term wealth creation progress." },
-            { icon: ShieldCheck, title: "Protection Planning", desc: "Evaluate insurance coverage, family protection needs, and financial security planning to ensure adequate risk management." },
-            { icon: Target, title: "Goal Tracking", desc: "Monitor progress towards retirement planning, child education, wealth creation, and emergency funds." },
-            { icon: Layers, title: "Financial Organization", desc: "Maintain visibility across investments, liabilities, savings, and long-term commitments." },
-            { icon: Clock, title: "Regular Financial Reviews", desc: "Ensure financial strategy remains aligned with changing goals and responsibilities." },
-            { icon: Compass, title: "Long-Term Discipline", desc: "Encourage informed and disciplined financial decisions instead of reacting to short-term market movements." }
-          ].map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="group flex flex-col relative p-8 rounded-3xl bg-white border border-[#1a1a2e]/10 shadow-[0_8px_30px_rgba(0,0,0,0.06)] overflow-hidden hover:shadow-[0_16px_40px_rgba(0,102,255,0.12)] hover:-translate-y-2 transition-all duration-300"
-              >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0066FF] to-[#00B2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="w-12 h-12 rounded-2xl bg-[#0066FF]/5 flex items-center justify-center text-[#0066FF] mb-6 group-hover:scale-110 group-hover:bg-[#0066FF] group-hover:text-white transition-all duration-300">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1a1a2e] mb-3 group-hover:text-[#0066FF] transition-colors">{item.title}</h3>
-                <p className="text-[#1a1a2e]/60 text-sm leading-relaxed">{item.desc}</p>
-              </motion.div>
-            )
-          })}
-        </div>
-      </section>
 
       {/* 5. VALUES SECTION */}
       <section className="bg-[#FAFAFC] py-24 px-6 md:px-12 border-y border-[#1a1a2e]/5">
@@ -273,7 +239,6 @@ export default function AboutPage() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-3">Our People</h2>
           <h3 className="text-3xl md:text-5xl font-extrabold text-[#1a1a2e] tracking-tight">Meet the Experts Behind Fintness Finserv</h3>
         </motion.div>
 
@@ -320,61 +285,94 @@ export default function AboutPage() {
           ))}
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            { 
-              name: "Manish Sharma", 
-              role: "Certified Financial Planner & Portfolio Manager", 
-              bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
-              img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
-            },
-            { 
-              name: "Preksha Jain", 
-              role: "Insurance & Estate Planning Consultant", 
-              bio: "Focuses on insurance, estate planning, and financial protection solutions, while guiding clients on long-term financial products and policy planning.", 
-              img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
-            },
-            { 
-              name: "Mehul Khandelwal", 
-              role: "Operations Head", 
-              bio: "Leads operations, process management, and client coordination, ensuring efficient workflows and a seamless client experience.", 
-              img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
-            },
-            { 
-              name: "Vimla Parmanandani", 
-              role: "Service Relationship Manager", 
-              bio: "Handles client servicing and relationship support, ensuring smooth communication, timely assistance, and responsive query resolution.", 
-              img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?auto=format&fit=crop&q=80&w=600" 
-            }
-          ].map((member, idx) => (
-            <motion.div 
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-3xl border border-[#1a1a2e]/5 overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,102,255,0.08)] transition-all duration-300 relative aspect-[4/5]"
-            >
-              <div className="absolute inset-0 bg-[#f0f4fa]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src={member.img} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-              </div>
-              <div className="absolute bottom-0 left-0 w-full bg-white p-6 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
-                <h4 className="text-xl font-bold text-[#1a1a2e] mb-1">{member.name}</h4>
-                <p className="text-[#0066FF] font-semibold text-xs tracking-wider uppercase min-h-[2rem] flex items-start">{member.role}</p>
-                <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-[grid-template-rows] duration-500 overflow-hidden">
-                  <p className="text-[#1a1a2e]/60 text-sm leading-relaxed min-h-0 pt-3">
-                    {member.bio}
-                  </p>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12 mt-20"
+        >
+          <h3 className="text-3xl md:text-5xl font-extrabold text-[#1a1a2e] tracking-tight">Meet Our Core Team</h3>
+        </motion.div>
+
+        {/* Team Grid Slider */}
+        <div className="relative group">
+          <div 
+            ref={scrollRef}
+            className="flex overflow-x-auto gap-6 pb-12 snap-x snap-mandatory scrollbar-hide"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            {[
+              { 
+                name: "Manish Sharma", 
+                role: "Certified Financial Planner & Portfolio Manager", 
+                bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
+                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+              },
+              { 
+                name: "Preksha Jain", 
+                role: "Insurance & Estate Planning Consultant", 
+                bio: "Focuses on insurance, estate planning, and financial protection solutions, while guiding clients on long-term financial products and policy planning.", 
+                img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
+              },
+              { 
+                name: "Mehul Khandelwal", 
+                role: "Operations Head", 
+                bio: "Leads operations, process management, and client coordination, ensuring efficient workflows and a seamless client experience.", 
+                img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
+              },
+              { 
+                name: "Vimla Parmanandani", 
+                role: "Service Relationship Manager", 
+                bio: "Handles client servicing and relationship support, ensuring smooth communication, timely assistance, and responsive query resolution.", 
+                img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?auto=format&fit=crop&q=80&w=600" 
+              }
+            ].map((member, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white rounded-3xl border border-[#1a1a2e]/10 shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden group/card hover:shadow-[0_12px_40px_rgba(0,102,255,0.12)] transition-all duration-300 relative h-[480px] md:h-[520px] lg:h-[550px] min-w-[280px] sm:min-w-[320px] lg:min-w-[calc(25%-1.125rem)] shrink-0 snap-start"
+              >
+                <div className="absolute inset-0 bg-[#f0f4fa]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img 
+                    src={member.img} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover object-top group-hover/card:scale-105 transition-transform duration-700 ease-out"
+                  />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="absolute bottom-0 left-0 w-full bg-white p-6 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+                  <h4 className="text-xl font-bold text-[#1a1a2e] mb-1">{member.name}</h4>
+                  <p className="text-[#0066FF] font-semibold text-xs tracking-wider uppercase min-h-[2rem] flex items-start">{member.role}</p>
+                  <div className="grid grid-rows-[0fr] group-hover/card:grid-rows-[1fr] transition-[grid-template-rows] duration-500 overflow-hidden">
+                    <p className="text-[#1a1a2e]/60 text-sm leading-relaxed min-h-0 pt-3">
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Slider Controls */}
+          <div className="flex justify-end items-center gap-4 mt-6">
+            <button 
+              onClick={() => scroll('left')} 
+              className="w-12 h-12 rounded-full border border-[#1a1a2e]/10 bg-white flex items-center justify-center text-[#1a1a2e]/60 hover:text-[#0066FF] hover:border-[#0066FF]/30 hover:shadow-lg transition-all"
+              aria-label="Previous team member"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button 
+              onClick={() => scroll('right')} 
+              className="w-12 h-12 rounded-full border border-[#1a1a2e]/10 bg-white flex items-center justify-center text-[#1a1a2e]/60 hover:text-[#0066FF] hover:border-[#0066FF]/30 hover:shadow-lg transition-all"
+              aria-label="Next team member"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </section>
 
