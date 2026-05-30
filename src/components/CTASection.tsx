@@ -98,7 +98,7 @@ export default function CTASection() {
                       placeholder="Tell us about your financial goals..."
                     />
                   </div>
-                  <button className="group/btn w-full bg-[#0066FF] hover:bg-[#0052CC] text-white font-semibold tracking-wide py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(0,102,255,0.2)]">
+                  <button className="group/btn w-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-semibold tracking-wide py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,102,255,0.2)]">
                     Request Consultation
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                   </button>

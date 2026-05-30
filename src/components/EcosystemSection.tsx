@@ -5,12 +5,12 @@ import { Wallet, LineChart, Shield, Landmark, PieChart, Coins } from "lucide-rea
 import { SparklesText } from "@/components/ui/sparkles-text";
 
 const CARDS = [
-  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF", image: "/wealth_management.png" },
-  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolios tailored for maximum risk-adjusted returns.", accent: "#00B2FF", image: "/investment_planning.png" },
-  { icon: Shield, title: "Risk Mitigation", desc: "Advanced protection mechanisms for structured life security.", accent: "#7c6baa", image: "/risk_mitigation.png" },
-  { icon: Landmark, title: "Estate Planning", desc: "Secure generational wealth transfer and legacy continuity.", accent: "#c9852a", image: "/estate_planning.png" },
-  { icon: PieChart, title: "Tax Optimization", desc: "Strategic structuring to dynamically maximize your post-tax yield.", accent: "#c94e7c", image: "/tax_optimization.png" },
-  { icon: Coins, title: "Retirement Strategy", desc: "Reliable and structured cash flows for lasting financial independence.", accent: "#1e8a9a", image: "/retirement_strategy.png" }
+  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF", image: "/wealth_management_real.png" },
+  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolio architecture aligned with your risk profile.", accent: "#00B2FF", image: "/investment_planning_real.jpeg" },
+  { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive protection strategies against market volatility.", accent: "#0066FF", image: "/risk_mitigation_real.png" },
+  { icon: Landmark, title: "Estate Planning", desc: "Structuring your legacy for seamless intergenerational wealth transfer.", accent: "#00B2FF", image: "/estate_planning.png" },
+  { icon: PieChart, title: "Tax Optimization", desc: "Proactive tax planning to maximize your after-tax returns.", accent: "#0066FF", image: "/tax_optimization.png" },
+  { icon: Coins, title: "Retirement Strategy", desc: "Designing sustainable income streams for your post-career life.", accent: "#00B2FF", image: "/retirement_strategy.png" }
 ];
 
 function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx: number, progress: any, range: number[], targetScale: number }) {
@@ -49,9 +49,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
               className="w-full h-full object-cover"
             />
           </motion.div>
-          {/* Subtle gradient overlay to blend into the light content area */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white hidden md:block" />
-          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent md:hidden" />
+          {/* Subtle gradient overlay removed to let the image shine */}
         </div>
 
         {/* Right Side: Content */}
@@ -105,8 +103,12 @@ export default function EcosystemSection() {
     // Switched to light mode theme
     <section id="services" className="bg-[#F4F5F7] border-y border-slate-200 relative w-full" ref={containerRef}>
       
+      {/* Ambient glows */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px] opacity-10 bg-[#0066FF] pointer-events-none" />
+      <div className="absolute bottom-1/2 left-0 w-80 h-80 rounded-full blur-[100px] opacity-10 bg-[#00B2FF] pointer-events-none" />
+
       {/* Introduction Header - Sticky at the top */}
-      <div className="sticky top-0 h-[40vh] md:h-[45vh] flex flex-col items-center justify-center z-0 w-full max-w-7xl mx-auto px-6 text-center pointer-events-none">
+      <div className="sticky top-0 h-[40vh] md:h-[45vh] flex flex-col items-center justify-center z-10 w-full max-w-7xl mx-auto px-6 text-center pointer-events-none">
         <SparklesText 
           text="Our Services" 
           colors={{ first: "#0066FF", second: "#00B2FF" }} 

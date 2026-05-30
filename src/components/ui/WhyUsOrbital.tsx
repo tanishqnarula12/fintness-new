@@ -71,9 +71,9 @@ export default function WhyUsOrbital() {
 
   return (
     <section className="py-24 md:py-32 px-6 w-full relative overflow-hidden bg-[#FAFAFC]">
-      {/* Background accents */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.015] pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.015] pointer-events-none" />
+      {/* Ambient glows */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px] opacity-10 bg-[#0066FF] pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-80 h-80 rounded-full blur-[100px] opacity-10 bg-[#00B2FF] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-10">
         

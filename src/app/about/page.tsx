@@ -401,7 +401,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
               <Link 
                 href="/contact" 
-                className="w-full sm:w-auto px-8 py-4 bg-[#0066FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:bg-[#0044BB] hover:-translate-y-0.5 transition-all duration-300"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white rounded-2xl font-bold text-sm tracking-wide hover:scale-105 transition-all duration-300"
               >
                 Schedule a Consultation
               </Link>

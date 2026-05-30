@@ -47,7 +47,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group bg-[#0066FF] hover:bg-[#0052CC] text-white font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-2">
+          <button className="group bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2">
             Get Started
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>

@@ -31,7 +31,7 @@ export default function FoundersDesk() {
   }, [x, y]);
 
   return (
-    <section className="py-16 lg:py-20 w-full bg-[#0a0f1d] relative overflow-hidden">
+    <section className="py-16 lg:py-20 w-full bg-[#1a1a2e] relative overflow-hidden">
       {/* Background Subtle Elements */}
       <div className="absolute inset-0 z-0 opacity-20">
         <FloatingPaths position={1} />
@@ -98,11 +98,16 @@ export default function FoundersDesk() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6 }}
               className="mb-8"
+              style={{
+                '--color-1': '0 0% 100%',
+                '--color-2': '210 24% 87%',
+                '--color-3': '210 40% 96%'
+              } as React.CSSProperties}
             >
               <SparklesText 
                 text="Founder's Desk" 
-                colors={{ first: "#0066FF", second: "#00B2FF" }} 
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
+                colors={{ first: "#FFFFFF", second: "#CBD5E1" }} 
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
               />
             </motion.div>
 
