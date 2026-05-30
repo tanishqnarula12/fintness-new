@@ -34,7 +34,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
           scale, 
           top: `calc(12vh + ${idx * 20}px)` 
         }} 
-        className="flex flex-col md:flex-row relative h-[60vh] md:h-[480px] w-full max-w-5xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-white border border-[#1a1a2e]/[0.06]"
+        className="flex flex-col md:flex-row relative h-[60vh] md:h-[480px] w-full max-w-5xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
       >
         {/* Left Side: Cinematic Image */}
         <div className="relative w-full md:w-[40%] h-1/2 md:h-full overflow-hidden shrink-0 bg-slate-100">
@@ -53,7 +53,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
         </div>
 
         {/* Right Side: Content */}
-        <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center relative bg-white">
+        <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center relative bg-[#F4F5F7]">
           
           {/* Glowing Icon */}
           <div className="mb-6 md:mb-8 relative w-14 h-14">
@@ -101,7 +101,7 @@ export default function EcosystemSection() {
 
   return (
     // Switched to light mode theme
-    <section id="services" className="bg-[#F4F5F7] border-y border-slate-200 relative w-full" ref={containerRef}>
+    <section id="services" className="bg-white border-y border-slate-200 relative w-full" ref={containerRef}>
       
       {/* Ambient glows */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-[120px] opacity-10 bg-[#0066FF] pointer-events-none" />

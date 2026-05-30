@@ -78,7 +78,7 @@ export default function FoundersDesk() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6, type: "spring" }}
-              className="absolute -bottom-4 -right-2 md:-bottom-8 md:-right-8 bg-white/90 backdrop-blur-xl border border-slate-100 p-6 rounded-2xl shadow-[0_20px_40px_rgba(0,102,255,0.15)] z-30 max-w-[200px]"
+              className="absolute -bottom-4 -right-2 md:-bottom-8 md:-right-8 bg-white backdrop-blur-xl border border-slate-100 p-6 rounded-2xl shadow-[0_20px_40px_rgba(0,102,255,0.15)] z-30 max-w-[200px]"
             >
               <div className="w-12 h-12 bg-[#0066FF]/10 rounded-xl flex items-center justify-center mb-3 text-[#0066FF]">
                 <Award className="w-6 h-6" />
@@ -119,7 +119,7 @@ export default function FoundersDesk() {
               className="relative py-4 px-8"
             >
               <Quote className="absolute -top-4 -left-4 w-12 h-12 text-[#0066FF]/40 rotate-180 z-0" />
-              <h3 className="relative z-10 text-xl md:text-2xl lg:text-3xl font-serif italic text-slate-300 leading-[1.6]">
+              <h3 className="relative z-10 text-xl md:text-2xl lg:text-3xl font-serif italic text-white leading-[1.6]">
                 We do <strong className="font-semibold text-white not-italic">not</strong> believe in selling financial products. We believe in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] font-semibold not-italic">understanding your goals</span> and guiding you towards financial decisions that are right for you.
                 <span className="inline-block ml-2"><Quote className="w-10 h-10 text-[#0066FF]/40 translate-y-3" /></span>
               </h3>

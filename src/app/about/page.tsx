@@ -56,7 +56,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full">
             <div className="relative w-full flex items-center justify-center">
-              <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase mb-0 drop-shadow-xl mt-4 md:mt-8">
+              <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase mb-4 md:mb-8 drop-shadow-xl">
                 About Us
               </h2>
             </div>
@@ -306,10 +306,10 @@ export default function AboutPage() {
           >
             {[
               { 
-                name: "Manish Sharma", 
-                role: "Certified Financial Planner & Portfolio Manager", 
-                bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+                name: "Mehul Khandelwal", 
+                role: "Operations Head", 
+                bio: "Leads operations, process management, and client coordination, ensuring efficient workflows and a seamless client experience.", 
+                img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
               },
               { 
                 name: "Preksha Jain", 
@@ -318,10 +318,10 @@ export default function AboutPage() {
                 img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
               },
               { 
-                name: "Mehul Khandelwal", 
-                role: "Operations Head", 
-                bio: "Leads operations, process management, and client coordination, ensuring efficient workflows and a seamless client experience.", 
-                img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
+                name: "Manish Sharma", 
+                role: "Certified Financial Planner & Portfolio Manager", 
+                bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
+                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
               },
               { 
                 name: "Vimla Parmanandani", 

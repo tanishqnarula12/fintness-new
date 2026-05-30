@@ -57,10 +57,10 @@ export default function WhyUsOrbital() {
   useEffect(() => {
     if (isPaused) return;
     
-    // Auto cycle the active item every 4 seconds
+    // Auto cycle the active item every 2.5 seconds
     const cycleInterval = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % ITEMS.length);
-    }, 4000);
+    }, 2500);
 
     return () => clearInterval(cycleInterval);
   }, [isPaused, activeIdx]);
@@ -126,7 +126,7 @@ export default function WhyUsOrbital() {
                    key={`progress-${activeItem.id}`}
                    initial={{ width: "0%" }}
                    animate={{ width: "100%" }}
-                   transition={{ duration: 4, ease: "linear" }}
+                   transition={{ duration: 2.5, ease: "linear" }}
                    className="h-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF]"
                  />
                )}

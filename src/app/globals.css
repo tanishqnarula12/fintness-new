@@ -150,6 +150,7 @@ body {
 /* ── Smooth Scroll ────────────────────────────── */
 html {
   scroll-behavior: smooth;
+  zoom: 0.8; /* Unzooms the entire website to ~80% scale */
 }
 
 /* ── Custom Selection Color ───────────────────── */
