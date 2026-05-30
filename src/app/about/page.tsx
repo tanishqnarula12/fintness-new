@@ -18,6 +18,7 @@ import {
   ChevronRight
 } from "lucide-react";
 import { ShaderBackground } from "@/components/ui/shader-background";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 export default function AboutPage() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -55,9 +56,6 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full">
             <div className="relative w-full flex items-center justify-center">
-              <h1 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[40px] sm:text-[70px] md:text-[100px] lg:text-[130px] font-black text-white/20 uppercase tracking-widest pointer-events-none select-none whitespace-nowrap z-0">
-                Introduction
-              </h1>
               <h2 className="relative z-10 text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight uppercase mb-0 drop-shadow-xl mt-4 md:mt-8">
                 About Us
               </h2>
@@ -79,19 +77,20 @@ export default function AboutPage() {
         >
           <motion.div 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/5 border border-[#0066FF]/10 text-[#0066FF] font-semibold text-xs tracking-widest uppercase mb-6"
           >
-            <Sparkles className="w-4 h-4 text-[#0066FF]" />
-            Our Mission
+            <SparklesText 
+              text="Our Mission" 
+              colors={{ first: "#0066FF", second: "#00B2FF" }} 
+              className="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4"
+            />
           </motion.div>
           
-          <motion.h1 
+          <motion.h3 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
-            className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1a1a2e] leading-[1.1]"
+            className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight leading-tight max-w-3xl"
           >
-            Structured Planning for a <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">Financially Fit Future</span>
-          </motion.h1>
+            Structured Planning for a Financially Fit Future
+          </motion.h3>
           
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }} 
@@ -111,10 +110,14 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="flex flex-col"
           >
-            <h2 className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase">Who We Are</h2>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#1a1a2e] tracking-tight leading-tight">
+            <SparklesText 
+              text="Who We Are" 
+              colors={{ first: "#0066FF", second: "#00B2FF" }} 
+              className="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6"
+            />
+            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight leading-tight mb-6">
               Simplifying Finance for Real-Life Goals
             </h3>
             <div className="space-y-4 text-base md:text-lg text-[#1a1a2e]/65 font-light leading-relaxed pt-2">

@@ -1,6 +1,8 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { SparklesText } from "@/components/ui/sparkles-text";
+import { GradientText } from "@/components/ui/gradient-text";
 
 const PROCESS_PHASES = [
   {
@@ -69,12 +71,14 @@ export default function ProcessSection() {
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#00B2FF]/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 xl:px-12">
-          <div className="grid md:grid-cols-2 gap-12 xl:gap-20 items-center">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 xl:gap-20 items-center">
             {/* Left — sticky heading area */}
             <div>
-              <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-                Our Process
-              </h2>
+              <SparklesText 
+                text="Our Process" 
+                colors={{ first: "#0066FF", second: "#00B2FF" }} 
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
+              />
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight leading-[1.1] text-[#1a1a2e]">
                 Planning your{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF]">

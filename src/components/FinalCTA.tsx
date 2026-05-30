@@ -1,10 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-32 md:py-40 px-6 overflow-hidden">
+    <section className="relative py-20 md:py-32 lg:py-40 px-6 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03]" />
@@ -26,7 +27,11 @@ export default function FinalCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">Take The First Step</h2>
+          <SparklesText 
+            text="Take The First Step" 
+            colors={{ first: "#0066FF", second: "#00B2FF" }} 
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-6"
+          />
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight leading-[1.2] mb-8 mt-2">
             Ready to take control of your financial future?
           </h3>

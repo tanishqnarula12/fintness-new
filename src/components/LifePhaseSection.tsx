@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 const PHASES = [
   {
@@ -38,7 +39,7 @@ const PHASES = [
 
 export default function LifePhaseSection() {
   return (
-    <section className="py-24 px-6 max-w-7xl mx-auto w-full relative">
+    <section className="py-16 md:py-20 lg:py-24 px-6 max-w-7xl mx-auto w-full relative">
       <div className="mb-20 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +48,11 @@ export default function LifePhaseSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">Who We Serve</h2>
+          <SparklesText 
+            text="Who We Serve" 
+            colors={{ first: "#0066FF", second: "#00B2FF" }} 
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
+          />
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight mt-2">
             Tailored for Your Life Stage
           </h3>

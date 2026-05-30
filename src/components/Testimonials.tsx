@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { TestimonialCarousel } from "@/components/ui/testimonial";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 const TESTIMONIAL_DATA = [
   {
@@ -37,7 +38,7 @@ const TESTIMONIAL_DATA = [
 
 export default function Testimonials() {
   return (
-    <section id="events" className="py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden bg-white">
+    <section id="events" className="py-16 md:py-20 lg:py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden bg-white">
       <div className="mb-20 text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -45,7 +46,11 @@ export default function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">Testimonials</h2>
+          <SparklesText 
+            text="Testimonials" 
+            colors={{ first: "#0066FF", second: "#00B2FF" }} 
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
+          />
           <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight mt-2">
             Voices of Success
           </h3>

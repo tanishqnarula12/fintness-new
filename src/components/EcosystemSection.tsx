@@ -1,152 +1,144 @@
 "use client";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef, useCallback } from "react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Wallet, LineChart, Shield, Landmark, PieChart, Coins } from "lucide-react";
+import { SparklesText } from "@/components/ui/sparkles-text";
 
 const CARDS = [
-  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF" },
-  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolios tailored for maximum risk-adjusted returns.", accent: "#00B2FF" },
-  { icon: Shield, title: "Risk Mitigation", desc: "Advanced protection mechanisms for structured life security.", accent: "#7c6baa" },
-  { icon: Landmark, title: "Estate Planning", desc: "Secure generational wealth transfer and legacy continuity.", accent: "#c9852a" },
-  { icon: PieChart, title: "Tax Optimization", desc: "Strategic structuring to dynamically maximize your post-tax yield.", accent: "#c94e7c" },
-  { icon: Coins, title: "Retirement Strategy", desc: "Reliable and structured cash flows for lasting financial independence.", accent: "#1e8a9a" }
+  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF", image: "/wealth_management.png" },
+  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolios tailored for maximum risk-adjusted returns.", accent: "#00B2FF", image: "/investment_planning.png" },
+  { icon: Shield, title: "Risk Mitigation", desc: "Advanced protection mechanisms for structured life security.", accent: "#7c6baa", image: "/risk_mitigation.png" },
+  { icon: Landmark, title: "Estate Planning", desc: "Secure generational wealth transfer and legacy continuity.", accent: "#c9852a", image: "/estate_planning.png" },
+  { icon: PieChart, title: "Tax Optimization", desc: "Strategic structuring to dynamically maximize your post-tax yield.", accent: "#c94e7c", image: "/tax_optimization.png" },
+  { icon: Coins, title: "Retirement Strategy", desc: "Reliable and structured cash flows for lasting financial independence.", accent: "#1e8a9a", image: "/retirement_strategy.png" }
 ];
 
-function SpotlightCard({ card, idx }: { card: typeof CARDS[0]; idx: number }) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 20 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 20 });
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
-    
-    // For CSS spotlight
-    cardRef.current.style.setProperty("--mouse-x", `${mouseX}px`);
-    cardRef.current.style.setProperty("--mouse-y", `${mouseY}px`);
-
-    // For 3D tilt
-    const width = rect.width;
-    const height = rect.height;
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  }, [x, y]);
-
-  const handleMouseLeave = useCallback(() => {
-    x.set(0);
-    y.set(0);
-  }, [x, y]);
+function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx: number, progress: any, range: number[], targetScale: number }) {
+  const containerRef = useRef(null);
+  
+  // The scale shrinks the card as the user scrolls past it, creating a deep stack effect
+  const scale = useTransform(progress, range, [1, targetScale]);
+  
+  // Parallax effect for the image to give it life as you scroll
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start start"]
+  });
+  
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.3, 1]);
 
   return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 30, scale: 0.95 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ delay: 0.08 * idx, duration: 0.6, ease: "easeOut" }}
-      style={{ perspective: 1000 }}
-      className={`spotlight-card group relative rounded-3xl p-[1px] cursor-default z-10`}
-    >
+    <div ref={containerRef} className="h-screen flex items-center justify-center sticky top-0 px-4 md:px-6">
       <motion.div 
-        style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="w-full h-full transition-shadow duration-500 hover:z-50 relative"
+        style={{ 
+          scale, 
+          top: `calc(12vh + ${idx * 20}px)` 
+        }} 
+        className="flex flex-col md:flex-row relative h-[60vh] md:h-[480px] w-full max-w-5xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-white border border-[#1a1a2e]/[0.06]"
       >
-        {/* Animated border gradient */}
-        <div 
-          className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          style={{ background: `linear-gradient(135deg, ${card.accent}20, transparent 50%)`, transform: "translateZ(-10px)" }}
-        />
+        {/* Left Side: Cinematic Image */}
+        <div className="relative w-full md:w-[40%] h-1/2 md:h-full overflow-hidden shrink-0 bg-slate-100">
+          <motion.div
+            style={{ scale: imageScale }}
+            className="w-full h-full"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src={card.image} 
+              alt={card.title} 
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+          {/* Subtle gradient overlay to blend into the light content area */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white hidden md:block" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent md:hidden" />
+        </div>
 
-        <div 
-          className="relative h-full bg-white rounded-3xl p-8 border border-[#1a1a2e]/10 group-hover:border-[#0066FF]/20 shadow-[0_12px_40px_rgba(0,0,0,0.06)] group-hover:shadow-[0_20px_50px_rgba(0,102,255,0.12)] transition-all duration-500 overflow-hidden"
-          style={{ transform: "translateZ(20px)" }}
-        >
-        {/* Mouse-tracking spotlight */}
-        <div className="spotlight" />
-
-        {/* Corner accent glow */}
-        <div 
-          className="absolute -top-20 -right-20 w-40 h-40 rounded-full blur-[60px] opacity-0 group-hover:opacity-10 transition-all duration-700"
-          style={{ background: card.accent }}
-        />
-
-        <div className="relative z-10">
-          {/* Icon with accent ring */}
-          <div className="relative w-16 h-16 mb-8">
+        {/* Right Side: Content */}
+        <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center relative bg-white">
+          
+          {/* Glowing Icon */}
+          <div className="mb-6 md:mb-8 relative w-14 h-14">
             <div 
-              className="absolute inset-0 rounded-2xl opacity-10 group-hover:opacity-20 transition-opacity duration-500"
+              className="absolute inset-0 rounded-2xl opacity-15 blur-lg"
               style={{ background: card.accent }}
             />
-            <div className="w-full h-full rounded-2xl border border-[#1a1a2e]/[0.06] bg-[#1a1a2e]/[0.02] flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+            <div className="relative w-full h-full rounded-2xl border border-[#1a1a2e]/5 bg-white backdrop-blur-xl flex items-center justify-center shadow-md">
               <card.icon 
-                className="w-7 h-7 transition-colors duration-500" 
+                className="w-6 h-6 md:w-7 md:h-7" 
                 style={{ color: card.accent }} 
-                strokeWidth={1.5} 
+                strokeWidth={2} 
               />
             </div>
           </div>
 
-          <h3 className={`font-semibold text-[#1a1a2e] mb-4 tracking-tight group-hover:text-[#1a1a2e] transition-colors duration-300 text-xl`}>
+          <h3 className="font-bold text-[#1a1a2e] tracking-tight text-2xl md:text-4xl mb-4 leading-tight">
             {card.title}
           </h3>
-          <p className={`text-[#1a1a2e]/50 leading-relaxed font-medium group-hover:text-[#1a1a2e]/70 transition-colors duration-500 text-sm`}>
+          
+          <p className="text-[#1a1a2e]/60 leading-relaxed font-normal text-base md:text-lg max-w-lg">
             {card.desc}
           </p>
 
-          {/* Bottom accent line on hover */}
-          <div className="mt-6 h-[2px] w-0 group-hover:w-12 transition-all duration-500 rounded-full" style={{ background: card.accent }} />
+          {/* Accent Line */}
+          <div 
+            className="mt-6 md:mt-10 h-[2px] w-12 md:w-16 rounded-full opacity-60" 
+            style={{ 
+              background: card.accent, 
+            }} 
+          />
         </div>
-      </div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function EcosystemSection() {
-  return (
-    <section id="services" className="py-24 w-full bg-[#F4F5F7] border-y border-slate-200">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h2 className="text-[#0066FF] text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">Our Services</h2>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] mb-6 tracking-tight">
-              A Complete Financial Ecosystem
-            </h3>
-          </motion.div>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-[#1a1a2e]/45 text-lg md:text-xl max-w-2xl mx-auto font-light"
-          >
-            Everything you need to manage, grow, and protect your wealth.
-          </motion.p>
-        </div>
+  const containerRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-        {/* Bento Grid — first card is large */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-fr">
-          {CARDS.map((card, idx) => (
-            <SpotlightCard key={idx} card={card} idx={idx} />
-          ))}
-        </div>
+  return (
+    // Switched to light mode theme
+    <section id="services" className="bg-[#F4F5F7] border-y border-slate-200 relative w-full" ref={containerRef}>
+      
+      {/* Introduction Header - Sticky at the top */}
+      <div className="sticky top-0 h-[40vh] md:h-[45vh] flex flex-col items-center justify-center z-0 w-full max-w-7xl mx-auto px-6 text-center pointer-events-none">
+        <SparklesText 
+          text="Our Services" 
+          colors={{ first: "#0066FF", second: "#00B2FF" }} 
+          className="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4 pointer-events-auto"
+        />
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] mb-4 tracking-tight pointer-events-auto">
+          A Complete Financial Ecosystem
+        </h3>
+        <p className="text-[#1a1a2e]/60 text-lg md:text-xl max-w-2xl text-center font-normal leading-relaxed pointer-events-auto">
+          Everything you need to manage, grow, and protect your wealth.
+        </p>
       </div>
+
+      {/* The Stacked Cards Container */}
+      <div className="relative z-10 pb-[10vh]">
+        {CARDS.map((card, i) => {
+          const targetScale = 1 - ((CARDS.length - i) * 0.04);
+          const range = [i * (1 / CARDS.length), 1];
+
+          return (
+            <StackCard 
+              key={i} 
+              idx={i} 
+              card={card} 
+              progress={scrollYProgress} 
+              range={range} 
+              targetScale={targetScale} 
+            />
+          );
+        })}
+      </div>
+      
     </section>
   );
 }

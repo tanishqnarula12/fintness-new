@@ -14,6 +14,13 @@
   --blue-500: #0044BB;
   --indigo-300: #3388FF;
   --violet-200: #66AAFF;
+
+  --color-1: 216 100% 50%; /* #0066FF */
+  --color-2: 200 100% 50%; /* #00B2FF */
+  --color-3: 225 100% 55%; /* Indigo-ish blue */
+  --color-4: 190 100% 60%; /* Cyan */
+  --color-5: 230 100% 60%; /* Blue-purple */
+  --brand: 50 100% 50%;
 }
 
 @theme inline {
@@ -22,6 +29,19 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-aurora: aurora 60s linear infinite;
+
+  --color-color-1: hsl(216 100% 50%);
+  --color-color-2: hsl(200 100% 50%);
+  --color-color-3: hsl(225 100% 55%);
+  --color-color-4: hsl(190 100% 60%);
+  --color-color-5: hsl(230 100% 60%);
+  --color-brand: hsl(50 100% 50%);
+
+  --animate-gradient-border: gradient-border 6s ease-in-out infinite;
+  --animate-gradient-1: gradient-1 12s ease-in-out infinite alternate;
+  --animate-gradient-2: gradient-2 12s ease-in-out infinite alternate;
+  --animate-gradient-3: gradient-3 12s ease-in-out infinite alternate;
+  --animate-gradient-4: gradient-4 12s ease-in-out infinite alternate;
 }
 
 body {
@@ -151,4 +171,40 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(26, 26, 46, 0.25);
+}
+
+@keyframes gradient-border {
+  0%, 100% { border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%; }
+  25% { border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%; }
+  50% { border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%; }
+  75% { border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%; }
+}
+@keyframes gradient-1 {
+  0%, 100% { top: 0; right: 0; }
+  50% { top: 50%; right: 25%; }
+  75% { top: 25%; right: 50%; }
+}
+@keyframes gradient-2 {
+  0%, 100% { top: 0; left: 0; }
+  60% { top: 75%; left: 25%; }
+  85% { top: 50%; left: 50%; }
+}
+@keyframes gradient-3 {
+  0%, 100% { bottom: 0; left: 0; }
+  40% { bottom: 50%; left: 25%; }
+  65% { bottom: 25%; left: 50%; }
+}
+@keyframes gradient-4 {
+  0%, 100% { bottom: 0; right: 0; }
+  50% { bottom: 25%; right: 40%; }
+  90% { bottom: 50%; right: 25%; }
+}
+
+@keyframes text-gradient {
+  to {
+    background-position: 200% center;
+  }
+}
+.animate-text-gradient {
+  animation: text-gradient 4s linear infinite;
 }
