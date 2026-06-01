@@ -65,13 +65,10 @@ export default function LifePhaseSection() {
           className="flex flex-col items-center"
         >
           <SparklesText 
-            text="Who We Serve?" 
+            text="2. Who We Serve?" 
             colors={{ first: "#0066FF", second: "#00B2FF" }} 
             className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
           />
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-[#1a1a2e] tracking-tight mt-2">
-            Tailored for Your Life Stage
-          </h3>
           <p className="text-[#1a1a2e]/50 text-base md:text-lg font-light leading-relaxed mt-5 max-w-2xl">
             We specialize in solving the complex financial challenges of high-achieving individuals and families.
           </p>
@@ -86,10 +83,10 @@ export default function LifePhaseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
-            className="group bg-[#f0f4fa] rounded-3xl overflow-hidden flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-500"
+            className="group bg-[#f0f4fa] rounded-3xl overflow-hidden flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-500 sm:h-[280px]"
           >
             {/* Image Side */}
-            <div className="relative w-full sm:w-[45%] h-[220px] sm:h-auto min-h-[260px] overflow-hidden shrink-0">
+            <div className="relative w-full sm:w-[45%] h-[220px] sm:h-full overflow-hidden shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={phase.image}
@@ -99,30 +96,15 @@ export default function LifePhaseSection() {
             </div>
 
             {/* Content Side */}
-            <div className="flex flex-col justify-center p-6 sm:p-8 flex-1">
-              {/* Category Tag */}
-              <div className="flex items-center gap-2 mb-4">
-                <span
-                  className="w-2 h-2 rounded-full"
-                  style={{ backgroundColor: phase.categoryColor }}
-                />
-                <span
-                  className="text-[10px] font-bold uppercase tracking-[0.15em]"
-                  style={{ color: phase.categoryColor }}
-                >
-                  {phase.category}
-                </span>
-              </div>
+            <div className="flex flex-col justify-start p-6 sm:p-8 flex-1">
+              {/* Category Tag Removed */}
 
               {/* Title */}
-              <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a2e] mb-3 tracking-tight leading-tight">
-                {phase.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[#1a1a2e]/55 text-sm font-normal leading-relaxed mb-5">
-                {phase.desc}
-              </p>
+              <div className="min-h-[56px] sm:min-h-[64px] mb-4 flex items-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a2e] tracking-tight leading-tight">
+                  {phase.title}
+                </h3>
+              </div>
 
               {/* Bullet Points */}
               <div className="space-y-2.5">
