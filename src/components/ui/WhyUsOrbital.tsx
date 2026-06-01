@@ -78,7 +78,7 @@ export default function WhyUsOrbital() {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-10">
         
         {/* Left Side: Content & Title */}
-        <div className="flex-1 w-full max-w-2xl z-10 flex flex-col justify-center">
+        <div className="flex-1 w-full max-w-xl z-10 flex flex-col justify-center">
           <div className="mb-10 lg:mb-12 text-center lg:text-left">
             <SparklesText 
               text="Why Us" 
@@ -89,7 +89,7 @@ export default function WhyUsOrbital() {
 
           {/* Active Item Display Box */}
           <div 
-            className="relative h-[260px] md:h-[240px] bg-white rounded-3xl border border-slate-200 shadow-sm shadow-slate-200/50 overflow-hidden"
+            className="relative h-[240px] md:h-[220px] bg-white rounded-3xl border border-slate-200 shadow-sm shadow-slate-200/50 overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >

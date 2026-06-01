@@ -8,9 +8,9 @@ const CARDS = [
   { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF", image: "/wealth_management_real.png" },
   { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolio architecture aligned with your risk profile.", accent: "#00B2FF", image: "/investment_planning_real.jpeg" },
   { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive protection strategies against market volatility.", accent: "#0066FF", image: "/risk_mitigation_real.png" },
-  { icon: Landmark, title: "Estate Planning", desc: "Structuring your legacy for seamless intergenerational wealth transfer.", accent: "#00B2FF", image: "/estate_planning.png" },
-  { icon: PieChart, title: "Tax Optimization", desc: "Proactive tax planning to maximize your after-tax returns.", accent: "#0066FF", image: "/tax_optimization.png" },
-  { icon: Coins, title: "Retirement Strategy", desc: "Designing sustainable income streams for your post-career life.", accent: "#00B2FF", image: "/retirement_strategy.png" }
+  { icon: Landmark, title: "Estate Planning", desc: "Structuring your legacy for seamless intergenerational wealth transfer.", accent: "#00B2FF", image: "/estate_planning_real.jpeg" },
+  { icon: PieChart, title: "Tax Optimization", desc: "Proactive tax planning to maximize your after-tax returns.", accent: "#0066FF", image: "/tax_planning_real.jpeg" },
+  { icon: Coins, title: "Retirement Strategy", desc: "Designing sustainable income streams for your post-career life.", accent: "#00B2FF", image: "/retirement_real.jpeg" }
 ];
 
 function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx: number, progress: any, range: number[], targetScale: number }) {
@@ -25,7 +25,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
     offset: ["start end", "start start"]
   });
   
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.3, 1]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
 
   return (
     <div ref={containerRef} className="h-screen flex items-center justify-center sticky top-0 px-4 md:px-6">
@@ -34,7 +34,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
           scale, 
           top: `calc(12vh + ${idx * 20}px)` 
         }} 
-        className="flex flex-col md:flex-row relative h-[60vh] md:h-[480px] w-full max-w-5xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
+        className="flex flex-col md:flex-row relative h-[60vh] md:h-[400px] w-full max-w-4xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
       >
         {/* Left Side: Cinematic Image */}
         <div className="relative w-full md:w-[40%] h-1/2 md:h-full overflow-hidden shrink-0 bg-slate-100">
@@ -46,7 +46,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
             <img 
               src={card.image} 
               alt={card.title} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </motion.div>
           {/* Subtle gradient overlay removed to let the image shine */}

@@ -51,7 +51,7 @@ export default function FinalCTA() {
             Get Started
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </button>
-          <button className="text-[#1a1a2e]/50 hover:text-[#1a1a2e] font-medium tracking-wide py-4 px-8 rounded-full text-lg transition-all duration-300 border border-[#1a1a2e]/[0.08] hover:border-[#1a1a2e]/[0.2] hover:bg-[#1a1a2e]/[0.03]">
+          <button className="text-[#1a1a2e]/80 hover:text-[#1a1a2e] font-medium tracking-wide py-4 px-8 rounded-full text-lg transition-all duration-300 border border-[#1a1a2e]/30 hover:border-[#1a1a2e]/50 hover:bg-[#1a1a2e]/[0.05]">
             Learn More
           </button>
         </motion.div>

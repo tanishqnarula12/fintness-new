@@ -107,7 +107,7 @@ export default function FoundersDesk() {
               <SparklesText 
                 text="Founder's Desk" 
                 colors={{ first: "#FFFFFF", second: "#CBD5E1" }} 
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight mb-4 drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
               />
             </motion.div>
 
@@ -120,7 +120,7 @@ export default function FoundersDesk() {
             >
               <Quote className="absolute -top-4 -left-4 w-12 h-12 text-[#0066FF]/40 rotate-180 z-0" />
               <h3 className="relative z-10 text-xl md:text-2xl lg:text-3xl font-serif italic text-white leading-[1.6]">
-                We do <strong className="font-semibold text-white not-italic">not</strong> believe in selling financial products. We believe in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] font-semibold not-italic">understanding your goals</span> and guiding you towards financial decisions that are right for you.
+                We do not believe in selling financial products. We believe in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] font-semibold not-italic">understanding your goals</span> and guiding you towards financial decisions that are right for you.
                 <span className="inline-block ml-2"><Quote className="w-10 h-10 text-[#0066FF]/40 translate-y-3" /></span>
               </h3>
             </motion.div>
