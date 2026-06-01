@@ -33,6 +33,13 @@ const PROCESS_PHASES = [
     description:
       "We continuously monitor, review, and adjust your plan to keep you aligned with your goals.",
   },
+  {
+    id: "process-5",
+    num: "05",
+    title: "Achieve Goals",
+    description:
+      "Whether it's financial independence, retirement, your child's education, or legacy creation—we help you reach your goals with customized planning.",
+  },
 ];
 
 export default function ProcessSection() {
@@ -45,8 +52,8 @@ export default function ProcessSection() {
       const rect = sectionRef.current.getBoundingClientRect();
       const sectionHeight = sectionRef.current.offsetHeight;
       const scrolled = -rect.top;
-      const progress = scrolled / (sectionHeight - window.innerHeight);
-      const idx = Math.floor(progress * PROCESS_PHASES.length);
+      const phaseScrollDistance = window.innerHeight;
+      const idx = Math.floor(scrolled / phaseScrollDistance);
       setActiveIndex(Math.min(Math.max(idx, -1), PROCESS_PHASES.length - 1));
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -58,7 +65,7 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      style={{ height: `${(PROCESS_PHASES.length + 1) * 100}vh` }}
+      style={{ height: `${(PROCESS_PHASES.length + 1.5) * 100}vh` }}
       className="relative w-full"
     >
       {/* This is the sticky viewport — it pins to the screen */}

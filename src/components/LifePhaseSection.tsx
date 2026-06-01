@@ -8,23 +8,35 @@ const PHASES = [
     category: "Wealth Creation",
     categoryColor: "#0066FF",
     desc: "Optimization strategies for tax planning, wealth creation, and retirement mapping for high-earning experts.",
-    bullets: ["Tax Optimization", "Automated SIP Management"],
+    bullets: [
+      "Monthly Investment & Tax Planning",
+      "Goal-Based & Retirement Planning",
+      "Insurance & Risk Management",
+    ],
     image: "/salaried-professionals.jpeg",
   },
   {
-    title: "Business Owners",
+    title: "Business Owners & Entrepreneurs",
     category: "Asset Protection",
     categoryColor: "#00B2FF",
     desc: "Integrated cash flow management and robust protection plans to separate personal wealth from business risk.",
-    bullets: ["Cash Flow Smoothing", "Key-person Protection"],
+    bullets: [
+      "Separating Personal & Business Finances",
+      "Wealth Creation Outside the Business",
+      "Emergency Funds for Business",
+    ],
     image: "/business-owners.jpeg",
   },
   {
-    title: "Non-Resident Indians",
+    title: "Non-Resident Indians (NRIs)",
     category: "Global Mobility",
     categoryColor: "#7c6baa",
     desc: "Seamless cross-border planning, NRE/NRO account optimization, and Indian market exposure management.",
-    bullets: ["Cross-border Compliance", "Remittance Strategy"],
+    bullets: [
+      "India-Focused Investment Planning",
+      "Repatriation & Investment Structuring",
+      "Managing Indian Assets Efficiently",
+    ],
     image: "/nris.jpeg",
   },
   {
@@ -32,7 +44,11 @@ const PHASES = [
     category: "Legacy Building",
     categoryColor: "#c9852a",
     desc: "Comprehensive insurance layering and estate planning to ensure smooth wealth transition for the next generation.",
-    bullets: ["Will & Trust Creation", "Child Education Corpus"],
+    bullets: [
+      "Estate & Succession Planning",
+      "Family Financial Literacy",
+      "Multi-Generational Wealth Planning",
+    ],
     image: "/modern-families.jpeg",
   },
 ];
@@ -49,7 +65,7 @@ export default function LifePhaseSection() {
           className="flex flex-col items-center"
         >
           <SparklesText 
-            text="Who We Serve" 
+            text="Who We Serve?" 
             colors={{ first: "#0066FF", second: "#00B2FF" }} 
             className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
           />

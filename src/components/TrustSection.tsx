@@ -1,13 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
-import { Crosshair, Scale, Headphones, Users, Database } from "lucide-react";
+import { Target, Fingerprint, Layers, Scale, TrendingUp, Users, Handshake } from "lucide-react";
 
 const TRUST_POINTS = [
-  { icon: Crosshair, num: "01", title: "Goal-based Advice", desc: "Every recommendation is laser-focused on your defined financial targets — not generic products." },
-  { icon: Scale, num: "02", title: "Unbiased Recommendations", desc: "Fiduciary-first approach ensuring your interests always come before commissions." },
-  { icon: Headphones, num: "03", title: "End-to-end Support", desc: "From onboarding to portfolio reviews — we handle every complexity behind the scenes." },
-  { icon: Users, num: "04", title: "Dedicated Manager", desc: "A single point of contact who knows your portfolio inside-out and proactively monitors it." },
-  { icon: Database, num: "05", title: "Data-driven Decisions", desc: "Quantitative research and real-time analytics powering every investment decision we make." }
+  { icon: Target, num: "01", title: "We Start With Your Life, Not Your Investments", desc: "We take the time to understand your goals, aspirations, responsibilities, and concerns before recommending any financial solution." },
+  { icon: Fingerprint, num: "02", title: "Personalized, Not Trend-Driven", desc: "We don't follow market trends or popular products. Every recommendation is tailored to your unique financial situation and long-term objectives." },
+  { icon: Layers, num: "03", title: "Comprehensive Financial Planning", desc: "From investments and insurance to retirement and estate planning, we bring every aspect of your financial life under one roof." },
+  { icon: Scale, num: "04", title: "Unbiased Recommendations", desc: "Our advice is driven by what is right for you—not by market noise, product popularity, or short-term trends." },
+  { icon: TrendingUp, num: "05", title: "Ongoing Guidance & Reviews", desc: "Financial planning is not a one-time activity. We regularly review your portfolio and help you stay aligned with your goals." },
+  { icon: Users, num: "06", title: "Building Multi-Generational Financial Well-being", desc: "We involve and educate family members and the next generation to create lasting financial awareness and continuity." },
+  { icon: Handshake, num: "07", title: "A Long-Term Partnership", desc: "We measure success not by transactions, but by the achievement of your life goals and financial peace of mind." }
 ];
 
 export default function TrustSection() {
@@ -25,7 +27,7 @@ export default function TrustSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Why Us</p>
+            <p className="text-[#0066FF] text-sm font-bold tracking-[0.2em] uppercase mb-4">Why Us?*</p>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#1a1a2e] tracking-tight">
               Why Clients Trust<br className="hidden md:block" /> Fintness Finserv
             </h2>

@@ -3,38 +3,50 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SparklesText } from "@/components/ui/sparkles-text";
-import { Crosshair, Scale, Headphones, Users, Database } from "lucide-react";
+import { Target, Fingerprint, Layers, Scale, TrendingUp, Users, Handshake } from "lucide-react";
 
 const ITEMS = [
   {
     id: 1,
-    icon: Crosshair,
-    title: "Goal-based Advice",
-    description: "Every recommendation is laser-focused on your defined financial targets — not generic products.",
+    icon: Target,
+    title: "We Start With Your Life, Not Your Investments",
+    description: "We take the time to understand your goals, aspirations, responsibilities, and concerns before recommending any financial solution.",
   },
   {
     id: 2,
-    icon: Scale,
-    title: "Unbiased Recommendations",
-    description: "Fiduciary-first approach ensuring your interests always come before commissions.",
+    icon: Fingerprint,
+    title: "Personalized, Not Trend-Driven",
+    description: "We don't follow market trends or popular products. Every recommendation is tailored to your unique financial situation and long-term objectives.",
   },
   {
     id: 3,
-    icon: Headphones,
-    title: "End-to-end Support",
-    description: "From onboarding to portfolio reviews — we handle every complexity behind the scenes.",
+    icon: Layers,
+    title: "Comprehensive Financial Planning",
+    description: "From investments and insurance to retirement and estate planning, we bring every aspect of your financial life under one roof.",
   },
   {
     id: 4,
-    icon: Users,
-    title: "Dedicated Manager",
-    description: "A single point of contact who knows your portfolio inside-out and proactively monitors it.",
+    icon: Scale,
+    title: "Unbiased Recommendations",
+    description: "Our advice is driven by what is right for you—not by market noise, product popularity, or short-term trends.",
   },
   {
     id: 5,
-    icon: Database,
-    title: "Data-driven Decisions",
-    description: "Quantitative research and real-time analytics powering every investment decision we make.",
+    icon: TrendingUp,
+    title: "Ongoing Guidance & Reviews",
+    description: "Financial planning is not a one-time activity. We regularly review your portfolio and help you stay aligned with your goals.",
+  },
+  {
+    id: 6,
+    icon: Users,
+    title: "Building Multi-Generational Financial Well-being",
+    description: "We involve and educate family members and the next generation to create lasting financial awareness and continuity.",
+  },
+  {
+    id: 7,
+    icon: Handshake,
+    title: "A Long-Term Partnership",
+    description: "We measure success not by transactions, but by the achievement of your life goals and financial peace of mind.",
   },
 ];
 
@@ -81,7 +93,7 @@ export default function WhyUsOrbital() {
         <div className="flex-1 w-full max-w-xl z-10 flex flex-col justify-center">
           <div className="mb-10 lg:mb-12 text-center lg:text-left">
             <SparklesText 
-              text="Why Us" 
+              text="Why Us?*" 
               colors={{ first: "#0066FF", second: "#00B2FF" }} 
               className="text-4xl md:text-5xl lg:text-7xl mb-4 lg:mb-6"
             />
@@ -89,7 +101,7 @@ export default function WhyUsOrbital() {
 
           {/* Active Item Display Box */}
           <div 
-            className="relative h-[240px] md:h-[220px] bg-white rounded-3xl border border-slate-200 shadow-sm shadow-slate-200/50 overflow-hidden"
+            className="relative h-[300px] md:h-[240px] bg-white rounded-3xl border border-slate-200 shadow-sm shadow-slate-200/50 overflow-hidden"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
