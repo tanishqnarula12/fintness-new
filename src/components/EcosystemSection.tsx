@@ -37,19 +37,30 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
         className="flex flex-col md:flex-row relative h-[60vh] md:h-[400px] w-full max-w-4xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
       >
         {/* Left Side: Cinematic Image */}
-        <div className="relative w-full md:w-[40%] h-1/2 md:h-full overflow-hidden shrink-0 bg-slate-100">
+        <div className="relative w-full md:w-[40%] h-1/2 md:h-full overflow-hidden shrink-0 bg-[#F4F5F7]">
           <motion.div
             style={{ scale: imageScale }}
-            className="w-full h-full"
+            className="relative w-full h-full flex items-center justify-center"
           >
+            {/* Ambient Background Blur from the image itself */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+               {/* eslint-disable-next-line @next/next/no-img-element */}
+               <img 
+                 src={card.image} 
+                 alt="" 
+                 className="w-full h-full object-cover blur-[40px] opacity-40 scale-150 saturate-150"
+                 aria-hidden="true"
+               />
+               <div className="absolute inset-0 bg-[#F4F5F7]/30 backdrop-blur-[2px]" />
+            </div>
+            
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src={card.image} 
               alt={card.title} 
-              className="w-full h-full object-cover object-center"
+              className="relative z-10 w-full h-full object-contain object-center p-6 md:p-8 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-105"
             />
           </motion.div>
-          {/* Subtle gradient overlay removed to let the image shine */}
         </div>
 
         {/* Right Side: Content */}
