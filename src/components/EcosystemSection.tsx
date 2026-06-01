@@ -1,16 +1,16 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Wallet, LineChart, Shield, Landmark, PieChart, Coins } from "lucide-react";
+import { Wallet, TrendingUp, Shield, Scroll, ReceiptText, RockingChair } from "lucide-react";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
 const CARDS = [
-  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF", image: "/wealth_management_real.png" },
-  { icon: LineChart, title: "Investment Planning", desc: "Data-driven portfolio architecture aligned with your risk profile.", accent: "#00B2FF", image: "/investment_planning_real.jpeg" },
-  { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive protection strategies against market volatility.", accent: "#0066FF", image: "/risk_mitigation_real.png" },
-  { icon: Landmark, title: "Estate Planning", desc: "Structuring your legacy for seamless intergenerational wealth transfer.", accent: "#00B2FF", image: "/estate_planning_real.jpeg" },
-  { icon: PieChart, title: "Tax Optimization", desc: "Proactive tax planning to maximize your after-tax returns.", accent: "#0066FF", image: "/tax_planning_real.jpeg" },
-  { icon: Coins, title: "Retirement Strategy", desc: "Designing sustainable income streams for your post-career life.", accent: "#00B2FF", image: "/retirement_real.jpeg" }
+  { icon: Wallet, title: "Wealth Management", desc: "Holistic strategies to preserve and grow your capital over time.", accent: "#0066FF", image: "/wealth_management_real.png", stroke: 1.65 },
+  { icon: TrendingUp, title: "Investment Planning", desc: "Data-driven portfolio architecture aligned with your risk profile.", accent: "#00B2FF", image: "/investment_planning_real.jpeg", stroke: 2.25 },
+  { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive protection strategies against market volatility.", accent: "#0066FF", image: "/risk_mitigation_real.png", stroke: 1.85 },
+  { icon: Scroll, title: "Estate Planning", desc: "Structuring your legacy for seamless intergenerational wealth transfer.", accent: "#00B2FF", image: "/estate_planning_real.jpeg", stroke: 1.85 },
+  { icon: ReceiptText, title: "Tax Optimization", desc: "Proactive tax planning to maximize your after-tax returns.", accent: "#0066FF", image: "/tax_planning_real.jpeg", stroke: 1.65 },
+  { icon: RockingChair, title: "Retirement Strategy", desc: "Designing sustainable income streams for your post-career life.", accent: "#00B2FF", image: "/retirement_real.jpeg", stroke: 1.85 }
 ];
 
 function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx: number, progress: any, range: number[], targetScale: number }) {
@@ -76,7 +76,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
               <card.icon 
                 className="w-6 h-6 md:w-7 md:h-7" 
                 style={{ color: card.accent }} 
-                strokeWidth={2} 
+                strokeWidth={card.stroke || 2} 
               />
             </div>
           </div>
