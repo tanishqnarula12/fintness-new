@@ -36,7 +36,7 @@ const PROCESS_PHASES = [
   {
     id: "process-5",
     num: "05",
-    title: "Achieve Goals",
+    title: "Achieve Your Goals",
     description:
       "Whether it's financial independence, retirement, your child's education, or legacy creation—we help you reach your goals with customized planning.",
   },

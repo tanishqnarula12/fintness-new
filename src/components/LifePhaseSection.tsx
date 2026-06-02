@@ -65,7 +65,7 @@ export default function LifePhaseSection() {
           className="flex flex-col items-center"
         >
           <SparklesText 
-            text="2. Who We Serve?" 
+            text="Who We Serve?" 
             colors={{ first: "#0066FF", second: "#00B2FF" }} 
             className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight mb-4"
           />

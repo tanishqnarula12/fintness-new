@@ -93,7 +93,7 @@ export default function WhyUsOrbital() {
         <div className="flex-1 w-full max-w-xl z-10 flex flex-col justify-center">
           <div className="mb-10 lg:mb-12 text-center lg:text-left">
             <SparklesText 
-              text="Why Us?*" 
+              text="Why Us?" 
               colors={{ first: "#0066FF", second: "#00B2FF" }} 
               className="text-4xl md:text-5xl lg:text-7xl mb-4 lg:mb-6"
             />
