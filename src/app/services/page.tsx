@@ -8,7 +8,6 @@ import { RiskMitigationSection } from "@/components/services/RiskMitigationSecti
 import { TaxOptimizationSection } from "@/components/services/TaxOptimizationSection";
 import { LoanAgainstSecuritiesSection } from "@/components/services/LoanAgainstSecuritiesSection";
 import { ServicesFAQ } from "@/components/services/ServicesFAQ";
-import { ServicesCTA } from "@/components/services/ServicesCTA";
 
 export default function ServicesPage() {
   return (
@@ -20,7 +19,6 @@ export default function ServicesPage() {
       <TaxOptimizationSection />
       <LoanAgainstSecuritiesSection />
       <ServicesFAQ />
-      <ServicesCTA />
     </main>
   );
 }

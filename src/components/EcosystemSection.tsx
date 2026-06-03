@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Wallet, TrendingUp, Shield, Scroll, ReceiptText, RockingChair } from "lucide-react";
+import { Wallet, TrendingUp, Shield, Scroll, ReceiptText, Landmark } from "lucide-react";
 import { SparklesText } from "@/components/ui/sparkles-text";
 
 const CARDS = [
@@ -10,7 +10,7 @@ const CARDS = [
   { icon: Shield, title: "Risk Mitigation", desc: "Comprehensive protection strategies against market volatility.", accent: "#0066FF", image: "/risk_mitigation_real.png", stroke: 1.85 },
   { icon: Scroll, title: "Estate Planning", desc: "Structuring your legacy for seamless intergenerational wealth transfer.", accent: "#00B2FF", image: "/estate_planning_real.jpeg", stroke: 1.85 },
   { icon: ReceiptText, title: "Tax Optimization", desc: "Proactive tax planning to maximize your after-tax returns.", accent: "#0066FF", image: "/tax_planning_real.jpeg", stroke: 1.65 },
-  { icon: RockingChair, title: "Retirement Strategy", desc: "Designing sustainable income streams for your post-career life.", accent: "#00B2FF", image: "/retirement_real.jpeg", stroke: 1.85 }
+  { icon: Landmark, title: "Loan Against Securities", desc: "Leveraging your investments to provide smart and efficient access to capital.", accent: "#00B2FF", image: "/loan_against_security.jpeg", stroke: 1.85 }
 ];
 
 function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx: number, progress: any, range: number[], targetScale: number }) {

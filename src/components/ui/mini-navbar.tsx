@@ -50,7 +50,7 @@ export function Navbar() {
   // Modern minimal dot logo or FINTNESS text mapping
   const logoElement = (
     <div className="flex items-center gap-3">
-      <img src="/logo.png" alt="Fintness Finserv Logo" className="w-8 h-8 object-contain" />
+      <img src="/logo.png" alt="Fintness Finserv Logo" className="w-8 h-8 object-contain rounded-full" />
       <span className="text-[#1a1a2e] font-semibold tracking-tighter hidden lg:block">FINTNESS FINSERV</span>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FileText, PiggyBank, BarChart3, LineChart, ShieldCheck, CalendarClock } from "lucide-react";
+import { FileText, PiggyBank, BarChart3, LineChart, ShieldCheck, CalendarClock, IndianRupee } from "lucide-react";
 import Image from "next/image";
 
 const features = [
@@ -18,62 +18,59 @@ export function TaxOptimizationSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           
-          {/* Image Side */}
+          {/* Image Side - Only the new component with synced animations */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-1 relative"
+            className="order-1 lg:order-1 relative flex justify-center items-center"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-100">
-              <div className="aspect-[4/3] relative bg-slate-50">
-                <Image 
-                  src="/tax_planning_real.jpeg" 
-                  alt="Tax Optimization" 
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* Small Floating Component Image in Absolute Corner */}
-            <motion.div 
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-              className="absolute -bottom-8 -right-8 md:-bottom-10 md:-right-10 z-20 w-32 md:w-40"
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              className="relative w-4/5 max-w-sm mx-auto mt-8 md:mt-12"
             >
+              {/* Magical Sparkles and Synced Elements */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="relative"
+                animate={{ opacity: [0, 1, 0], scale: [0.5, 1.2, 0.5], rotate: [0, 90, 180] }}
+                transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                className="absolute -top-4 -left-4 text-[#00B2FF] text-3xl z-0"
               >
-                {/* Magical Sparkles */}
-                <motion.div
-                  animate={{ opacity: [0, 1, 0], scale: [0.5, 1, 0.5], rotate: [0, 45, 90] }}
-                  transition={{ repeat: Infinity, duration: 2, delay: 0.2 }}
-                  className="absolute -top-4 -left-2 text-[#00B2FF] text-lg z-0"
-                >
-                  ✦
-                </motion.div>
-                <motion.div
-                  animate={{ opacity: [0, 1, 0], scale: [0.5, 1, 0.5] }}
-                  transition={{ repeat: Infinity, duration: 3, delay: 0.8 }}
-                  className="absolute -bottom-2 -right-2 text-emerald-400 text-sm z-0"
-                >
-                  ✨
-                </motion.div>
-
-                <Image 
-                  src="/component-4.png" 
-                  alt="Tax Optimization Feature" 
-                  width={200} 
-                  height={200} 
-                  className="w-full h-auto object-contain drop-shadow-xl relative z-10"
-                />
+                ✦
               </motion.div>
+              <motion.div
+                animate={{ opacity: [0, 1, 0], scale: [0.6, 1, 0.6] }}
+                transition={{ repeat: Infinity, duration: 4, delay: 1, ease: "easeInOut" }}
+                className="absolute bottom-8 -right-6 text-emerald-400 text-2xl z-0"
+              >
+                ✨
+              </motion.div>
+              
+              {/* Floating Rupee Icon */}
+              <motion.div
+                animate={{ opacity: [0.9, 1, 0.9], y: [0, -8, 0], rotate: [-10, 10, -10] }}
+                transition={{ repeat: Infinity, duration: 5, delay: 0.5, ease: "easeInOut" }}
+                className="absolute top-1/4 -right-8 bg-white/90 p-3 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 backdrop-blur-md z-20"
+              >
+                <IndianRupee className="w-5 h-5 text-emerald-500" />
+              </motion.div>
+
+              {/* Ambient Glowing Circle behind the component */}
+              <motion.div
+                animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                className="absolute inset-0 bg-blue-400/20 rounded-full blur-3xl z-0"
+              />
+
+              {/* Main Component Image */}
+              <Image 
+                src="/tax_optimization_comp.png" 
+                alt="Tax Optimization Component" 
+                width={500} 
+                height={500} 
+                className="w-full h-auto object-contain drop-shadow-2xl relative z-10"
+              />
             </motion.div>
           </motion.div>
 
@@ -85,11 +82,11 @@ export function TaxOptimizationSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2"
           >
-            <h2 className="text-lg md:text-xl font-bold tracking-wide uppercase mb-3 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
-              What is Tax Optimization?
-            </h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
               Tax Optimization
+            </h2>
+            <h3 className="text-lg md:text-xl font-bold tracking-wide uppercase mb-6 bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+              What is Tax Optimization?
             </h3>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               Tax optimization involves structuring investments and financial decisions to improve after-tax returns while remaining compliant with applicable regulations.

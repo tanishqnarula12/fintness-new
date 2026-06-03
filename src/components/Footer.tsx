@@ -80,8 +80,8 @@ export default function Footer() {
               <Link href="/" className="group flex items-center gap-4 transition-all duration-300">
                 {/* Logo Container */}
                 <div className="relative shrink-0">
-                  <div className="relative w-14 h-14 rounded-xl bg-white flex items-center justify-center shadow-[0_0_15px_rgba(0,102,255,0.15)] group-hover:scale-105 transition-transform duration-300 border border-white">
-                    <img src="/logo.png" alt="Fintness Finserv Logo" className="w-9 h-9 object-contain" />
+                  <div className="relative w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-[0_0_15px_rgba(0,102,255,0.15)] group-hover:scale-105 transition-transform duration-300 border border-white">
+                    <img src="/logo.png" alt="Fintness Finserv Logo" className="w-9 h-9 object-contain rounded-full" />
                   </div>
                 </div>
 
@@ -194,8 +194,8 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
-                    Retirement Strategy
+                  <Link href="/services#loan-against-securities" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                    Loan Against Securities
                   </Link>
                 </li>
               </ul>
