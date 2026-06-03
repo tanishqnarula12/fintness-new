@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { SparklesText } from "@/components/ui/sparkles-text";
 import { GradientText } from "@/components/ui/gradient-text";
+import { motion } from "framer-motion";
 
 const PROCESS_PHASES = [
   {
@@ -47,14 +48,22 @@ export default function ProcessSection() {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   useEffect(() => {
+    let lastActiveIndex = -1;
+
     const handleScroll = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
-      const sectionHeight = sectionRef.current.offsetHeight;
       const scrolled = -rect.top;
       const phaseScrollDistance = window.innerHeight;
-      const idx = Math.floor(scrolled / phaseScrollDistance);
-      setActiveIndex(Math.min(Math.max(idx, -1), PROCESS_PHASES.length - 1));
+      const idx = Math.min(
+        Math.max(Math.floor(scrolled / phaseScrollDistance), -1),
+        PROCESS_PHASES.length - 1
+      );
+
+      if (idx !== lastActiveIndex) {
+        lastActiveIndex = idx;
+        setActiveIndex(idx);
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
@@ -118,46 +127,54 @@ export default function ProcessSection() {
             </div>
 
             {/* Right — stacking cards */}
-            <div className="relative h-[400px] md:h-[360px]">
+            <div className="relative h-[450px] sm:h-[400px] md:h-[380px] lg:h-[360px]">
               {PROCESS_PHASES.map((phase, index) => {
                 const isVisible = index <= activeIndex;
                 const isActive = index === activeIndex;
                 const stackOffset = isVisible
-                  ? (activeIndex - index) * 8
+                  ? (activeIndex - index) * 12
                   : 0;
                 const scale = isVisible
                   ? 1 - (activeIndex - index) * 0.03
                   : 1;
 
                 return (
-                  <div
+                  <motion.div
                     key={phase.id}
-                    className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-                    style={{
-                      transform: isVisible
-                        ? `translateY(${stackOffset}px) scale(${scale})`
-                        : "translateY(100px) scale(0.95)",
+                    className="absolute inset-0"
+                    initial={{ y: 80, scale: 0.95, opacity: 0 }}
+                    animate={{
+                      y: isVisible ? stackOffset : 100,
+                      scale: isVisible ? scale : 0.95,
                       opacity: isVisible ? 1 : 0,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 18,
+                      mass: 0.8
+                    }}
+                    style={{
                       zIndex: isVisible ? PROCESS_PHASES.length - (activeIndex - index) : 0,
                       pointerEvents: isActive ? "auto" : "none",
                     }}
                   >
                     <div
                       className={`
-                        h-full rounded-3xl p-8 md:p-10 relative
-                        border transition-all duration-700
+                        h-full rounded-3xl p-8 md:p-10 relative border backdrop-blur-xl
+                        transition-all duration-300
                         ${isActive
-                          ? "bg-white/80 backdrop-blur-xl border-[#0066FF]/20 shadow-[0_8px_40px_rgba(0,102,255,0.15)]"
-                          : "bg-white/50 backdrop-blur-lg border-[#1a1a2e]/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.04)]"
+                          ? "bg-white/90 border-[#0066FF]/20 shadow-[0_8px_40px_rgba(0,102,255,0.12)]"
+                          : "bg-white/60 border-[#1a1a2e]/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
                         }
                       `}
                     >
                       {/* Card content */}
                       <div className="relative z-10 flex flex-col justify-between h-full">
                         <div>
-                          <div className="flex items-start justify-between gap-4 mb-6">
+                          <div className="flex items-start justify-between gap-4 mb-4 md:mb-6">
                             <span
-                              className={`text-7xl md:text-8xl font-black leading-none transition-colors duration-500 ${
+                              className={`text-6xl md:text-8xl font-black leading-none transition-colors duration-500 ${
                                 isActive
                                   ? "text-[#0066FF]/[0.60]"
                                   : "text-[#1a1a2e]/[0.12]"
@@ -167,7 +184,7 @@ export default function ProcessSection() {
                             </span>
                           </div>
                           <h3
-                            className={`text-2xl md:text-3xl font-bold tracking-tight mb-4 transition-colors duration-500 ${
+                            className={`text-2xl md:text-3xl font-bold tracking-tight mb-3 md:mb-4 transition-colors duration-500 ${
                               isActive ? "text-[#1a1a2e]" : "text-[#1a1a2e]/60"
                             }`}
                           >
@@ -183,10 +200,10 @@ export default function ProcessSection() {
                         </div>
 
                         {/* Bottom accent line */}
-                        <div className="mt-8">
+                        <div className="mt-6 md:mt-8">
                           <div className="h-[2px] w-full bg-[#1a1a2e]/[0.04] rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full transition-all duration-700 ease-out"
+                              className="h-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full transition-all duration-500 ease-out"
                               style={{
                                 width: isActive ? "100%" : "0%",
                               }}
@@ -195,7 +212,7 @@ export default function ProcessSection() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>

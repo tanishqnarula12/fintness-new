@@ -77,8 +77,23 @@ export default function Footer() {
           {/* Logo & Info */}
           <div className="lg:col-span-3 space-y-5">
             <div className="space-y-3">
-              <Link href="/" className="font-extrabold text-2xl md:text-3xl text-white tracking-tight hover:opacity-90 block">
-                FINTNESS FINSERV
+              <Link href="/" className="group flex items-center gap-4 transition-all duration-300">
+                {/* Logo Container */}
+                <div className="relative shrink-0">
+                  <div className="relative w-14 h-14 rounded-xl bg-white flex items-center justify-center shadow-[0_0_15px_rgba(0,102,255,0.15)] group-hover:scale-105 transition-transform duration-300 border border-white">
+                    <img src="/logo.png" alt="Fintness Finserv Logo" className="w-9 h-9 object-contain" />
+                  </div>
+                </div>
+
+                {/* Text Container */}
+                <div className="flex flex-col justify-center -space-y-0.5">
+                  <span className="font-black text-2xl md:text-3xl text-white tracking-tight">
+                    FINTNESS
+                  </span>
+                  <span className="font-bold text-[13px] md:text-[15px] text-transparent bg-clip-text bg-gradient-to-r from-[#00B2FF] to-[#0066FF] tracking-[0.25em] uppercase pl-0.5">
+                    Finserv
+                  </span>
+                </div>
               </Link>
               <div className="space-y-2 pt-2">
                 <a href="tel:+919509608886" className="flex items-center gap-2 text-sm md:text-base font-semibold text-white/90 hover:text-[#00B2FF] transition-colors">
@@ -127,7 +142,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Services
                   </Link>
                 </li>
@@ -154,32 +169,32 @@ export default function Footer() {
               <h3 className="text-xs font-bold text-white/50 uppercase tracking-widest mb-3">Advisory</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services#wealth-management" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Wealth Management
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services#investment-planning" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Investment Planning
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services#risk-mitigation" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Risk Mitigation
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Estate Planning
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services#tax-optimization" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Tax Optimization
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
+                  <Link href="/services" className="text-xs text-white/75 hover:text-[#00B2FF] transition-colors font-medium">
                     Retirement Strategy
                   </Link>
                 </li>
