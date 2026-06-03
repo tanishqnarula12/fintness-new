@@ -27,6 +27,12 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
   
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
 
+  // Fade out the image of this card as the next card scrolls up to cover it
+  const fadeOutStart = (idx + 0.5) / 6; // 6 is CARDS.length
+  const fadeOutEnd = (idx + 0.9) / 6;
+  const isLastCard = idx === 5; // 5 is CARDS.length - 1
+  const imageOpacity = useTransform(progress, [fadeOutStart, fadeOutEnd], [1, isLastCard ? 1 : 0]);
+
   return (
     <div ref={containerRef} className="h-screen flex items-center justify-center sticky top-0 px-4 md:px-6">
       <motion.div 
@@ -36,35 +42,33 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
         }} 
         className="flex flex-col md:flex-row relative h-[60vh] md:h-[400px] w-full max-w-4xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
       >
-        {/* Left Side: Cinematic Image */}
-        <div className="relative w-full md:w-[40%] h-1/2 md:h-full overflow-hidden shrink-0 bg-[#F4F5F7]">
+        {/* Left Side: 3D Image inside Card */}
+        <div className="relative w-full md:w-[45%] h-1/2 md:h-full overflow-hidden shrink-0 bg-[#F4F5F7] border-b md:border-b-0 md:border-r border-[#1a1a2e]/[0.04]">
           <motion.div
             style={{ scale: imageScale }}
             className="relative w-full h-full flex items-center justify-center"
           >
-            {/* Ambient Background Blur from the image itself */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-               {/* eslint-disable-next-line @next/next/no-img-element */}
-               <img 
-                 src={card.image} 
-                 alt="" 
-                 className="w-full h-full object-cover blur-[40px] opacity-40 scale-150 saturate-150"
-                 aria-hidden="true"
-               />
-               <div className="absolute inset-0 bg-[#F4F5F7]/30 backdrop-blur-[2px]" />
+            {/* Subtle glow behind the 3D component inside the card */}
+            <div className="absolute inset-0 z-0 flex items-center justify-center">
+              <motion.div
+                animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.15, 0.08] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="w-48 h-48 md:w-64 md:h-64 rounded-full blur-[60px]"
+                style={{ background: card.accent }}
+              />
             </div>
             
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src={card.image} 
               alt={card.title} 
-              className="relative z-10 w-full h-full object-contain object-center p-6 md:p-8 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-105"
+              className="relative z-10 w-full h-full object-contain object-center p-6 md:p-8 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-110"
             />
           </motion.div>
         </div>
 
         {/* Right Side: Content */}
-        <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center relative bg-[#F4F5F7]">
+        <div className="w-full md:w-[55%] p-8 md:p-12 flex flex-col justify-center relative bg-[#F4F5F7]">
           
           {/* Glowing Icon */}
           <div className="mb-6 md:mb-8 relative w-14 h-14">
