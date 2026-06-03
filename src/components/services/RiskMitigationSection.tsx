@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Shield, Activity, Umbrella, AlertTriangle, LifeBuoy, HeartPulse, IndianRupee } from "lucide-react";
+import { Shield, Activity, Umbrella, AlertTriangle, LifeBuoy, HeartPulse, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const features = [
@@ -83,14 +83,6 @@ export function RiskMitigationSection() {
                 ✨
               </motion.div>
               
-              {/* Floating Rupee Icon */}
-              <motion.div
-                animate={{ opacity: [0.9, 1, 0.9], y: [0, -8, 0], rotate: [-10, 10, -10] }}
-                transition={{ repeat: Infinity, duration: 5, delay: 0.5, ease: "easeInOut" }}
-                className="absolute top-1/4 -left-8 bg-white/90 p-3 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 backdrop-blur-md z-20"
-              >
-                <IndianRupee className="w-5 h-5 text-emerald-500" />
-              </motion.div>
 
               {/* Ambient Glowing Circle behind the component */}
               <motion.div

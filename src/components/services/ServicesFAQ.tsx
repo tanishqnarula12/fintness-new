@@ -30,6 +30,14 @@ const faqs = [
     ]
   },
   {
+    category: "Estate Planning",
+    questions: [
+      { q: "Do I need a will if I have nominations?", a: "Yes. A nomination and a will serve different purposes." },
+      { q: "When should I create a will?", a: "Every adult with assets should consider estate planning." },
+      { q: "Can a will be updated later?", a: "Yes. A Will can generally be updated during your lifetime to reflect changes in your family, assets, or wishes, subject to applicable legal requirements." },
+    ]
+  },
+  {
     category: "Tax Optimization",
     questions: [
       { q: "Can tax planning be done throughout the year?", a: "Yes. Effective tax planning should be a year-round activity." },

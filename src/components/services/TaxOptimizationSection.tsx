@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FileText, PiggyBank, BarChart3, LineChart, ShieldCheck, CalendarClock, IndianRupee } from "lucide-react";
+import { FileText, PiggyBank, BarChart3, LineChart, ShieldCheck, CalendarClock, Sparkles } from "lucide-react";
 import Image from "next/image";
 
 const features = [
@@ -20,11 +20,11 @@ export function TaxOptimizationSection() {
           
           {/* Image Side - Only the new component with synced animations */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-1 relative flex justify-center items-center"
+            className="order-1 lg:order-2 relative flex justify-center items-center"
           >
             <motion.div
               animate={{ y: [0, -12, 0] }}
@@ -47,14 +47,6 @@ export function TaxOptimizationSection() {
                 ✨
               </motion.div>
               
-              {/* Floating Rupee Icon */}
-              <motion.div
-                animate={{ opacity: [0.9, 1, 0.9], y: [0, -8, 0], rotate: [-10, 10, -10] }}
-                transition={{ repeat: Infinity, duration: 5, delay: 0.5, ease: "easeInOut" }}
-                className="absolute top-1/4 -right-8 bg-white/90 p-3 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-slate-100 backdrop-blur-md z-20"
-              >
-                <IndianRupee className="w-5 h-5 text-emerald-500" />
-              </motion.div>
 
               {/* Ambient Glowing Circle behind the component */}
               <motion.div
@@ -74,13 +66,13 @@ export function TaxOptimizationSection() {
             </motion.div>
           </motion.div>
 
-          {/* Content Side - Right */}
+          {/* Content Side - Right (Wait no, changing to Left) */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-2"
+            className="order-2 lg:order-1"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
               Tax Optimization

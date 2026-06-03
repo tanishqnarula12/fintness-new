@@ -6,6 +6,7 @@ import { WealthManagementSection } from "@/components/services/WealthManagementS
 import { InvestmentPlanningSection } from "@/components/services/InvestmentPlanningSection";
 import { RiskMitigationSection } from "@/components/services/RiskMitigationSection";
 import { TaxOptimizationSection } from "@/components/services/TaxOptimizationSection";
+import { EstatePlanningSection } from "@/components/services/EstatePlanningSection";
 import { LoanAgainstSecuritiesSection } from "@/components/services/LoanAgainstSecuritiesSection";
 import { ServicesFAQ } from "@/components/services/ServicesFAQ";
 
@@ -16,6 +17,7 @@ export default function ServicesPage() {
       <WealthManagementSection />
       <InvestmentPlanningSection />
       <RiskMitigationSection />
+      <EstatePlanningSection />
       <TaxOptimizationSection />
       <LoanAgainstSecuritiesSection />
       <ServicesFAQ />
