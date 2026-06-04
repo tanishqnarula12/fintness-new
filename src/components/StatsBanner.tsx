@@ -62,7 +62,7 @@ export default function StatsBanner() {
           />
           
           <StatItem 
-            endValue={500} 
+            endValue={400} 
             suffix="+" 
             title="Families" 
             subtitle="Trusted Partners" 
