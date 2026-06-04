@@ -170,9 +170,9 @@ export default function PrivacyPolicyPage() {
                       <Mail className="w-3.5 h-3.5" />
                       mail@fintness.in
                     </a>
-                    <a href="tel:+919509608886" className="flex items-center gap-2 text-xs font-semibold text-[#0066FF] hover:underline">
+                    <a href="tel:+917852048886" className="flex items-center gap-2 text-xs font-semibold text-[#0066FF] hover:underline">
                       <Phone className="w-3.5 h-3.5" />
-                      +91 9509608886
+                      +91 7852048886
                     </a>
                   </div>
                 </div>
@@ -446,9 +446,9 @@ export default function PrivacyPolicyPage() {
                     <Mail className="w-4 h-4 text-[#00B2FF]" />
                     <span>mail@fintness.in</span>
                   </a>
-                  <a href="tel:+919509608886" className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl hover:bg-white/10 transition-colors text-xs font-semibold">
+                  <a href="tel:+917852048886" className="flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl hover:bg-white/10 transition-colors text-xs font-semibold">
                     <Phone className="w-4 h-4 text-[#00B2FF]" />
-                    <span>+91 9509608886</span>
+                    <span>+91 7852048886</span>
                   </a>
                 </div>
               </div>

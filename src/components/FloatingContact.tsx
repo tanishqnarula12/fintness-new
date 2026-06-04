@@ -42,7 +42,7 @@ export default function FloatingContact() {
             </a>
 
             <a
-              href="https://wa.me/919509608886"
+              href="https://wa.me/917852048886"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between gap-3 bg-white text-[#1a1a2e] pl-4 pr-1 py-1 rounded-full shadow-lg border border-slate-200 hover:bg-slate-50 transition-colors group"

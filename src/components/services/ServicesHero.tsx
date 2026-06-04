@@ -31,7 +31,7 @@ export function ServicesHero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Button size="lg" className="bg-[#0044BB] hover:bg-[#003399] text-white rounded-full px-10 h-14 text-base w-full sm:w-auto shadow-lg shadow-blue-500/20">
+          <Button size="lg" className="bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white rounded-full px-10 h-14 text-base w-full sm:w-auto shadow-lg shadow-blue-500/20 border-none transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95">
             Get Started
           </Button>
         </div>

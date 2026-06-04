@@ -13,7 +13,7 @@ export default function NotFound() {
       
       <Link 
         href="/"
-        className="bg-[#0066FF] text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-[#0052CC] transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.2)] hover:shadow-[0_0_30px_rgba(0,102,255,0.3)] transform hover:scale-105"
+        className="bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white px-8 py-3 rounded-full font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,102,255,0.2)] hover:shadow-[0_0_30px_rgba(0,102,255,0.3)] transform hover:scale-105"
       >
         Return to Home
       </Link>

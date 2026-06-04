@@ -53,12 +53,28 @@ export default function ProcessSection() {
     const handleScroll = () => {
       if (!sectionRef.current) return;
       const rect = sectionRef.current.getBoundingClientRect();
+      
+      const totalMultiplier = 11.5;
+      const viewportHeight = rect.height / totalMultiplier;
+      const totalScrollable = rect.height - viewportHeight;
       const scrolled = -rect.top;
-      const phaseScrollDistance = window.innerHeight;
-      const idx = Math.min(
-        Math.max(Math.floor(scrolled / phaseScrollDistance), -1),
-        PROCESS_PHASES.length - 1
-      );
+      
+      const progress = totalScrollable > 0 ? Math.min(Math.max(scrolled / totalScrollable, 0), 1) : 0;
+
+      let idx = -1;
+      if (rect.top <= 0) {
+        if (progress < 0.14) {
+          idx = 0;
+        } else if (progress < 0.28) {
+          idx = 1;
+        } else if (progress < 0.42) {
+          idx = 2;
+        } else if (progress < 0.56) {
+          idx = 3;
+        } else {
+          idx = 4;
+        }
+      }
 
       if (idx !== lastActiveIndex) {
         lastActiveIndex = idx;
@@ -74,7 +90,7 @@ export default function ProcessSection() {
     <section
       id="process"
       ref={sectionRef}
-      style={{ height: `${(PROCESS_PHASES.length + 1.5) * 100}vh` }}
+      style={{ height: `${(PROCESS_PHASES.length * 1.5 + 4.0) * 100}vh` }}
       className="relative w-full"
     >
       {/* This is the sticky viewport — it pins to the screen */}

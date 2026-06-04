@@ -265,7 +265,7 @@ export default function PiggyScrollScene() {
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="group flex items-center justify-center gap-4 rounded-full bg-[#0066FF] px-10 py-5 font-bold text-lg text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-[#0052CC] hover:shadow-[#0066FF]/30 cursor-pointer"
+            className="group flex items-center justify-center gap-4 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] px-10 py-5 font-bold text-lg text-white shadow-xl transition-all duration-300 hover:shadow-2xl hover:shadow-[#0066FF]/30 cursor-pointer border-none"
           >
             <span className="tracking-wide">Talk to an Advisor</span>
             <ArrowRight className="w-6 h-6 text-white group-hover:translate-x-1.5 transition-transform duration-300" />

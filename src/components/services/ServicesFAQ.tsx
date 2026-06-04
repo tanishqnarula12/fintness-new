@@ -9,8 +9,8 @@ const faqs = [
     category: "Wealth Management",
     questions: [
       { q: "What is the minimum investment required?", a: "The investment amount depends on your financial goals and planning requirements." },
-      { q: "How often is my portfolio reviewed?", a: "Portfolios are reviewed periodically and whenever significant life or market events occur." },
-      { q: "Will my investments be actively monitored?", a: "Yes. We continuously review portfolio performance and suitability." },
+      { q: "How often is my portfolio reviewed?", a: "We have general review every 6 months and then we review when goals are nearby" },
+      { q: "Will my investments be actively monitored?", a: "Yes but active monitor does not mean we will make changes according to markets fluctuations but majorly according to asset allocation and goals" },
     ]
   },
   {

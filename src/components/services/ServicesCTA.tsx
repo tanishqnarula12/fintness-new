@@ -25,7 +25,7 @@ export function ServicesCTA() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-4 relative z-10">
-            <Button size="lg" className="bg-[#0099FF] hover:bg-[#0077CC] text-white rounded-xl px-8 h-14 text-base font-semibold w-full sm:w-auto shadow-lg shadow-blue-500/20">
+            <Button size="lg" className="bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white rounded-xl px-8 h-14 text-base font-semibold w-full sm:w-auto shadow-lg shadow-blue-500/20 border-none transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95">
               Schedule a Consultation
             </Button>
             <Button size="lg" variant="outline" className="rounded-xl px-8 h-14 text-base font-semibold w-full sm:w-auto border-slate-600 bg-[#2A2E40] text-white hover:bg-[#34384C] hover:text-white border-none shadow-sm">

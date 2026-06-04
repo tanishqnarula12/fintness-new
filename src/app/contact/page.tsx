@@ -67,7 +67,7 @@ export default function ContactPage() {
           transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           className="lg:col-span-7 bg-[#141C2B] border border-white/[0.05] rounded-3xl p-8 lg:p-12 shadow-2xl text-white"
         >
-          <h2 className="text-2xl font-bold text-white mb-8 tracking-tight">Inquiry Registry</h2>
+          <h2 className="text-2xl font-bold text-white mb-8 tracking-tight">Contact Us</h2>
           
           {submitted ? (
             <motion.div 
@@ -156,7 +156,7 @@ export default function ContactPage() {
                 className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95 hover:-translate-y-0.5 transition-all duration-300"
                 type="submit"
               >
-                Dispatch Inquiry
+                Submit
               </button>
             </form>
           )}
@@ -177,7 +177,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-[#1a1a2e]/40 mb-1">Direct Line</p>
-                <p className="text-xl font-bold text-[#1a1a2e]">+91 95096 08886</p>
+                <p className="text-xl font-bold text-[#1a1a2e]">+91 78520 48886</p>
               </div>
             </div>
 
