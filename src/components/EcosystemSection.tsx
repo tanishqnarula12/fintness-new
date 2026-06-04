@@ -38,9 +38,9 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
       <motion.div 
         style={{ 
           scale, 
-          top: `calc(12vh + ${idx * 20}px)` 
+          top: `calc(15vh + ${idx * 20}px)` 
         }} 
-        className="flex flex-col md:flex-row relative h-[60vh] md:h-[400px] w-full max-w-4xl mx-auto rounded-[32px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.08)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
+        className="flex flex-col md:flex-row relative h-[50vh] md:h-[350px] w-full max-w-3xl mx-auto rounded-[24px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.06)] origin-top bg-[#F4F5F7] border border-[#1a1a2e]/[0.06]"
       >
         {/* Left Side: 3D Image inside Card */}
         <div className="relative w-full md:w-[45%] h-1/2 md:h-full overflow-hidden shrink-0 bg-[#F4F5F7] border-b md:border-b-0 md:border-r border-[#1a1a2e]/[0.04]">
@@ -53,7 +53,7 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
               <motion.div
                 animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.15, 0.08] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="w-48 h-48 md:w-64 md:h-64 rounded-full blur-[60px]"
+                className="w-36 h-36 md:w-48 md:h-48 rounded-full blur-[50px]"
                 style={{ background: card.accent }}
               />
             </div>
@@ -62,40 +62,40 @@ function StackCard({ card, idx, progress, range, targetScale }: { card: any, idx
             <img 
               src={card.image} 
               alt={card.title} 
-              className="relative z-10 w-full h-full object-contain object-center p-6 md:p-8 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] transition-transform duration-700 hover:scale-110"
+              className="relative z-10 w-full h-full object-contain object-center p-5 md:p-6 drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] transition-transform duration-700 hover:scale-110"
             />
           </motion.div>
         </div>
 
         {/* Right Side: Content */}
-        <div className="w-full md:w-[55%] p-8 md:p-12 flex flex-col justify-center relative bg-[#F4F5F7]">
+        <div className="w-full md:w-[55%] p-6 md:p-10 flex flex-col justify-center relative bg-[#F4F5F7]">
           
           {/* Glowing Icon */}
-          <div className="mb-6 md:mb-8 relative w-14 h-14">
+          <div className="mb-4 md:mb-5 relative w-12 h-12">
             <div 
-              className="absolute inset-0 rounded-2xl opacity-15 blur-lg"
+              className="absolute inset-0 rounded-xl opacity-15 blur-lg"
               style={{ background: card.accent }}
             />
-            <div className="relative w-full h-full rounded-2xl border border-[#1a1a2e]/5 bg-white backdrop-blur-xl flex items-center justify-center shadow-md">
+            <div className="relative w-full h-full rounded-xl border border-[#1a1a2e]/5 bg-white backdrop-blur-xl flex items-center justify-center shadow-md">
               <card.icon 
-                className="w-6 h-6 md:w-7 md:h-7" 
+                className="w-5 h-5 md:w-6 md:h-6" 
                 style={{ color: card.accent }} 
                 strokeWidth={card.stroke || 2} 
               />
             </div>
           </div>
 
-          <h3 className="font-bold text-[#1a1a2e] tracking-tight text-2xl md:text-4xl mb-4 leading-tight">
+          <h3 className="font-bold text-[#1a1a2e] tracking-tight text-xl md:text-2xl lg:text-3xl mb-3 leading-tight">
             {card.title}
           </h3>
           
-          <p className="text-[#1a1a2e]/60 leading-relaxed font-normal text-base md:text-lg max-w-lg">
+          <p className="text-[#1a1a2e]/60 leading-relaxed font-normal text-sm md:text-base max-w-lg">
             {card.desc}
           </p>
 
           {/* Accent Line */}
           <div 
-            className="mt-6 md:mt-10 h-[2px] w-12 md:w-16 rounded-full opacity-60" 
+            className="mt-4 md:mt-6 h-[2px] w-12 md:w-16 rounded-full opacity-60" 
             style={{ 
               background: card.accent, 
             }} 
