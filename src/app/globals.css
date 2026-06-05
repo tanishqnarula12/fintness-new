@@ -209,3 +209,13 @@ html {
 .animate-text-gradient {
   animation: text-gradient 4s linear infinite;
 }
+
+/* ── Hero Height Adjustments (Compensates for html { zoom: 0.7 } on Chromium/WebKit) ── */
+.hero-height {
+  height: 143vh;
+}
+@supports (-moz-appearance: none) {
+  .hero-height {
+    height: 100vh;
+  }
+}

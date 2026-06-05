@@ -51,7 +51,7 @@ export function Navbar() {
   const logoElement = (
     <div className="flex items-center gap-3">
       <img src="/logo.png" alt="Fintness Finserv Logo" className="w-8 h-8 object-contain rounded-full" />
-      <span className="text-[#1a1a2e] font-semibold tracking-tighter hidden lg:block">FINTNESS FINSERV</span>
+      <span className="text-[#1a1a2e] font-semibold tracking-tighter text-xs sm:text-sm md:text-base">FINTNESS FINSERV</span>
     </div>
   );
 

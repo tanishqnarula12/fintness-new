@@ -13,7 +13,8 @@ const PHASES = [
       "Goal-Based & Retirement Planning",
       "Insurance & Risk Management",
     ],
-    image: "/salaried-professionals.jpeg",
+    image: "/salaried-professionals.png",
+    imagePosition: "object-center",
   },
   {
     title: "Business Owners & Entrepreneurs",
@@ -26,6 +27,7 @@ const PHASES = [
       "Emergency Funds for Business",
     ],
     image: "/business-owners.jpeg",
+    imagePosition: "object-top",
   },
   {
     title: "Non-Resident Indians (NRIs)",
@@ -37,7 +39,8 @@ const PHASES = [
       "Repatriation & Investment Structuring",
       "Managing Indian Assets Efficiently",
     ],
-    image: "/nris.jpeg",
+    image: "/nris.png",
+    imagePosition: "object-center",
   },
   {
     title: "Modern Families",
@@ -49,7 +52,8 @@ const PHASES = [
       "Family Financial Literacy",
       "Multi-Generational Wealth Planning",
     ],
-    image: "/modern-families.jpeg",
+    image: "/modern-families.png",
+    imagePosition: "object-center",
   },
 ];
 
@@ -83,53 +87,51 @@ export default function LifePhaseSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ delay: 0.1, duration: 0.6, ease: "easeOut" }}
-            className="group bg-[#f0f4fa] rounded-3xl overflow-hidden flex flex-col sm:flex-row hover:shadow-xl transition-shadow duration-500 sm:h-[280px]"
+            className="group bg-[#f0f4fa] rounded-3xl overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-500 h-full"
           >
-            {/* Image Side */}
-            <div className="relative w-full sm:w-[45%] h-[220px] sm:h-full overflow-hidden shrink-0">
+            {/* Image Side - Top Part */}
+            <div className="relative w-full aspect-video overflow-hidden shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={phase.image}
                 alt={phase.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+                className={`absolute inset-0 w-full h-full object-cover ${phase.imagePosition || "object-center"} transition-transform duration-[1200ms] ease-out group-hover:scale-110`}
               />
             </div>
 
-            {/* Content Side */}
-            <div className="flex flex-col justify-start p-6 sm:p-8 flex-1">
-              {/* Category Tag Removed */}
-
-              {/* Title */}
-              <div className="min-h-[56px] sm:min-h-[64px] mb-4 flex items-center">
-                <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a2e] tracking-tight leading-tight">
+            {/* Content Side - Bottom Part */}
+            <div className="flex flex-col justify-between p-6 md:p-8 flex-1">
+              <div>
+                {/* Title */}
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1a1a2e] tracking-tight leading-tight mb-4">
                   {phase.title}
                 </h3>
-              </div>
 
-              {/* Bullet Points */}
-              <div className="space-y-2.5">
-                {phase.bullets.map((bullet, bIdx) => (
-                  <div key={bIdx} className="flex items-center gap-2.5">
-                    <svg
-                      className="w-4 h-4 shrink-0"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle cx="10" cy="10" r="10" fill={phase.categoryColor} fillOpacity="0.12" />
-                      <path
-                        d="M6.5 10.5L8.5 12.5L13.5 7.5"
-                        stroke={phase.categoryColor}
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="text-sm font-semibold text-[#1a1a2e]/80">
-                      {bullet}
-                    </span>
-                  </div>
-                ))}
+                {/* Bullet Points */}
+                <div className="space-y-2.5">
+                  {phase.bullets.map((bullet, bIdx) => (
+                    <div key={bIdx} className="flex items-center gap-2.5">
+                      <svg
+                        className="w-4 h-4 shrink-0"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="10" cy="10" r="10" fill={phase.categoryColor} fillOpacity="0.12" />
+                        <path
+                          d="M6.5 10.5L8.5 12.5L13.5 7.5"
+                          stroke={phase.categoryColor}
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      <span className="text-sm font-semibold text-[#1a1a2e]/80">
+                        {bullet}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>

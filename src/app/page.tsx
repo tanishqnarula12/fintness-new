@@ -14,55 +14,75 @@ import StatsBanner from "@/components/StatsBanner";
 export default function Home() {
   return (
     <main className="bg-white min-h-screen text-[#1a1a2e] font-sans">
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-white text-[#1a1a2e]">
+      <section className="relative hero-height w-full flex items-center justify-start px-6 md:px-12 lg:px-20 overflow-hidden bg-white text-[#1a1a2e] pt-24">
+        {/* Background Video */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover scale-100"
+          >
+            <source src="/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Subtle gradient overlay to guarantee text legibility on LHS while showing the video clearly on RHS */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 via-white/40 to-transparent w-full md:w-[70%] lg:w-[55%]" />
+        </div>
+
         {/* Ambient glows */}
-        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full blur-[120px] opacity-20 bg-[#0066FF] pointer-events-none" />
-        <div className="absolute bottom-10 -left-20 w-80 h-80 rounded-full blur-[100px] opacity-20 bg-[#00B2FF] pointer-events-none" />
+        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full blur-[120px] opacity-10 bg-[#0066FF] pointer-events-none z-0" />
 
-        <motion.div 
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
-          }}
-          className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center"
-        >
+        <div className="relative z-10 w-full mt-4 md:mt-6">
+          {/* LHS - Text Content (max-w bounds it to the left side) */}
           <motion.div 
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0066FF]/5 border border-[#0066FF]/10 backdrop-blur-md mb-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+            }}
+            className="w-full max-w-lg lg:max-w-xl flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0"
           >
-            <span className="w-2 h-2 rounded-full bg-[#0066FF] animate-pulse" />
-            <span className="text-xs font-semibold tracking-widest uppercase text-[#0066FF]">Wealth Architecture</span>
-          </motion.div>
-          
-          <motion.h1 
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[1.05] mb-6"
-          >
-            Let&apos;s build a <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] drop-shadow-sm">
-              fitter financial
-            </span>{" "}
-            future.
-          </motion.h1>
-          
-          <motion.p 
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }}
-            className="max-w-2xl text-lg md:text-xl text-[#1a1a2e]/60 font-light leading-relaxed mb-10"
-          >
-            We don&apos;t just manage wealth; we architect legacies. Experience goal-based financial planning designed for precision, growth, and long-term security.
-          </motion.p>
+            <motion.h1 
+              variants={{ 
+                hidden: { opacity: 0, x: -60 }, 
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } 
+              }}
+              className="text-[clamp(2.75rem,6vw,5rem)] font-extrabold tracking-[-0.02em] leading-[1.05] mb-6 text-[#1a1a2e] text-center md:text-left"
+            >
+              Let&apos;s build a <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] drop-shadow-sm whitespace-nowrap">
+                fitter financial
+              </span>{" "}
+              <br />
+              future together.
+            </motion.h1>
+            
+            <motion.p 
+              variants={{ 
+                hidden: { opacity: 0, x: -60 }, 
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } 
+              }}
+              className="max-w-[46ch] text-base md:text-lg text-[#334155] font-medium leading-[1.6] mb-8 text-center md:text-left"
+            >
+              We don&apos;t just manage wealth; we architect legacies. Experience goal-based financial planning designed for precision, growth, and long-term security.
+            </motion.p>
 
-          <motion.div 
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white shadow-sm font-bold text-lg hover:scale-105 transition-all duration-300">
-              Talk to Advisor
-            </button>
+            <motion.div 
+              variants={{ 
+                hidden: { opacity: 0, x: -60 }, 
+                visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } } 
+              }}
+              className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4"
+            >
+              <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white shadow-lg shadow-[#0066FF]/25 font-bold text-lg hover:scale-105 hover:brightness-110 active:scale-98 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0066FF] focus:outline-none transition-all duration-300 cursor-pointer min-h-[44px]">
+                Talk to Advisor
+              </button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </section>
       
       <StatsBanner />

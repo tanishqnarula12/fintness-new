@@ -43,7 +43,7 @@ const StatItem = ({ endValue, suffix = "", title, subtitle, isAccent = false }: 
 
 export default function StatsBanner() {
   return (
-    <div className="w-full px-6 -mt-16 md:-mt-24 relative z-20 pb-12">
+    <div className="w-full px-6 py-12 relative z-20 bg-white">
       <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-[0_8px_40px_rgba(0,0,0,0.06)] border border-[#1a1a2e]/[0.04] p-4 md:p-8 backdrop-blur-xl">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 divide-x-0 md:divide-x divide-y md:divide-y-0 divide-[#1a1a2e]/10">
           
