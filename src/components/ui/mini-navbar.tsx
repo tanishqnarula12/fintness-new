@@ -75,9 +75,9 @@ export function Navbar() {
   );
 
   return (
-    <header className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50
+    <header className={`fixed top-4 md:top-6 left-1/2 transform -translate-x-1/2 z-50
                        flex flex-col items-center
-                       pl-6 pr-6 py-3 backdrop-blur-md
+                       px-4 md:px-6 py-2 md:py-3 backdrop-blur-md
                        ${headerShapeClass}
                        border border-[#1a1a2e]/10 bg-white/75 shadow-[0_4px_30px_rgba(0,0,0,0.06)]
                        w-[calc(100%-2rem)] xl:w-max max-w-[95vw] xl:max-w-7xl
