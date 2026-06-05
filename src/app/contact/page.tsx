@@ -8,6 +8,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "Wealth Creation",
     message: "",
     agree: false,
@@ -35,7 +36,9 @@ export default function ContactPage() {
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "1731cdd8-a5a1-40c0-9b19-c4248b1703c9",
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           subject: `Fintness Inquiry: ${formData.subject}`,
+          inquiry_subject: formData.subject,
           message: formData.message,
           from_name: "Fintness Finserv Website",
         }),
@@ -47,6 +50,7 @@ export default function ContactPage() {
         setFormData({
           name: "",
           email: "",
+          phone: "",
           subject: "Wealth Creation",
           message: "",
           agree: false,
@@ -136,24 +140,37 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Subject of Inquiry</label>
-                <div className="relative">
-                  <select
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium appearance-none cursor-pointer"
-                  >
-                    <option className="bg-[#141C2B] text-white">Wealth Creation</option>
-                    <option className="bg-[#141C2B] text-white">Retirement Planning</option>
-                    <option className="bg-[#141C2B] text-white">Tax Optimization</option>
-                    <option className="bg-[#141C2B] text-white">Investment Planning</option>
-                    <option className="bg-[#141C2B] text-white">Risk Mitigation</option>
-                    <option className="bg-[#141C2B] text-white">Estate Planning</option>
-                    <option className="bg-[#141C2B] text-white">Asset Management</option>
-                    <option className="bg-[#141C2B] text-white">General Support</option>
-                  </select>
-                  <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 pointer-events-none" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Mobile Number</label>
+                  <input
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white placeholder-white/30 focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium"
+                    placeholder="+91 98765 43210"
+                    type="tel"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Subject of Inquiry</label>
+                  <div className="relative">
+                    <select
+                      value={formData.subject}
+                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#1F2937]/50 border border-transparent text-white focus:outline-none focus:border-white/10 focus:bg-white/10 transition-all duration-300 text-sm font-medium appearance-none cursor-pointer"
+                    >
+                      <option className="bg-[#141C2B] text-white">Wealth Creation</option>
+                      <option className="bg-[#141C2B] text-white">Retirement Planning</option>
+                      <option className="bg-[#141C2B] text-white">Tax Optimization</option>
+                      <option className="bg-[#141C2B] text-white">Investment Planning</option>
+                      <option className="bg-[#141C2B] text-white">Risk Mitigation</option>
+                      <option className="bg-[#141C2B] text-white">Estate Planning</option>
+                      <option className="bg-[#141C2B] text-white">Asset Management</option>
+                      <option className="bg-[#141C2B] text-white">General Support</option>
+                    </select>
+                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/50 pointer-events-none" />
+                  </div>
                 </div>
               </div>
 
