@@ -243,7 +243,9 @@ ${formData.message}
               </div>
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-[#1a1a2e]/40 mb-1">Direct Line</p>
-                <p className="text-xl font-bold text-[#1a1a2e]">+91 78520 48886</p>
+                <a href="tel:+917852048886" className="text-xl font-bold text-[#1a1a2e] hover:text-[#0066FF] transition-colors">
+                  +91 78520 48886
+                </a>
               </div>
             </div>
 

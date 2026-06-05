@@ -96,9 +96,9 @@ export default function Footer() {
                 </div>
               </Link>
               <div className="space-y-2 pt-2">
-                <a href="tel:+919509608886" className="flex items-center gap-2 text-sm md:text-base font-semibold text-white/90 hover:text-[#00B2FF] transition-colors">
+                <a href="tel:+917852048886" className="flex items-center gap-2 text-sm md:text-base font-semibold text-white/90 hover:text-[#00B2FF] transition-colors">
                   <Phone className="w-4 h-4 text-[#00B2FF] shrink-0" />
-                  <span>+91 95096 08886</span>
+                  <span>+91 78520 48886</span>
                 </a>
                 <a href="mailto:mail@fintness.in" className="flex items-center gap-2 text-sm md:text-base font-semibold text-white/90 hover:text-[#00B2FF] transition-colors">
                   <Mail className="w-4 h-4 text-[#00B2FF] shrink-0" />
