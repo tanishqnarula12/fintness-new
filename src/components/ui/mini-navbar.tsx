@@ -20,32 +20,10 @@ const AnimatedNavLink = ({ href, children }: { href: string; children: React.Rea
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [headerShapeClass, setHeaderShapeClass] = useState('rounded-full');
-  const shapeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  useEffect(() => {
-    if (shapeTimeoutRef.current) {
-      clearTimeout(shapeTimeoutRef.current);
-    }
-
-    if (isOpen) {
-      setHeaderShapeClass('rounded-2xl');
-    } else {
-      shapeTimeoutRef.current = setTimeout(() => {
-        setHeaderShapeClass('rounded-full');
-      }, 300);
-    }
-
-    return () => {
-      if (shapeTimeoutRef.current) {
-        clearTimeout(shapeTimeoutRef.current);
-      }
-    };
-  }, [isOpen]);
 
   // Modern minimal dot logo or FINTNESS text mapping
   const logoElement = (
@@ -78,10 +56,10 @@ export function Navbar() {
     <header className={`fixed top-4 md:top-6 left-1/2 transform -translate-x-1/2 z-50
                        flex flex-col items-center
                        px-4 md:px-6 py-2 md:py-3 backdrop-blur-md
-                       ${headerShapeClass}
+                       rounded-3xl
                        border border-[#1a1a2e]/10 bg-white/80 shadow-[0_8px_32px_rgba(0,102,255,0.08)]
                        w-[calc(100%-2rem)] xl:w-max max-w-[95vw] xl:max-w-7xl
-                       transition-all duration-300 ease-in-out`}>
+                       transition-all duration-500 ease-in-out`}>
 
       <div className="flex items-center justify-between w-full gap-x-4 md:gap-x-6 xl:gap-x-10">
         <Link href="/" className="flex items-center shrink-0">
@@ -97,13 +75,16 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3 shrink-0">
-          {/* Mobile & Tablet Get Started Button */}
-          <Link 
-            href="/contact" 
-            className="xl:hidden px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full hover:scale-105 active:scale-95 hover:shadow-[0_0_15px_rgba(0,102,255,0.4)] transition-all duration-300 shadow-md border border-transparent inline-flex items-center justify-center text-center"
-          >
-            Get Started
-          </Link>
+          {/* Mobile & Tablet Get Started Button (animates out on open) */}
+          <div className={`xl:hidden transition-all duration-500 ease-in-out origin-right overflow-hidden flex items-center
+                           ${isOpen ? 'w-0 opacity-0 scale-75 pointer-events-none mr-0' : 'w-[96px] opacity-100 scale-100 mr-2'}`}>
+            <Link 
+              href="/contact" 
+              className="px-3 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full hover:scale-105 active:scale-95 hover:shadow-[0_0_15px_rgba(0,102,255,0.4)] transition-all duration-300 shadow-md border border-transparent inline-flex items-center justify-center text-center w-full whitespace-nowrap"
+            >
+              Get Started
+            </Link>
+          </div>
 
           {/* Desktop Get Started Button */}
           <div className="hidden xl:flex items-center">
@@ -122,7 +103,7 @@ export function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`xl:hidden flex flex-col items-center w-full transition-all ease-in-out duration-300 overflow-hidden
+      <div className={`xl:hidden flex flex-col items-center w-full transition-all ease-in-out duration-500 overflow-hidden
                        ${isOpen ? 'max-h-[500px] opacity-100 pt-6 pb-2' : 'max-h-0 opacity-0 pt-0 pb-0 pointer-events-none'}`}>
         <nav className="flex flex-col items-center space-y-5 text-base w-full">
           {navLinksData.map((link) => (
