@@ -18,14 +18,26 @@ export default function Home() {
       <section className="relative hero-height w-full flex items-center justify-start px-6 md:px-12 lg:px-20 overflow-hidden bg-white text-[#1a1a2e] pt-24">
         {/* Background Video */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          {/* Desktop Video */}
           <video 
             autoPlay 
             loop 
             muted 
             playsInline 
-            className="w-full h-full object-cover scale-100"
+            className="w-full h-full object-cover scale-100 hidden md:block"
           >
             <source src="/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          {/* Mobile Video */}
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover scale-100 block md:hidden"
+          >
+            <source src="/hero-video-mobile.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           {/* Subtle gradient overlay to guarantee text legibility on LHS while showing the video clearly on RHS */}
