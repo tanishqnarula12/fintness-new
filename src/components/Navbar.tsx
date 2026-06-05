@@ -74,9 +74,6 @@ export default function Navbar() {
 
         {/* Right Nav / CTA */}
         <div className="flex items-center gap-6">
-          <Link href="/login" className="hidden md:block text-sm text-[#1a1a2e]/50 hover:text-[#1a1a2e] transition-all duration-300 font-medium">
-            Client Login
-          </Link>
           <Link href="/contact" className="bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white px-5 py-2.5 rounded-full font-bold text-sm tracking-wide hover:scale-105 transition-all duration-300 hover:shadow-md inline-block text-center">
             Get Started
           </Link>

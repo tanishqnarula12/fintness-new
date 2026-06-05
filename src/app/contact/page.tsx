@@ -142,7 +142,7 @@ ${formData.message}
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Corporate Email</label>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-white/50 ml-1">Email</label>
                   <input
                     required
                     value={formData.email}

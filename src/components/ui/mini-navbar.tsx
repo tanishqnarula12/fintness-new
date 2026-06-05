@@ -64,11 +64,7 @@ export function Navbar() {
     { label: 'Events', href: '/#events' },
   ];
 
-  const loginButtonElement = (
-    <button className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-[#1a1a2e]/10 bg-[#1a1a2e]/[0.03] text-[#1a1a2e]/60 rounded-full hover:border-[#0066FF]/40 hover:text-[#1a1a2e] transition-colors duration-200 w-full xl:w-auto font-medium">
-      Client Login
-    </button>
-  );
+
 
   const signupButtonElement = (
     <div className="relative group w-full xl:w-auto">
@@ -100,8 +96,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden xl:flex items-center gap-3 shrink-0">
-          {loginButtonElement}
+        <div className="hidden xl:flex items-center shrink-0">
           {signupButtonElement}
         </div>
 
@@ -124,8 +119,7 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-col items-center gap-3 mt-8 w-full border-t border-[#1a1a2e]/10 pt-6">
-          {loginButtonElement}
+        <div className="flex flex-col items-center mt-8 w-full border-t border-[#1a1a2e]/10 pt-6">
           {signupButtonElement}
         </div>
       </div>
