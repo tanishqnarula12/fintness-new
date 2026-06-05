@@ -72,9 +72,9 @@ export function Navbar() {
 
   const signupButtonElement = (
     <div className="relative group w-full xl:w-auto">
-       <button className="relative z-10 px-5 py-2.5 xl:px-4 xl:py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full hover:scale-105 transition-all duration-300 w-full xl:w-auto shadow-md border border-transparent">
+       <Link href="/contact" className="relative z-10 px-5 py-2.5 xl:px-4 xl:py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full hover:scale-105 transition-all duration-300 w-full xl:w-auto shadow-md border border-transparent inline-flex items-center justify-center text-center">
          Get Started
-       </button>
+       </Link>
     </div>
   );
 

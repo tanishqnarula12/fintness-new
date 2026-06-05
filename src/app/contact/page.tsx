@@ -14,13 +14,36 @@ export default function ContactPage() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.agree) {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
+    if (!formData.name || !formData.email || !formData.agree) return;
+
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          subject: `Fintness Inquiry: ${formData.subject}`,
+          message: formData.message,
+          from_name: "Fintness Finserv Website",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
         setFormData({
           name: "",
           email: "",
@@ -28,7 +51,14 @@ export default function ContactPage() {
           message: "",
           agree: false,
         });
-      }, 3000);
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setSubmitError("Failed to send message. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -152,11 +182,16 @@ export default function ContactPage() {
                 </label>
               </div>
 
+              {submitError && (
+                <p className="text-red-500 text-sm font-semibold">{submitError}</p>
+              )}
+
               <button
-                className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95 hover:-translate-y-0.5 transition-all duration-300"
+                disabled={isSubmitting}
+                className="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 type="submit"
               >
-                Submit
+                {isSubmitting ? "Sending..." : "Submit"}
               </button>
             </form>
           )}

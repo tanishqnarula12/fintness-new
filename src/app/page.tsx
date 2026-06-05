@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import TransitionSection from "@/components/TransitionSection";
 import EcosystemSection from "@/components/EcosystemSection";
 import ProcessSection from "@/components/ProcessSection";
@@ -77,9 +78,9 @@ export default function Home() {
               }}
               className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4"
             >
-              <button className="px-10 py-4 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white shadow-lg shadow-[#0066FF]/25 font-bold text-lg hover:scale-105 hover:brightness-110 active:scale-98 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0066FF] focus:outline-none transition-all duration-300 cursor-pointer min-h-[44px]">
+              <Link href="/contact" className="px-10 py-4 rounded-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white shadow-lg shadow-[#0066FF]/25 font-bold text-lg hover:scale-105 hover:brightness-110 active:scale-98 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0066FF] focus:outline-none transition-all duration-300 cursor-pointer min-h-[44px] inline-block text-center">
                 Talk to Advisor
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>

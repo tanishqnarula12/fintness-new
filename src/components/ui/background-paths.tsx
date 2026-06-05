@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export function FloatingPaths({ position }: { position: number }) {
     const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -103,7 +104,8 @@ export function BackgroundPaths({
                         ))}
                     </h1>
 
-                    <div
+                    <Link
+                        href="/contact"
                         className="inline-block group relative bg-gradient-to-b from-[#0066FF]/10 to-[#00B2FF]/10 
                         p-px rounded-2xl backdrop-blur-lg 
                         overflow-hidden shadow-[0_10px_30px_rgba(0,102,255,0.15)] hover:shadow-[0_15px_40px_rgba(0,102,255,0.25)] transition-shadow duration-300"
@@ -125,7 +127,7 @@ export function BackgroundPaths({
                                 →
                             </span>
                         </Button>
-                    </div>
+                    </Link>
                 </motion.div>
             </div>
         </div>

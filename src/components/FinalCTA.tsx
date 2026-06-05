@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import Link from "next/link";
 
 export default function FinalCTA() {
   return (
@@ -47,10 +48,10 @@ export default function FinalCTA() {
           transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <button className="group bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2">
+          <Link href="/contact" className="group bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-semibold tracking-wide py-4 px-10 rounded-full text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center gap-2 inline-flex items-center">
             Get Started
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </button>
+          </Link>
           <button className="text-[#1a1a2e]/80 hover:text-[#1a1a2e] font-medium tracking-wide py-4 px-8 rounded-full text-lg transition-all duration-300 border border-[#1a1a2e]/30 hover:border-[#1a1a2e]/50 hover:bg-[#1a1a2e]/[0.05]">
             Learn More
           </button>

@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import Link from "next/link";
 
 export function ServicesHero() {
   return (
@@ -31,9 +32,11 @@ export function ServicesHero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <Button size="lg" className="bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white rounded-full px-10 h-14 text-base w-full sm:w-auto shadow-lg shadow-blue-500/20 border-none transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95">
-            Get Started
-          </Button>
+          <Link href="/contact" className="w-full sm:w-auto">
+            <Button size="lg" className="bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white rounded-full px-10 h-14 text-base w-full sm:w-auto shadow-lg shadow-blue-500/20 border-none transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0066FF]/20 active:scale-95">
+              Get Started
+            </Button>
+          </Link>
         </div>
       </motion.div>
     </section>

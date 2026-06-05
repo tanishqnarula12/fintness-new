@@ -1,8 +1,64 @@
 "use client";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 
 export default function CTASection() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email) return;
+
+    setIsSubmitting(true);
+    setSubmitError("");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "YOUR_ACCESS_KEY_HERE",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: "Fintness Consultation Request",
+          message: formData.message || "Requesting free 30-minute consultation.",
+          from_name: "Fintness Finserv Website",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: ""
+        });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        setSubmitError(result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setSubmitError("Failed to send request. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-24 px-6 max-w-7xl mx-auto w-full relative overflow-hidden">
       {/* Background blobs */}
@@ -66,43 +122,74 @@ export default function CTASection() {
                 <h3 className="text-2xl font-semibold text-[#1a1a2e] mb-2">Book a Consultation</h3>
                 <p className="text-[#1a1a2e]/35 text-sm font-light mb-8">Free 30-minute strategy session</p>
 
-                <form className="flex flex-col gap-5" onSubmit={(e) => e.preventDefault()}>
-                  <div className="group">
-                    <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">Full Name</label>
-                    <input 
-                      type="text" 
-                      className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div className="group">
-                    <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">Email Address</label>
-                    <input 
-                      type="email" 
-                      className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                  <div className="group">
-                    <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">Phone Number</label>
-                    <input 
-                      type="tel" 
-                      className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                  <div className="group">
-                    <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">How can we help?</label>
-                    <textarea 
-                      className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300 min-h-[100px] resize-none"
-                      placeholder="Tell us about your financial goals..."
-                    />
-                  </div>
-                  <button className="group/btn w-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-semibold tracking-wide py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,102,255,0.2)]">
-                    Request Consultation
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                  </button>
-                </form>
+                {submitted ? (
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="bg-[#22C55E]/5 border border-[#22C55E]/20 text-[#22C55E] p-8 rounded-2xl text-center space-y-3"
+                  >
+                    <CheckCircle2 className="w-12 h-12 mx-auto animate-bounce" />
+                    <h4 className="text-xl font-bold">Request Dispatched!</h4>
+                    <p className="text-sm text-[#22C55E]/80">We will call or email you shortly to schedule your session.</p>
+                  </motion.div>
+                ) : (
+                  <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+                    <div className="group">
+                      <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">Full Name</label>
+                      <input 
+                        type="text" 
+                        required
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300"
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div className="group">
+                      <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">Email Address</label>
+                      <input 
+                        type="email" 
+                        required
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300"
+                        placeholder="john@example.com"
+                      />
+                    </div>
+                    <div className="group">
+                      <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">Phone Number</label>
+                      <input 
+                        type="tel" 
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300"
+                        placeholder="+91 98765 43210"
+                      />
+                    </div>
+                    <div className="group">
+                      <label className="block text-[#1a1a2e]/40 text-xs font-medium mb-2 tracking-wider uppercase group-focus-within:text-[#0066FF] transition-colors">How can we help?</label>
+                      <textarea 
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        className="w-full bg-[#1a1a2e]/[0.03] border border-[#1a1a2e]/[0.08] rounded-xl px-5 py-3.5 text-[#1a1a2e] placeholder-[#1a1a2e]/25 focus:outline-none focus:border-[#0066FF]/30 focus:bg-white focus:shadow-[0_0_20px_rgba(0,102,255,0.05)] transition-all duration-300 min-h-[100px] resize-none"
+                        placeholder="Tell us about your financial goals..."
+                      />
+                    </div>
+
+                    {submitError && (
+                      <p className="text-red-500 text-sm font-semibold">{submitError}</p>
+                    )}
+
+                    <button 
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="group/btn w-full bg-gradient-to-r from-[#0066FF] to-[#00B2FF] text-white font-semibold tracking-wide py-4 rounded-xl mt-2 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,102,255,0.2)] disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? "Submitting..." : "Request Consultation"}
+                      <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
           </div>
