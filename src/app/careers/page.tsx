@@ -8,6 +8,7 @@ import {
   Mail, 
   MapPin, 
   User, 
+  Users,
   Briefcase, 
   FileText,
   SearchX,
@@ -34,17 +35,20 @@ export default function CareersPage() {
     {
       icon: TrendingUp,
       title: "Culture of Growth",
-      desc: "Continuous learning is in our DNA. We provide extensive resources for certifications, workshops, and career mentoring."
-    },
-    {
-      icon: Layers,
-      title: "Architectural Precision",
-      desc: "We value the detail. Our systems are built with structural integrity, and we empower you to design financial solutions that last."
+      subtitle: "We believe success is shared",
+      desc: "Your professional growth matters as much as our firm's growth. We invest in continuous learning, mentorship, leadership development, and career advancement opportunities to help you build a rewarding future."
     },
     {
       icon: ShieldCheck,
-      title: "Unwavering Ethics",
-      desc: "Integrity isn't a policy; it's our identity. We prioritize transparency and the client's long-term well-being above all else."
+      title: "Building Trusted Relationships",
+      subtitle: "We work for our clients, not products",
+      desc: "Our consultants take a holistic approach to wealth management, focusing on what is truly best for each client. You'll have the freedom to build trusted relationships and deliver meaningful financial guidance."
+    },
+    {
+      icon: Users,
+      title: "Shared Success",
+      subtitle: "Win together, grow together",
+      desc: "We foster a culture of collaboration, knowledge sharing, and mutual respect. Every team member's success contributes to the success of the entire organization, creating an environment where everyone can thrive."
     }
   ];
 
@@ -86,10 +90,13 @@ export default function CareersPage() {
                   <div className="w-12 h-12 rounded-2xl bg-[#0066FF]/5 flex items-center justify-center text-[#0066FF] mb-6 group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold tracking-tight mb-3 text-[#1a1a2e]">
+                  <h3 className="text-xl font-bold tracking-tight mb-1.5 text-[#1a1a2e]">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-[#1a1a2e]/60 leading-relaxed">
+                  <p className="text-[13px] font-semibold text-[#0052CC] mb-3.5 italic">
+                    &ldquo;{feature.subtitle}&rdquo;
+                  </p>
+                  <p className="text-sm text-slate-600 font-medium leading-relaxed">
                     {feature.desc}
                   </p>
                 </motion.div>
