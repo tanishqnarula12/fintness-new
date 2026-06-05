@@ -238,27 +238,12 @@ export default function CareersPage() {
               </div>
 
               <button
-                type="submit"
-                disabled={formStatus !== "idle"}
-                className={`w-full py-4 mt-2 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2 shadow-lg ${
-                  formStatus === "success" 
-                    ? "bg-[#00E676] text-[#121620]" 
-                    : "bg-[#00A3FF] hover:bg-[#0088EE] text-white"
-                }`}
+                type="button"
+                disabled={true}
+                className="w-full py-4 mt-2 rounded-xl font-bold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2 bg-white/10 text-white/40 border border-white/5 cursor-not-allowed opacity-50"
               >
-                {formStatus === "idle" && (
-                  <>
-                    Submit Application
-                    <Send className="w-4 h-4 ml-1" />
-                  </>
-                )}
-                {formStatus === "submitting" && (
-                  <span className="flex items-center gap-2">
-                    <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Processing...
-                  </span>
-                )}
-                {formStatus === "success" && "Application Received!"}
+                Submit Application
+                <Send className="w-4 h-4 ml-1" />
               </button>
             </motion.form>
           </div>
