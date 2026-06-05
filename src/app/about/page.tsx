@@ -405,12 +405,6 @@ export default function AboutPage() {
               >
                 Schedule a Consultation
               </Link>
-              <Link 
-                href="/contact" 
-                className="w-full sm:w-auto px-8 py-4 bg-white/10 text-white hover:text-white border border-white/20 rounded-2xl font-bold text-sm tracking-wide hover:bg-white/20 hover:scale-105 transition-all duration-300"
-              >
-                Talk to an Expert
-              </Link>
             </div>
           </motion.div>
         </div>
