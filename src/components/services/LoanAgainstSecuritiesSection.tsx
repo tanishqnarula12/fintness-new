@@ -24,7 +24,7 @@ export function LoanAgainstSecuritiesSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="order-1 lg:order-2"
+            className="order-2 lg:order-2"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
               Loan Against Securities
@@ -61,7 +61,7 @@ export function LoanAgainstSecuritiesSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-2 lg:order-1 relative flex justify-center items-center"
+            className="order-1 lg:order-1 relative flex justify-center items-center"
           >
             <motion.div
               animate={{ y: [0, -12, 0] }}
