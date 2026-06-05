@@ -25,6 +25,20 @@ export default function ContactPage() {
     setIsSubmitting(true);
     setSubmitError("");
 
+    // Construct a formatted text block of all fields for email display guarantee
+    const emailBody = `
+Client Details:
+----------------------------------
+Name: ${formData.name}
+Email: ${formData.email}
+Mobile Number: ${formData.phone}
+Subject: ${formData.subject}
+
+Message:
+----------------------------------
+${formData.message}
+`;
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -39,7 +53,7 @@ export default function ContactPage() {
           phone: formData.phone,
           subject: `Fintness Inquiry: ${formData.subject}`,
           inquiry_subject: formData.subject,
-          message: formData.message,
+          message: emailBody.trim(),
           from_name: "Fintness Finserv Website",
         }),
       });

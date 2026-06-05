@@ -21,6 +21,19 @@ export default function CTASection() {
     setIsSubmitting(true);
     setSubmitError("");
 
+    // Format the email body to explicitly include the Phone Number
+    const emailBody = `
+Consultation Request Details:
+----------------------------------
+Name: ${formData.name}
+Email: ${formData.email}
+Phone Number: ${formData.phone}
+
+Message:
+----------------------------------
+${formData.message || "Requesting free 30-minute consultation."}
+`;
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -34,7 +47,7 @@ export default function CTASection() {
           email: formData.email,
           phone: formData.phone,
           subject: "Fintness Consultation Request",
-          message: formData.message || "Requesting free 30-minute consultation.",
+          message: emailBody.trim(),
           from_name: "Fintness Finserv Website",
         }),
       });
