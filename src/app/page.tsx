@@ -65,12 +65,15 @@ export default function Home() {
               }}
               className="text-[clamp(2.75rem,6vw,5rem)] font-extrabold tracking-[-0.02em] leading-[1.05] mb-6 text-[#1a1a2e] text-center md:text-left"
             >
-              Let&apos;s build a <br />
+              Let&apos;s Build <br className="block md:hidden" /> Your <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] drop-shadow-sm whitespace-nowrap">
-                fitter financial
+                Fitter Financial
               </span>{" "}
-              <br />
-              future together.
+              <br className="block md:hidden" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0066FF] to-[#00B2FF] drop-shadow-sm">
+                Future
+              </span>{" "}
+              Together.
             </motion.h1>
             
             <motion.p 
@@ -80,7 +83,7 @@ export default function Home() {
               }}
               className="max-w-[46ch] text-base md:text-lg text-[#334155] font-medium leading-[1.6] mb-8 text-center md:text-left"
             >
-              We don&apos;t just manage wealth; we architect legacies. Experience goal-based financial planning designed for precision, growth, and long-term security.
+              Turning ambitions into achievements through personalized financial guidance and trusted expertise.
             </motion.p>
 
             <motion.div 
