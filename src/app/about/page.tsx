@@ -135,7 +135,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              { label: "Experience", value: "12+ Years", desc: "Of Market Expertise" },
+              { label: "Experience", value: "14+ Years", desc: "Of Market Expertise" },
               { label: "Client Impact", value: "400+", desc: "Families Catered" },
               { label: "Approach", value: "Client-Focused", desc: "Structured Planning" },
               { label: "Vision", value: "Long-Term", desc: "Wealth Guidance" }
@@ -251,7 +251,7 @@ export default function AboutPage() {
             { 
               name: "Nitesh Luthra", 
               role: "Founder", 
-              bio: "Qualified Certified Financial Planner and MBA (Finance) from SCMLD Pune. He has been educating and managing money for investors for 12 years. He covers investments, insurance, tax planning, goal planning and estate planning. He has taken 50+ sessions for companies like Hero and Summit Digital. His vision is to make people financially fit.", 
+              bio: "Qualified Certified Financial Planner and MBA (Finance) from SCMLD Pune. He has been educating and managing money for investors for 14 years. He covers investments, insurance, tax planning, goal planning and estate planning. He has taken 50+ sessions for companies like Hero and Summit Digital. His vision is to make people financially fit.", 
               img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
             },
             { 
