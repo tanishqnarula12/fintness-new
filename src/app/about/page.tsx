@@ -258,7 +258,7 @@ export default function AboutPage() {
               name: "Vaishali Choudhary", 
               role: "Co-Founder", 
               bio: "With over 6 years of experience in the financial services industry, Vaishali specializes in personal financial planning, client servicing, and operational management. She plays a key role in driving operations, client experience, and digital communication at Fintness Finserv Pvt. Ltd. Holding an MBA from Rajasthan University, her focus is on simplifying financial planning.", 
-              img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+              img: "/vaishali-choudhary.jpeg" 
             }
           ].map((member, idx) => (
             <motion.div 
@@ -269,12 +269,12 @@ export default function AboutPage() {
               transition={{ delay: idx * 0.1 }}
               className="bg-white rounded-3xl border border-[#1a1a2e]/5 overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,102,255,0.08)] transition-all duration-300 flex flex-col"
             >
-              <div className="aspect-[4/5] sm:aspect-square w-full bg-[#f0f4fa] overflow-hidden shrink-0">
+              <div className="aspect-[3/4] w-full bg-[#f0f4fa] overflow-hidden shrink-0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={member.img} 
                   alt={member.name} 
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
               <div className="p-8 flex flex-col flex-grow">
@@ -309,25 +309,27 @@ export default function AboutPage() {
                 name: "Mehul Khandelwal", 
                 role: "Operations Head", 
                 bio: "Leads operations, process management, and client coordination, ensuring efficient workflows and a seamless client experience.", 
-                img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" 
+                img: "/mehul-khandelwal.jpeg" 
               },
               { 
                 name: "Preksha Jain", 
                 role: "Insurance & Estate Planning Consultant", 
                 bio: "Focuses on insurance, estate planning, and financial protection solutions, while guiding clients on long-term financial products and policy planning.", 
-                img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600" 
+                img: "/preksha-jain.jpeg" 
               },
               { 
                 name: "Manish Sharma", 
                 role: "Certified Financial Planner & Portfolio Manager", 
                 bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
-                img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+                img: "/manish-sharma.jpeg",
+                imgClass: "object-[40%_center]",
+                hoverClass: "group-hover/card:scale-105"
               },
               { 
                 name: "Vimla Parmanandani", 
                 role: "Service Relationship Manager", 
                 bio: "Handles client servicing and relationship support, ensuring smooth communication, timely assistance, and responsive query resolution.", 
-                img: "https://images.unsplash.com/photo-1598550874175-4d0ef436c909?auto=format&fit=crop&q=80&w=600" 
+                img: "/vimla-parmanandani.jpeg"
               }
             ].map((member, idx) => (
               <motion.div 
@@ -343,7 +345,7 @@ export default function AboutPage() {
                   <img 
                     src={member.img} 
                     alt={member.name} 
-                    className="w-full h-full object-cover object-top group-hover/card:scale-105 transition-transform duration-700 ease-out"
+                    className={`w-full h-full object-cover transition-transform duration-700 ease-out ${member.imgClass || 'object-center'} ${member.hoverClass || 'group-hover/card:scale-105'}`}
                   />
                 </div>
                 <div className="absolute bottom-0 left-0 w-full bg-white p-6 z-10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
