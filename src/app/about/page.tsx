@@ -252,7 +252,7 @@ export default function AboutPage() {
               name: "Nitesh Luthra", 
               role: "Founder", 
               bio: "Qualified Certified Financial Planner and MBA (Finance) from SCMLD Pune. He has been educating and managing money for investors for 14 years. He covers investments, insurance, tax planning, goal planning and estate planning. He has taken 50+ sessions for companies like Hero and Summit Digital. His vision is to make people financially fit.", 
-              img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" 
+              img: "/nitesh-luthra.jpeg" 
             },
             { 
               name: "Vaishali Choudhary", 
@@ -315,7 +315,9 @@ export default function AboutPage() {
                 name: "Preksha Jain", 
                 role: "Insurance & Estate Planning Consultant", 
                 bio: "Focuses on insurance, estate planning, and financial protection solutions, while guiding clients on long-term financial products and policy planning.", 
-                img: "/preksha-jain.jpeg" 
+                img: "/preksha-jain.jpeg",
+                imgClass: "scale-x-[-1] object-[55%_center]",
+                hoverClass: "group-hover/card:scale-x-[-1.05] group-hover/card:scale-y-[1.05]"
               },
               { 
                 name: "Manish Sharma", 
