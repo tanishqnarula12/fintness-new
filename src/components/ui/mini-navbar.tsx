@@ -39,7 +39,7 @@ export function Navbar() {
     { label: 'Services', href: '/services' },
     { label: 'Careers', href: '/careers' },
     { label: 'Contact Us', href: '/contact' },
-    { label: 'Events', href: '/#events' },
+    { label: 'Events', href: '/events' },
   ];
 
 
