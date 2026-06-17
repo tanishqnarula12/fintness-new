@@ -11,6 +11,7 @@ import {
   Maximize2 
 } from "lucide-react";
 import { SparklesText } from "@/components/ui/sparkles-text";
+import { FloatingPaths } from "@/components/ui/background-paths";
 
 interface EventItem {
   id: string;
@@ -153,6 +154,12 @@ export default function EventsPage() {
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.04] pointer-events-none" />
       <div className="absolute top-[40%] left-[-20%] w-[500px] h-[500px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
+
+      {/* BACKGROUND PATHS */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <FloatingPaths position={1} />
+        <FloatingPaths position={-1} />
+      </div>
 
       {/* HERO SECTION */}
       <section className="relative pt-36 pb-20 px-6 md:px-12 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
