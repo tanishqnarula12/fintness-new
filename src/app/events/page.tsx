@@ -28,10 +28,9 @@ const eventsData: EventItem[] = [
     name: "Atharv Offshore Ahmedabad",
     date: "November 28, 2025",
     location: "Ahmedabad, Gujarat",
-    description: "An offshore corporate milestone celebration focusing on team alignment, collaborative work strategies, and outlining our long-term trajectory.",
+    description: "Conducted a Financial Awareness Session covering goal-based investing, financial planning, risk management, and wealth creation strategies for employees.",
     images: [
-      "/events/atharv-1.jpeg",
-      "/events/atharv-3.jpeg",
+      "/events/atharv-2.jpeg",
     ]
   },
   {
@@ -39,7 +38,7 @@ const eventsData: EventItem[] = [
     name: "BN Group India Summit",
     date: "May 30, 2024",
     location: "New Delhi",
-    description: "A collaborative corporate alignment meet and financial planning summit discussing partnership initiatives and strategic growth roadmaps.",
+    description: "An interactive financial wellness session focused on improving financial literacy, investment awareness, and long-term wealth-building habits.",
     images: [
       "/events/bn-group-1.jpeg",
       "/events/bn-group-2.jpeg",
@@ -49,14 +48,13 @@ const eventsData: EventItem[] = [
   },
   {
     id: "mavericks",
-    name: "Mavericks Forum",
+    name: "Mavericks",
     date: "July 2, 2024",
     location: "Corporate Headquarters",
-    description: "An intense brainstorm session by the Mavericks core group to design next-generation financial services and client experience systems.",
+    description: "Educating employees on smart financial decision-making through discussions on investments, insurance, taxation, and retirement planning.",
     images: [
       "/events/mavericks-1.jpeg",
       "/events/mavericks-2.jpeg",
-      "/events/mavericks-3.jpeg",
     ]
   },
   {
@@ -64,7 +62,7 @@ const eventsData: EventItem[] = [
     name: "SQ Fit Corporate Wellness",
     date: "May 30, 2024",
     location: "Wellness Arena",
-    description: "Demonstrating our commitment to physical fitness alongside financial fitness in an active, energy-charged wellness session.",
+    description: "Empowering employees with practical insights on budgeting, investing, risk protection, and financial independence.",
     images: [
       "/events/sq-fit-1.jpeg",
       "/events/sq-fit-2.jpeg",
@@ -75,9 +73,22 @@ const eventsData: EventItem[] = [
     name: "Sumit Digital Integration",
     date: "June 3, 2024",
     location: "Digital HQ",
-    description: "Aligning digital systems, back-office processes, and interactive client dashboards for efficient operational execution.",
+    description: "A corporate financial literacy program designed to help employees build stronger financial foundations and achieve their personal financial goals.",
     images: [
+      "/events/sumit-1.jpeg",
+      "/events/sumit-2.jpeg",
       "/events/sumit-3.jpeg",
+    ]
+  },
+  {
+    id: "hornblower",
+    name: "Hornblower Corporate Session",
+    date: "May 30, 2024",
+    location: "Hornblower Yacht",
+    description: "A knowledge-driven session aimed at helping employees understand personal finance, manage money effectively, and make informed investment decisions for their future.",
+    images: [
+      "/events/hornblower-1.jpeg",
+      "/events/hornblower-2.jpeg",
     ]
   }
 ];
