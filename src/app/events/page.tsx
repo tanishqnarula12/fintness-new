@@ -8,7 +8,6 @@ import {
   X, 
   ChevronLeft, 
   ChevronRight, 
-  Play, 
   Maximize2 
 } from "lucide-react";
 import { SparklesText } from "@/components/ui/sparkles-text";
@@ -91,14 +90,6 @@ const eventsData: EventItem[] = [
       "/events/hornblower-2.jpeg",
     ]
   }
-];
-
-const videosData = [
-  {
-    id: "vid-sumit-1",
-    src: "/events/sumit-1.mp4",
-    title: "Sumit Digital Highlight",
-  },
 ];
 
 export default function EventsPage() {
@@ -273,64 +264,6 @@ export default function EventsPage() {
             </motion.div>
           </div>
         ))}
-      </section>
-
-      {/* VIDEOS SECTION */}
-      <section className="relative z-10 px-6 md:px-12 max-w-7xl mx-auto mt-40 border-t border-slate-100 pt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16 space-y-4"
-        >
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-[#00B2FF] bg-[#00B2FF]/5 uppercase">
-            Videos
-          </span>
-          <SparklesText 
-            text="Moments in Motion" 
-            colors={{ first: "#0066FF", second: "#00B2FF" }} 
-            className="text-4xl md:text-5xl font-extrabold tracking-tight"
-          />
-          <p className="text-slate-600 font-light max-w-xl mx-auto leading-relaxed">
-            Experience our events, energy, and corporate milestones through short video highlights.
-          </p>
-        </motion.div>
-
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {videosData.map((video, idx) => (
-            <motion.div
-              key={video.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="bg-white rounded-[32px] border border-slate-100 p-3 shadow-md shadow-slate-100 hover:shadow-[0_16px_40px_rgba(0,102,255,0.06)] hover:-translate-y-1 transition-all duration-500 overflow-hidden flex flex-col group"
-            >
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-slate-900 border border-slate-100 shrink-0">
-                <video
-                  controls
-                  preload="metadata"
-                  playsInline
-                  className="w-full h-full object-cover"
-                >
-                  <source src={video.src} />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-              <div className="p-5 flex-grow flex flex-col justify-center">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#0066FF]/5 flex items-center justify-center shrink-0">
-                    <Play className="w-4 h-4 text-[#0066FF] fill-[#0066FF]" />
-                  </div>
-                  <div className="h-[2px] bg-slate-100 flex-grow" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Reel {idx + 1}</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
       </section>
 
       {/* LIGHTBOX MODAL OVERLAY */}
