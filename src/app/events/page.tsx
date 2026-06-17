@@ -188,16 +188,18 @@ export default function EventsPage() {
       {/* EVENTS IMAGES SECTION */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto space-y-28 relative z-10">
         {eventsData.map((event, eventIdx) => (
-          <motion.div 
+          <div 
             key={event.id}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1 }}
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start border-t border-slate-100 pt-16"
           >
             {/* Event Description (LHS on Desktop) */}
-            <div className="lg:col-span-5 space-y-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="lg:col-span-5 space-y-6"
+            >
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-[#0066FF] bg-[#0066FF]/5 uppercase">
                 Event {eventIdx + 1}
               </span>
@@ -219,10 +221,16 @@ export default function EventsPage() {
               <p className="text-slate-600 font-light leading-relaxed text-base md:text-lg">
                 {event.description}
               </p>
-            </div>
+            </motion.div>
 
             {/* Event Image Gallery Grid (RHS on Desktop) */}
-            <div className="lg:col-span-7">
+            <motion.div 
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+              className="lg:col-span-7"
+            >
               <div className={`grid gap-4 ${
                 event.images.length === 1 
                   ? "grid-cols-1" 
@@ -262,8 +270,8 @@ export default function EventsPage() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         ))}
       </section>
 
