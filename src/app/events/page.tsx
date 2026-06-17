@@ -151,9 +151,9 @@ export default function EventsPage() {
   return (
     <main className="bg-white min-h-screen text-[#1a1a2e] font-sans w-full relative overflow-hidden pb-24">
       {/* BACKGROUND ELEMENTS */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.04] pointer-events-none" />
-      <div className="absolute top-[40%] left-[-20%] w-[500px] h-[500px] bg-[#00B2FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
-      <div className="absolute bottom-[10%] right-[-10%] w-[500px] h-[500px] bg-[#0066FF] rounded-full blur-[250px] opacity-[0.03] pointer-events-none" />
+      <div className="absolute top-0 -left-1/4 w-[60%] h-[1200px] bg-[#00B2FF]/10 blur-[120px] rounded-full z-0 pointer-events-none" />
+      <div className="absolute top-[30%] -right-1/4 w-[60%] h-[1200px] bg-[#00B2FF]/8 blur-[120px] rounded-full z-0 pointer-events-none" />
+      <div className="absolute bottom-0 -left-1/4 w-[60%] h-[1200px] bg-[#00B2FF]/6 blur-[120px] rounded-full z-0 pointer-events-none" />
 
       {/* BACKGROUND PATHS */}
       <div className="absolute inset-0 z-0 pointer-events-none">
