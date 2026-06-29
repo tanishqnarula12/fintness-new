@@ -44,10 +44,16 @@ export function Navbar() {
 
 
 
+  const loginButtonElement = (
+    <button className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-[#1a1a2e]/10 bg-[#1a1a2e]/[0.03] text-[#1a1a2e]/60 rounded-full hover:border-[#0066FF]/40 hover:text-[#1a1a2e] transition-colors duration-200 w-full xl:w-auto font-medium cursor-not-allowed">
+      Client Login
+    </button>
+  );
+
   const signupButtonElement = (
     <div className="relative group w-full xl:w-auto">
        <Link href="/contact" className="relative z-10 px-5 py-2.5 xl:px-4 xl:py-2 text-sm font-semibold text-white bg-gradient-to-r from-[#0066FF] to-[#00B2FF] rounded-full hover:scale-105 transition-all duration-300 w-full xl:w-auto shadow-md border border-transparent inline-flex items-center justify-center text-center">
-         Get Started
+          Get Started
        </Link>
     </div>
   );
@@ -86,9 +92,10 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Get Started Button */}
-          <div className="hidden xl:flex items-center">
+          {/* Desktop Buttons */}
+          <div className="hidden xl:flex items-center gap-3">
             {signupButtonElement}
+            {loginButtonElement}
           </div>
 
           {/* Hamburger Menu Toggle */}
@@ -112,8 +119,9 @@ export function Navbar() {
             </Link>
           ))}
         </nav>
-        <div className="flex flex-col items-center mt-8 w-full border-t border-[#1a1a2e]/10 pt-6">
+        <div className="flex flex-col items-center gap-3 mt-8 w-full border-t border-[#1a1a2e]/10 pt-6">
           {signupButtonElement}
+          {loginButtonElement}
         </div>
       </div>
     </header>
