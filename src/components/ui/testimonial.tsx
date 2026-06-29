@@ -6,7 +6,8 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 export interface Testimonial {
   id: number | string
   name: string
-  avatar: string
+  avatar?: string
+  role?: string
   description: string
 }
 
@@ -16,6 +17,24 @@ export interface TestimonialCarouselProps
   showArrows?: boolean
   showDots?: boolean
 }
+
+const getInitials = (name: string) => {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+};
+
+const getGradient = (index: number) => {
+  const gradients = [
+    "from-[#0066FF] to-[#00B2FF]", // Blue-Cyan
+    "from-[#7C3AED] to-[#C084FC]", // Purple-Lavender
+    "from-[#059669] to-[#34D399]", // Emerald-Mint
+  ];
+  return gradients[index % gradients.length];
+};
 
 export const TestimonialCarousel = React.forwardRef<
   HTMLDivElement,
@@ -41,7 +60,7 @@ export const TestimonialCarousel = React.forwardRef<
           }, 200)
           return newDirection
         })
-      }, 3500)
+      }, 5000) // Slightly longer auto-play since text is longer
 
       return () => clearInterval(interval)
     }, [testimonials.length])
@@ -79,7 +98,7 @@ export const TestimonialCarousel = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "h-80 w-full flex items-center justify-center relative",
+          "h-[420px] w-full flex items-center justify-center relative",
           className
         )}
         {...props}
@@ -87,13 +106,14 @@ export const TestimonialCarousel = React.forwardRef<
         {showArrows && (
           <button 
             onClick={prevTestimonial}
-            className="absolute left-0 md:left-10 z-20 p-2 text-slate-400 hover:text-[#0066FF] transition-colors"
+            className="absolute left-1 sm:left-4 lg:left-10 z-20 p-2.5 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#0066FF] shadow-sm transition-all hover:scale-105 active:scale-95"
+            aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-8 h-8" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
         )}
         
-        <div className="relative w-80 md:w-96 h-64">
+        <div className="relative w-80 md:w-[500px] h-[340px]">
           {testimonials.map((testimonial, index) => {
             const isCurrentCard = index === currentIndex
             const isPrevCard =
@@ -136,17 +156,23 @@ export const TestimonialCarousel = React.forwardRef<
                   damping: 25,
                 }}
               >
-                <div className="p-6 md:p-8 flex flex-col items-center gap-4 text-center h-full justify-center">
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover shadow-sm"
-                  />
+                <div className="p-5 sm:p-8 flex flex-col items-center gap-3 sm:gap-4 text-center h-full justify-center">
+                  <div className={cn(
+                    "w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md bg-gradient-to-br shrink-0",
+                    getGradient(index)
+                  )}>
+                    {getInitials(testimonial.name)}
+                  </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-[#1a1a2e]">
+                    <h3 className="text-xl font-bold text-[#1a1a2e]">
                       {testimonial.name}
                     </h3>
-                    <p className="text-sm text-[#1a1a2e]/60 font-light mt-2 line-clamp-4">
+                    {testimonial.role && (
+                      <p className="text-xs sm:text-sm text-[#0066FF] font-bold mt-1.5 uppercase tracking-wider">
+                        {testimonial.role}
+                      </p>
+                    )}
+                    <p className="text-sm sm:text-base text-slate-800 font-normal mt-4 leading-relaxed">
                       "{testimonial.description}"
                     </p>
                   </div>
@@ -161,10 +187,10 @@ export const TestimonialCarousel = React.forwardRef<
                 <div
                   key={index}
                   className={cn(
-                    "w-2 h-2 rounded-full transition-colors",
+                    "h-2 rounded-full transition-all duration-300",
                     index === currentIndex
-                      ? "bg-[#0066FF]"
-                      : "bg-slate-200",
+                      ? "w-6 bg-[#0066FF]"
+                      : "w-2 bg-slate-300",
                   )}
                 />
               ))}
@@ -175,9 +201,10 @@ export const TestimonialCarousel = React.forwardRef<
         {showArrows && (
           <button 
             onClick={nextTestimonial}
-            className="absolute right-0 md:right-10 z-20 p-2 text-slate-400 hover:text-[#0066FF] transition-colors"
+            className="absolute right-1 sm:right-4 lg:right-10 z-20 p-2.5 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#0066FF] shadow-sm transition-all hover:scale-105 active:scale-95"
+            aria-label="Next testimonial"
           >
-            <ChevronRight className="w-8 h-8" />
+            <ChevronRight className="w-6 h-6" />
           </button>
         )}
       </div>

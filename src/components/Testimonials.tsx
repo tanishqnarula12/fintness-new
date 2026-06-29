@@ -6,33 +6,21 @@ import { SparklesText } from "@/components/ui/sparkles-text";
 const TESTIMONIAL_DATA = [
   {
     id: 1,
-    name: "John Doe",
-    avatar: "https://i.pravatar.cc/150?img=11",
-    description: "Amazing experience working with Fintness Finserv! The results exceeded my expectations."
+    name: "Vishal Agarwal",
+    role: "Regional Collection Manager, SK Finance Limited, Jaipur",
+    description: "Meeting Nitesh and his team in 2013 changed the way I looked at money and my future. I started with a SIP of just ₹7,500/month, and today, despite life's ups and downs, I've built a ₹62.5 lakh portfolio with complete confidence. They have been more than financial consultant, they have been family, guiding me at every step of my journey."
   },
   {
     id: 2,
-    name: "Jane Smith",
-    avatar: "https://i.pravatar.cc/150?img=5",
-    description: "Highly recommended! Great service, goal-oriented strategies, and a professional approach."
+    name: "Samresh Kumar",
+    role: "ELV Lead, Sterling & Wilson Data Centre Pvt. Ltd.",
+    description: "Thanks to Nitesh Luthra and the entire Team Fintness for being a constant source of guidance and support in my financial journey. Their advice and disciplined planning gave me the confidence to achieve financial stability and move closer to true financial freedom. I’m truly grateful for their unwavering support."
   },
   {
     id: 3,
-    name: "Mike Johnson",
-    avatar: "https://i.pravatar.cc/150?img=8",
-    description: "Exceptional quality and professionalism. I finally feel in control of my financial future."
-  },
-  {
-    id: 4,
-    name: "Sarah Jenkins",
-    avatar: "https://i.pravatar.cc/150?img=9",
-    description: "Fintness Finserv transformed how I view my wealth. Finally, a structured approach that matches my career trajectory and growth ambitions."
-  },
-  {
-    id: 5,
-    name: "Dr. Rahul Sharma",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    description: "Their unbiased approach gave me immense clarity. I'm taking less risk with better tax-adjusted returns than I ever managed on my own."
+    name: "S Sathish",
+    role: "Insurance Client",
+    description: "A big thank you to Team Fintness for your excellent support throughout my insurance journey. Your professionalism, product knowledge, and prompt assistance made the entire process smooth and hassle free. Highly recommended for anyone looking for reliable insurance guidance!"
   }
 ];
 
