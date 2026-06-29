@@ -47,7 +47,7 @@ ${formData.message}
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "1731cdd8-a5a1-40c0-9b19-c4248b1703c9",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
           name: formData.name,
           email: formData.email,
           phone: formData.phone,

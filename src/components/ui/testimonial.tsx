@@ -161,7 +161,7 @@ export const TestimonialCarousel = React.forwardRef<
                   {/* Description */}
                   <div className="flex-1 flex items-center justify-center my-3 max-w-[240px] sm:max-w-md md:max-w-xl">
                     <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 font-normal leading-relaxed italic">
-                      "{testimonial.description}"
+                      &quot;{testimonial.description}&quot;
                     </p>
                   </div>
 

@@ -17,7 +17,7 @@ function GradientText({
   as: Component = "span",
   ...props
 }: GradientTextProps) {
-  const MotionComponent = motion.create(Component);
+  const MotionComponent = React.useMemo(() => motion.create(Component), [Component]);
 
   return (
     <MotionComponent

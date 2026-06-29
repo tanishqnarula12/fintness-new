@@ -173,7 +173,7 @@ export const ShaderBackground = ({ className, children }: ShaderBackgroundProps)
     };
 
     let animationFrameId: number;
-    let startTime = Date.now();
+    const startTime = Date.now();
 
     const resizeCanvas = () => {
       // Create a high-DPI canvas
