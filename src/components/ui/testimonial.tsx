@@ -98,7 +98,7 @@ export const TestimonialCarousel = React.forwardRef<
       <div
         ref={ref}
         className={cn(
-          "h-[420px] w-full flex items-center justify-center relative",
+          "h-[480px] sm:h-[430px] md:h-[380px] w-full flex items-center justify-center relative",
           className
         )}
         {...props}
@@ -106,49 +106,42 @@ export const TestimonialCarousel = React.forwardRef<
         {showArrows && (
           <button 
             onClick={prevTestimonial}
-            className="absolute left-1 sm:left-4 lg:left-10 z-20 p-2.5 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#0066FF] shadow-sm transition-all hover:scale-105 active:scale-95"
+            className="absolute left-1 sm:left-4 md:left-8 lg:left-12 z-20 p-2 sm:p-2.5 rounded-full bg-white/95 backdrop-blur-sm hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#0066FF] shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         )}
         
-        <div className="relative w-80 md:w-[500px] h-[340px]">
+        <div className="relative w-[265px] min-[375px]:w-[310px] sm:w-[420px] md:w-[600px] h-[395px] sm:h-[350px] md:h-[320px]">
           {testimonials.map((testimonial, index) => {
             const isCurrentCard = index === currentIndex
-            const isPrevCard =
-              index === (currentIndex + 1) % testimonials.length
-            const isNextCard =
-              index === (currentIndex + 2) % testimonials.length
 
-            if (!isCurrentCard && !isPrevCard && !isNextCard) return null
+            if (!isCurrentCard) return null
 
             return (
               <motion.div
                 key={testimonial.id}
                 className={cn(
-                  "absolute w-full h-full rounded-2xl cursor-grab active:cursor-grabbing border border-slate-100",
-                  "bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)]",
+                  "absolute w-full h-full rounded-3xl border border-slate-100",
+                  "bg-white shadow-[0_15px_40px_rgba(0,102,255,0.06)]",
                 )}
                 style={{
-                  zIndex: isCurrentCard ? 3 : isPrevCard ? 2 : 1,
+                  zIndex: 3,
                 }}
-                drag={isCurrentCard ? "x" : false}
+                drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.7}
-                onDragEnd={isCurrentCard ? handleDragEnd : undefined}
+                onDragEnd={handleDragEnd}
                 initial={{
                   scale: 0.95,
                   opacity: 0,
-                  y: isCurrentCard ? 0 : isPrevCard ? 8 : 16,
-                  rotate: isCurrentCard ? 0 : isPrevCard ? -2 : -4,
+                  x: slideDirection * 50
                 }}
                 animate={{
-                  scale: isCurrentCard ? 1 : 0.95,
-                  opacity: isCurrentCard ? 1 : isPrevCard ? 0.6 : 0.3,
-                  x: isCurrentCard ? exitX : 0,
-                  y: isCurrentCard ? 0 : isPrevCard ? 8 : 16,
-                  rotate: isCurrentCard ? exitX / 20 : isPrevCard ? -2 : -4,
+                  scale: 1,
+                  opacity: 1,
+                  x: exitX
                 }}
                 transition={{
                   type: "spring",
@@ -156,25 +149,39 @@ export const TestimonialCarousel = React.forwardRef<
                   damping: 25,
                 }}
               >
-                <div className="p-5 sm:p-8 flex flex-col items-center gap-3 sm:gap-4 text-center h-full justify-center">
+                <div className="p-6 sm:p-8 flex flex-col items-center text-center h-full justify-between relative">
+                  {/* Quote Icon Background */}
+                  <div className="absolute top-4 left-6 text-[#0066FF]/10 select-none pointer-events-none">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                  </div>
+                  
+                  {/* Initials Avatar */}
                   <div className={cn(
-                    "w-16 h-16 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md bg-gradient-to-br shrink-0",
+                    "w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-md bg-gradient-to-br shrink-0 mt-2",
                     getGradient(index)
                   )}>
                     {getInitials(testimonial.name)}
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-[#1a1a2e]">
+                  
+                  {/* Description */}
+                  <div className="flex-1 flex items-center justify-center my-3 max-w-[240px] sm:max-w-md md:max-w-xl">
+                    <p className="text-xs sm:text-sm md:text-[15px] text-slate-700 font-normal leading-relaxed italic">
+                      "{testimonial.description}"
+                    </p>
+                  </div>
+
+                  {/* Name and Designation */}
+                  <div className="mt-1 pb-2">
+                    <h3 className="text-base sm:text-lg font-bold text-[#1a1a2e]">
                       {testimonial.name}
                     </h3>
                     {testimonial.role && (
-                      <p className="text-xs sm:text-sm text-[#0066FF] font-bold mt-1.5 uppercase tracking-wider">
+                      <p className="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 max-w-[220px] sm:max-w-md mx-auto">
                         {testimonial.role}
                       </p>
                     )}
-                    <p className="text-sm sm:text-base text-slate-800 font-normal mt-4 leading-relaxed">
-                      "{testimonial.description}"
-                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -201,10 +208,10 @@ export const TestimonialCarousel = React.forwardRef<
         {showArrows && (
           <button 
             onClick={nextTestimonial}
-            className="absolute right-1 sm:right-4 lg:right-10 z-20 p-2.5 rounded-full bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-[#0066FF] shadow-sm transition-all hover:scale-105 active:scale-95"
+            className="absolute right-1 sm:right-4 md:right-8 lg:right-12 z-20 p-2 sm:p-2.5 rounded-full bg-white/95 backdrop-blur-sm hover:bg-slate-50 border border-slate-200 text-slate-600 hover:text-[#0066FF] shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center justify-center"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
         )}
       </div>

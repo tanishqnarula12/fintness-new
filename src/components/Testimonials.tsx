@@ -48,7 +48,7 @@ export default function Testimonials() {
       <div className="w-full relative mt-10">
         <TestimonialCarousel 
           testimonials={TESTIMONIAL_DATA}
-          className="max-w-2xl mx-auto"
+          className="max-w-4xl mx-auto px-4 sm:px-12"
         />
       </div>
     </section>
