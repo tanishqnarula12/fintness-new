@@ -324,7 +324,7 @@ export default function AboutPage() {
                 role: "Certified Financial Planner & Portfolio Manager", 
                 bio: "Specializes in financial planning, investment advisory, and portfolio management, helping clients build disciplined, goal-based wealth strategies for long-term financial growth.", 
                 img: "/manish-sharma.jpeg",
-                imgClass: "object-[40%_center]",
+                imgClass: "object-[40%_30%]",
                 hoverClass: "group-hover/card:scale-105"
               },
               { 
