@@ -220,10 +220,11 @@ export default function CareersPage() {
                 </label>
                 <select 
                   required
+                  defaultValue=""
                   className="w-full bg-[#1A1F2D] border-none rounded-xl px-5 py-4 text-sm text-white focus:outline-none focus:ring-2 focus:ring-[#00A3FF] transition-all appearance-none cursor-pointer"
                   style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'none\' viewBox=\'0 0 24 24\' stroke=\'%236b7280\'%3E%3Cpath stroke-linecap=\'round\' stroke-linejoin=\'round\' stroke-width=\'2\' d=\'M19 9l-7 7-7-7\'%3E%3C/path%3E%3C/svg%3E")', backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1.25rem center', backgroundSize: '1.2em' }}
                 >
-                  <option value="" disabled selected>Select an area of interest...</option>
+                  <option value="" disabled>Select an area of interest...</option>
                   <option value="wealth-advisor">Wealth Advisor</option>
                   <option value="financial-analyst">Financial Analyst</option>
                   <option value="compliance-officer">Compliance Officer</option>
