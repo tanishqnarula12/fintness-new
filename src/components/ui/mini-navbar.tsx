@@ -46,7 +46,7 @@ export function Navbar() {
 
   const loginButtonElement = (
     <button className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-[#1a1a2e]/10 bg-[#1a1a2e]/[0.03] text-[#1a1a2e]/60 rounded-full hover:border-[#0066FF]/40 hover:text-[#1a1a2e] transition-colors duration-200 w-full xl:w-auto font-medium cursor-not-allowed">
-      Client Login
+      Login
     </button>
   );
 
