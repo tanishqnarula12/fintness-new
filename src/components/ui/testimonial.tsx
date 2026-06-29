@@ -150,13 +150,6 @@ export const TestimonialCarousel = React.forwardRef<
                 }}
               >
                 <div className="p-6 sm:p-8 flex flex-col items-center text-center h-full justify-between relative">
-                  {/* Quote Icon Background */}
-                  <div className="absolute top-4 left-6 text-[#0066FF]/10 select-none pointer-events-none">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                    </svg>
-                  </div>
-                  
                   {/* Initials Avatar */}
                   <div className={cn(
                     "w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center text-white text-lg sm:text-xl font-bold shadow-md bg-gradient-to-br shrink-0 mt-2",
