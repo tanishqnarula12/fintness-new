@@ -44,10 +44,17 @@ export function Navbar() {
 
 
 
+  const crmUrl = process.env.NEXT_PUBLIC_CRM_URL || 'https://crm.fintness.in';
+
   const loginButtonElement = (
-    <button className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-[#1a1a2e]/10 bg-[#1a1a2e]/[0.03] text-[#1a1a2e]/60 rounded-full hover:border-[#0066FF]/40 hover:text-[#1a1a2e] transition-colors duration-200 w-full xl:w-auto font-medium cursor-not-allowed">
+    <a
+      href={crmUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="px-5 py-2.5 xl:px-4 xl:py-2 text-sm border border-[#1a1a2e]/10 bg-[#1a1a2e]/[0.03] text-[#1a1a2e]/60 rounded-full hover:border-[#0066FF]/40 hover:text-[#1a1a2e] transition-colors duration-200 w-full xl:w-auto font-medium inline-flex items-center justify-center text-center"
+    >
       Login
-    </button>
+    </a>
   );
 
   const signupButtonElement = (
